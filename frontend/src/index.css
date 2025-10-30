@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+body {
+  cursor: none; /* hide cursor globally */
+}
+
+.navbar {
+  cursor: default !important;
+}
+
+.video {
+  cursor: default !important;
+}
+
