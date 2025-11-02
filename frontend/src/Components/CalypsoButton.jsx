@@ -118,7 +118,7 @@ export default function App() {
         <span>About Us</span>
       </button>
       <button className="button button--calypso">
-        <span>Workss</span>
+        <span>Projects</span>
       </button>
 
     </>

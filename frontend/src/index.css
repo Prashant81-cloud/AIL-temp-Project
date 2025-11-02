@@ -12,3 +12,10 @@ body {
   cursor: default !important;
 }
 
+.watchNowBtn {
+  cursor: pointer !important;
+}
+
+button, .cursor-pointer {
+  cursor: pointer !important;
+}

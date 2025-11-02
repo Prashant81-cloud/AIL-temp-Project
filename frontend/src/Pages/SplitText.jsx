@@ -56,9 +56,9 @@ gsap.to(imgRef.current, {
   return (
     <div className="mt-12">
       {/* 1️⃣ First line */}
-      <div ref={txt1Ref} className="font-normal text-[110px] flex items-center txt1">
+      <div ref={txt1Ref} className="font-normal text-[93px] flex items-center txt1">
         <img ref={imgRef} className="h-28 w-28" src={rmbgOrig} alt="logo" />
-        <p>In the age of AI,</p>
+        <p>In the age of AI - </p>
       </div>
 
       {/* 2️⃣ Third text (hidden initially) */}
@@ -66,17 +66,17 @@ gsap.to(imgRef.current, {
         ref={txt3Ref}
         className="w-100 font-normal text-xl txt3 ml-43 hidden absolute"
       >
-        Discover an impactful and immersive storytelling for your brand and
-        reach your audience wherever they are
+Discover an impactful — A Full-Stack Storytelling Studio Transforming How Brands Speak
+to the World
       </div>
 
       {/* 3️⃣ Second line */}
       <div ref={txt2Ref} className="txt2 ">
-        <div className="ml-60 font-normal text-[110px] leading-none">
-          let humans tell
+        <div className="ml-50 font-normal text-[93px] leading-none">
+Humanizing Brands  
         </div>
-        <div className="ml-95 font-normal text-[110px] leading-none ">
-          your brand story
+        <div className="ml-70 font-normal text-[93px] leading-none ">
+          Through Believable Stories
         </div>
       </div>
     </div>

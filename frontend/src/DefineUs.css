@@ -1,0 +1,115 @@
+.about-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  padding: 80px 100px; /* Adjust padding as needed */
+  gap: 80px; /* Space between left and right columns */
+
+}
+
+.left-content {
+  flex: 0 0 35%; /* Fixed width for left content, adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0px; /* To align the "What defines us" with the headline */
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 40px; /* Space below the title */
+  line-height: 1.2;
+}
+
+.arrow-icon {
+  width: 80px; /* Width of the arrow */
+  height: 150px; /* Height of the arrow */
+  background-color: #000; /* Color of the arrow */
+  position: relative;
+  clip-path: polygon(
+    50% 100%,
+    0% 75%,
+    30% 75%,
+    30% 0%,
+    70% 0%,
+    70% 75%,
+    100% 75%
+  );
+  /* You might need to adjust clip-path or use an SVG for a perfect arrow */
+}
+
+
+.right-content {
+  flex: 0 0 65%; /* Wider for right content */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.headline {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.7;
+font-weight: 400;
+}
+
+.culture-button {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px; /* Makes it pill-shaped */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between text and arrow */
+}
+
+.culture-button:hover {
+  background-color: #333;
+}
+
+/* For the background circles, you'd typically use a background image 
+   or a more complex CSS approach with pseudo-elements and gradients.
+   I'm omitting that for core structure. */
+
+/* Media queries for responsiveness would be added here */
+@media (max-width: 768px) {
+  .about-us-container {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .left-content, .right-content {
+    flex: 0 0 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .headline {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
