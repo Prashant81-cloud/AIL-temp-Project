@@ -17,13 +17,11 @@ verticalSwiping: true
   return (
     <div className="slider-container" style={{ width: "150px",  }}>
       <Slider {...settings}>
-        <div><h3>.Brands</h3></div>
-        <div><h3>.Tech</h3></div>
-        <div><h3>.Media</h3></div>
-        <div><h3>.Production</h3></div>
-        <div><h3>.Influencers</h3></div>
-        <div><h3>.Talent</h3></div>
-        <div><h3>.IT</h3></div>
+        <div><h3>.ideas</h3></div>
+        <div><h3>.innovation</h3></div>
+        <div><h3>.experience</h3></div>
+        <div><h3>.thrill</h3></div>
+        <div><h3>.action</h3></div>
       </Slider>
     </div>
   );

@@ -11,9 +11,11 @@ import FlipPages from "./Pages/FlipPages";
 import SchbangFooter from "./Pages/DefineUs";
 import PageTransitionFooter from "./Pages/PageTransitionFooter";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  // Cursor follower config
   const IMAGE_URL = AILIMG;
   const SMOOTHING = 0.15;
   const SIZE = 150;
@@ -24,9 +26,12 @@ export default function App() {
   const posRef = useRef({ x: targetRef.current.x, y: targetRef.current.y });
   const rafRef = useRef(null);
   const [visible, setVisible] = useState(true);
-  const [cursorMode, setCursorMode] = useState("image");
 
-  // Smooth scroll
+  const [cursorMode, setCursorMode] = useState("image"); 
+  // "image" = AIL image cursor
+  // "text"  = "See Magic!" cursor
+
+  // 💫 Smooth Scroll Setup (Lenis + GSAP)
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -44,7 +49,7 @@ export default function App() {
     return () => lenis.destroy();
   }, []);
 
-  // Cursor follower
+  // 💡 Cursor Follower Effect
   useEffect(() => {
     const handleMouseMove = (e) => {
       targetRef.current.x = e.clientX;
@@ -53,12 +58,15 @@ export default function App() {
     };
 
     const handleMouseLeave = () => setVisible(false);
+
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseleave", handleMouseLeave);
 
     const tick = () => {
       const t = targetRef.current;
       const p = posRef.current;
+
+      // Smooth follow logic
       p.x += (t.x - p.x) * SMOOTHING;
       p.y += (t.y - p.y) * SMOOTHING;
 
@@ -68,28 +76,16 @@ export default function App() {
         }px, 0)`;
         followerRef.current.style.opacity = visible ? 1 : 0;
       }
+
       rafRef.current = requestAnimationFrame(tick);
     };
+
     rafRef.current = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
-
-  // ✅ Disable / Enable custom cursor when hovering "Watch now" button
-  useEffect(() => {
-    const disable = () => setCursorMode("none");
-    const enable = () => setCursorMode("image");
-
-    window.addEventListener("disableCustomCursor", disable);
-    window.addEventListener("enableCustomCursor", enable);
-
-    return () => {
-      window.removeEventListener("disableCustomCursor", disable);
-      window.removeEventListener("enableCustomCursor", enable);
     };
   }, []);
 
@@ -101,8 +97,8 @@ export default function App() {
     height: cursorMode === "image" ? `${SIZE}px` : "40px",
     pointerEvents: "none",
     willChange: "transform, opacity",
-    transition: "opacity 0.2s ease",
-    opacity: cursorMode === "none" ? 0 : 1,
+    transition: "opacity 150ms ease",
+    opacity: visible ? 1 : 0,
     zIndex: 9999,
     borderRadius: cursorMode === "image" ? "12px" : "9999px",
     overflow: "hidden",
@@ -116,17 +112,15 @@ export default function App() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  window.scrollTo(0, 0);
+}, []);
+
 
   return (
     <div className="relative w-full min-h-screen bg-[#FAF4EC]">
-      {/* Navbar */}
-      <div
-        className="navbar py-10 px-15"
-        onMouseEnter={() => setCursorMode("none")}
-        onMouseLeave={() => setCursorMode("image")}
-      >
+
+      {/* Navbar — disable cursor completely here */}
+      <div  className="navbar py-10 px-15"  onMouseEnter={() => setCursorMode("none")}  onMouseLeave={() => setCursorMode("image")}>
         <Navbar />
       </div>
 
@@ -135,33 +129,31 @@ export default function App() {
         <SplitText />
       </div>
 
-      {/* Video section */}
-      <div
-        className="mt-15 video h-full w-full"
-        onMouseEnter={() => setCursorMode("text")}
-        onMouseLeave={() => setCursorMode("image")}
-      >
+      {/* Video Section — show “See Magic!” cursor here */}
+      <div  className="mt-15 video h-full w-full"  onMouseEnter={() => setCursorMode("text")}  onMouseLeave={() => setCursorMode("image")}>
         <Video />
       </div>
 
-      {/* Flip Pages */}
-      <div>
-        <FlipPages />
-      </div>
+
+
+<div>
+  <FlipPages/>
+</div>
 
       <div>
         <InfiniteHorizontalAnimation />
       </div>
 
-      <div>
-        <SchbangFooter />
-      </div>
 
-      <div>
-        <PageTransitionFooter />
-      </div>
+<div>
+  <SchbangFooter/>
+</div>
 
-      {/* Cursor Follower */}
+<div>
+  <PageTransitionFooter/>
+</div>
+
+      {/* Cursor follower */}
       <div ref={followerRef} style={followerStyle} aria-hidden>
         {cursorMode === "image" && (
           <img

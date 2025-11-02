@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { useState } from 'react';
 import CalypsoButton from './CalypsoButton';
 import tfb from '../assets/tfb.png'
+import AILLOGO from '../assets/AIL BRONZE.png';
 
 function Navbar() {
 
@@ -16,21 +17,25 @@ function Navbar() {
 
     return (
     <div className='flex justify-between items-center'>
-    <div className='logo  flex' >
+<div
+  className="logo relative flex w-[] h-[130px] items-center justify-center bg-center bg-no-repeat bg-contain"
+  style={{
+    backgroundImage: `url(${AILLOGO})`,
+    backgroundSize: '170px', // adjust logo size
+    backgroundPosition: 'left 40%',
+     // makes logo faint
+  }}
+>
+  {/* Inner content (text + hover component) */}
+  <div className="flex font-bold text-4xl items-center justify-center flex-col text-[#c99a5b] z-10">
+    <h1 style={{ fontFamily: 'Alata, sans-serif' }}>ADVAITA</h1>
+    <h2 className="text-[15px]">INNOVATION LABS.</h2>
+  </div>
 
-<div className='flex font-bold text-4xl items-center justify-center' >
-<div className=''>
-    AIL-india
+  <div className="font-bold text-xl mt-[px] ml-0.5 text-[#c99a5b] z-10">
+    <PauseOnHover />
+  </div>
 </div>
-
-
-
-</div>
-
-<div className='font-bold text-lg mt-[12.5px]'>
-<PauseOnHover/>
-</div>
-    </div>
 <div className='navMenu flex gap-1 font-semibold text-[15px] bg-white py-2 px-4 rounded-xl '>
 <CalypsoButton/>
 </div>
