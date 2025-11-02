@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import risingBharat from '../assets/Rising bharat.png'
+import BOT from '../assets/BOT.png'
+import TBC from '../assets/The Bharat Chapters.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,23 +92,23 @@ useEffect(() => {
       <div ref={cardsContainerRef} className="cards relative w-[100vw]">
 
           <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#A91C60] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#b51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
         <span className={`absolute z-0 text-9xl font-extrabold  opacity-20 top-4 right-12`}>
           01    
         </span>
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold  rounded-lg text-black`}>
-              LOGO
+            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
+              Expertise
             </span>
              <h1 className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              Rising Bharat
+              <img className="" src={risingBharat} alt="" />
              </h1>
 
           </div>
         <div className="flex items-center justify-between">
-        <div className="mt-70">
+        <div className="mt-30">
           <h1 className="text-2xl font-medium text-black"></h1>
           <p className="w-200  font-normal text-xl">A first-time-in-India series spotlighting generational legacy businesses—the backbone of
 India’s economy—celebrating visionary leaders redefining industries with innovation,
@@ -123,7 +126,7 @@ resilience, and bold transformation shaping the nation’s global rise.</p>
 
         </div>
         <div>
-             <div className="p-2 mt-14 bg-white rounded-3xl shadow-2xl transform rotate-3">
+             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
                <img 
                  src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
                  alt="Man on the phone" 
@@ -137,24 +140,25 @@ resilience, and bold transformation shaping the nation’s global rise.</p>
             </div>
           </div>
 
+
           <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#FCB8FA]   rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#2f3a4e]   rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
         <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
           02       
         </span>
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold  rounded-lg text-black`}>
-              LOGO
+            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
+              Expertise
             </span>
              <h1 className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              Brands of Tomorrow Season 3
+              <img src={BOT} alt="" />
              </h1>
 
           </div>
         <div className="flex items-center justify-between">
-        <div className="mt-63">
+        <div className="mt-37">
           <h1 className="text-2xl font-medium text-black"></h1>
           <p className="w-200  font-normal text-xl">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from
 D2C to healthcare — telling stories of innovation and impact in a rapidly changing world.</p>
@@ -185,25 +189,24 @@ D2C to healthcare — telling stories of innovation and impact in a rapidly chan
             </div>
           </div>
 
-
           <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#e9d5b7] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#152b6e] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
         <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
           03       
         </span>
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold  rounded-lg text-black`}>
-              LOGO
+            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
+              Expertise
             </span>
              <h1 className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              The Bharat Chapters 
+              <img src={TBC} alt="" />
              </h1>
 
           </div>
         <div className="flex items-center justify-between">
-        <div className="mt-55">
+        <div className="mt-15">
           <h1 className="text-2xl font-medium text-black"></h1>
           <p className="w-200 mt-1  font-normal text-xl">The Bharat Chapter captures how digital transformation is reshaping lives across eight
 diverse Indian cities, with powerful personal journeys—especially of women—at its heart.
@@ -224,7 +227,7 @@ access and opportunity.</p>
 
         </div>
         <div>
-             <div className="p-2 mt-13 bg-white rounded-3xl shadow-2xl transform rotate-3">
+             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
                <img 
                  src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
                  alt="Man on the phone" 
