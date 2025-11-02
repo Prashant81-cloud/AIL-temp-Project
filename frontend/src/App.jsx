@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./Components/Navbar";
-import AILIMG from "./assets/AIL BRONZE.png";
+// import AILIMG from "./assets/AIL BRONZE.png"; // No longer needed
 import SplitText from "./Pages/SplitText";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,14 +11,13 @@ import FlipPages from "./Pages/FlipPages";
 import SchbangFooter from "./Pages/DefineUs";
 import PageTransitionFooter from "./Pages/PageTransitionFooter";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   // Cursor follower config
-  const IMAGE_URL = AILIMG;
+  // const IMAGE_URL = AILIMG; // No longer needed
   const SMOOTHING = 0.15;
-  const SIZE = 150;
+  const SIZE = 12; // <-- CHANGED: Dot size (was 150)
   const OFFSET = { x: SIZE / -2, y: SIZE / -2 };
 
   const followerRef = useRef(null);
@@ -27,7 +26,7 @@ export default function App() {
   const rafRef = useRef(null);
   const [visible, setVisible] = useState(true);
 
-  const [cursorMode, setCursorMode] = useState("image"); 
+  const [cursorMode, setCursorMode] = useState("image");
   // "image" = AIL image cursor
   // "text"  = "See Magic!" cursor
 
@@ -100,27 +99,28 @@ export default function App() {
     transition: "opacity 150ms ease",
     opacity: visible ? 1 : 0,
     zIndex: 9999,
-    borderRadius: cursorMode === "image" ? "12px" : "9999px",
+    borderRadius: cursorMode === "image" ? "50%" : "9999px", // <-- CHANGED: Made it circular
     overflow: "hidden",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: cursorMode === "text" ? "black" : "transparent",
+    backgroundColor: cursorMode === "text" ? "black" : "black", // <-- CHANGED: Made dot black
     color: cursorMode === "text" ? "white" : "transparent",
     fontSize: cursorMode === "text" ? "14px" : "0px",
     fontFamily: "sans-serif",
   };
 
   useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="relative w-full min-h-screen bg-[#FAF4EC]">
-
       {/* Navbar — disable cursor completely here */}
-      <div  className="navbar py-10 px-15"  onMouseEnter={() => setCursorMode("none")}  onMouseLeave={() => setCursorMode("image")}>
+      <div
+        className="navbar py-5 px-15"
+
+      >
         <Navbar />
       </div>
 
@@ -130,44 +130,33 @@ export default function App() {
       </div>
 
       {/* Video Section — show “See Magic!” cursor here */}
-      <div  className="mt-15 video h-full w-full"  onMouseEnter={() => setCursorMode("text")}  onMouseLeave={() => setCursorMode("image")}>
+      <div
+        className="mt-15 video h-full w-full"
+        onMouseEnter={() => setCursorMode("text")}
+        onMouseLeave={() => setCursorMode("image")}
+      >
         <Video />
       </div>
 
-
-
-<div>
-  <FlipPages/>
-</div>
+      <div>
+        <FlipPages />
+      </div>
 
       <div>
         <InfiniteHorizontalAnimation />
       </div>
 
+      <div>
+        <SchbangFooter />
+      </div>
 
-<div>
-  <SchbangFooter/>
-</div>
-
-<div>
-  <PageTransitionFooter/>
-</div>
+      <div>
+        <PageTransitionFooter />
+      </div>
 
       {/* Cursor follower */}
       <div ref={followerRef} style={followerStyle} aria-hidden>
-        {cursorMode === "image" && (
-          <img
-            src={IMAGE_URL}
-            alt="follower"
-            style={{
-              width: "165px",
-              height: "165px",
-              objectFit: "cover",
-              display: "block",
-            }}
-            draggable={false}
-          />
-        )}
+        {/* <-- REMOVED: The <img> tag was here --> */}
         {cursorMode === "text" && <p>See Magic!</p>}
       </div>
     </div>

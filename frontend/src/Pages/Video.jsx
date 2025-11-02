@@ -41,7 +41,7 @@ function Video() {
   return (
 <div 
   ref={containerRef}
-  className="w-full h-screen flex justify-center items-center overflow-hidden bg-[#FAF4EC]"
+  className="w-full h-[110vh] flex justify-center items-center overflow-hidden bg-[#FAF4EC]"
   id="page2"
 >
   <video
