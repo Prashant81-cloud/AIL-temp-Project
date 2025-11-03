@@ -10,6 +10,7 @@ import InfiniteHorizontalAnimation from "./Pages/InfiniteHorizontalAnimation";
 import FlipPages from "./Pages/FlipPages";
 import SchbangFooter from "./Pages/DefineUs";
 import PageTransitionFooter from "./Pages/PageTransitionFooter";
+import Solutions from "./Pages/Solutions";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,6 +149,10 @@ export default function App() {
 
       <div>
         <SchbangFooter />
+      </div>
+
+      <div>
+        <Solutions/>
       </div>
 
       <div>

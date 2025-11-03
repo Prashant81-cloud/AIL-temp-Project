@@ -102,15 +102,15 @@ useEffect(() => {
             <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
               Expertise
             </span>
-             <h1 className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img className="" src={risingBharat} alt="" />
-             </h1>
+             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
+              <img className="rounded-xl" src={risingBharat} alt="" />
+             </div>
 
           </div>
         <div className="flex items-center justify-between">
         <div className="mt-30">
           <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200  font-normal text-xl">A first-time-in-India series spotlighting generational legacy businesses—the backbone of
+          <p className="w-200  font-normal text-xl text-white">A first-time-in-India series spotlighting generational legacy businesses—the backbone of
 India’s economy—celebrating visionary leaders redefining industries with innovation,
 resilience, and bold transformation shaping the nation’s global rise.</p>
 <button
@@ -152,15 +152,15 @@ resilience, and bold transformation shaping the nation’s global rise.</p>
             <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
               Expertise
             </span>
-             <h1 className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img src={BOT} alt="" />
-             </h1>
+             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl ">
+              <img className="rounded-xl" src={BOT} alt="" />
+             </div>
 
           </div>
         <div className="flex items-center justify-between">
         <div className="mt-37">
           <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200  font-normal text-xl">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from
+          <p className="w-200  font-normal text-xl text-white">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from
 D2C to healthcare — telling stories of innovation and impact in a rapidly changing world.</p>
 <button
   className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
@@ -175,7 +175,7 @@ D2C to healthcare — telling stories of innovation and impact in a rapidly chan
 
         </div>
         <div>
-             <div className="p-2 bg-white rounded-3xl shadow-2xl transform rotate-3">
+             <div className="p-2 bg-white rounded-3xl shadow-2xl transform rotate-3 ">
                <img 
                  src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
                  alt="Man on the phone" 
@@ -200,15 +200,15 @@ D2C to healthcare — telling stories of innovation and impact in a rapidly chan
             <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
               Expertise
             </span>
-             <h1 className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img src={TBC} alt="" />
-             </h1>
+             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
+              <img className="rounded-xl" src={TBC} alt="" />
+             </div>
 
           </div>
         <div className="flex items-center justify-between">
         <div className="mt-15">
           <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200 mt-1  font-normal text-xl">The Bharat Chapter captures how digital transformation is reshaping lives across eight
+          <p className="w-200 mt-1  font-normal text-xl text-white">The Bharat Chapter captures how digital transformation is reshaping lives across eight
 diverse Indian cities, with powerful personal journeys—especially of women—at its heart.
 Through grounded, human-centric storytelling, it highlights how ecommerce and the internet
 have quietly enabled upward mobility by empowering individuals and households with
