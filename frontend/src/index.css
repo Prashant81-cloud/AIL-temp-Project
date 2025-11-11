@@ -2,6 +2,7 @@
 
 body {
   cursor: none; /* hide cursor globally */
+  background-color: #FAF4EC;
 }
 
 .navbar {

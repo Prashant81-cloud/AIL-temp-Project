@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-// (You can remove ArrowRight import if you don't need the icon)
-// import { ArrowRight } from "lucide-react";
 
 export default function ButtonHover() {
   return (
     <div
-      // When mouse enters the button area, disable the custom cursor
+      className="flex justify-center items-center w-full"
       onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
       onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
     >
@@ -31,15 +29,17 @@ const AnimatedButton = () => {
 
   return (
     <motion.button
-      className="relative px-8 py-4 text-lg font-medium bg-black rounded-full cursor-pointer border-1"
-      style={{ overflow: "hidden", position: "relative" }}
+      className="relative overflow-hidden rounded-full bg-black text-white font-medium cursor-pointer border border-[#c99a5b] 
+                 px-6 py-3 text-sm sm:px-8 sm:py-4 sm:text-base md:px-10 md:py-5 md:text-lg transition-all duration-300"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span className="relative z-10 flex items-center gap-2 text-white">
+      {/* Text (front layer) */}
+      <span className="relative z-10 flex items-center justify-center gap-2">
         Dive Into Our Culture →
       </span>
 
+      {/* Animated background (hover reveal) */}
       <motion.div
         className="absolute inset-0 z-20 flex items-center justify-center gap-2 bg-[#faf4ec] text-black"
         initial={{
@@ -51,8 +51,8 @@ const AnimatedButton = () => {
             : `circle(0% at ${mousePosition.x}px ${mousePosition.y}px)`,
         }}
         transition={{
-          duration: 0.4,
-          ease: [0, 0, 0.58, 1],
+          duration: 0.45,
+          ease: [0.22, 1, 0.36, 1],
         }}
       >
         Dive Into Our Culture →

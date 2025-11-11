@@ -52,7 +52,7 @@ function Video() {
     muted
     playsInline
     onClick={handleVideoClick}
-    className="w-[80%] h-[80%] max-h-full object-cover cursor-pointer mt-20"
+    className="w-[80%] h-[80%] max-h-full object-fill cursor-pointer mt-20"
     style={{ outline: "none" }}
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}

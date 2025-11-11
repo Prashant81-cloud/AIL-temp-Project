@@ -16,7 +16,7 @@ function Navbar() {
 
 
     return (
-    <div className='flex justify-between items-center'>
+    <div className='flex justify-between items-center mx-15 my-5'>
 <div
   className="logo relative flex w-[] h-[130px] items-center justify-center bg-center bg-no-repeat bg-contain"
   style={{

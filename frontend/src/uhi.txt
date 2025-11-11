@@ -56,8 +56,8 @@ gsap.to(imgRef.current, {
   return (
     <div  className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 ">
       {/* 1️⃣ First line */}
-      <div ref={txt1Ref} className="font-normal   leading-none flex items-center txt1  sm:text-[2.7rem] md:text-[clamp(3rem,5.8vw,93px)]  [@media(max-width:639px)]:text-[1.5rem] ">
-        <img ref={imgRef} className="xl:h-[100px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[28px]" src={rmbgOrig} alt="logo" />
+      <div ref={txt1Ref} className="font-normal   leading-none flex items-center txt1  sm:text-[2.7rem] md:text-[clamp(3rem,6.8vw,93px)]  [@media(max-width:639px)]:text-[2rem] ">
+        <img ref={imgRef} className="xl:h-[110px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[45px]" src={rmbgOrig} alt="logo" />
         <p className="font-semibold"> HUMANIZING BRANDS, </p>
       </div>
 
@@ -72,8 +72,8 @@ to the World
 
 
       {/* 3️⃣ Second line */}
-      <div ref={txt2Ref}  className="txt2 xl:ml-[117px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[1.5rem] ml-[50px] ">
-        <div className="font-normal  sm:text-[2.7rem] md:text-[clamp(3rem,5.7vw,93px)] leading-none font-semibold">
+      <div ref={txt2Ref}  className="txt2 xl:ml-[117px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[2rem] ml-[50px] ">
+        <div className="font-normal  sm:text-[2.7rem] md:text-[clamp(3rem,6.8vw,93px)] leading-none font-semibold">
  THROUGH BELIEVABLE STORIES
         </div>
       </div>

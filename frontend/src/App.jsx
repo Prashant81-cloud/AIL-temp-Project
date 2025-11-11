@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/DesktopNavbar";
 // import AILIMG from "./assets/AIL BRONZE.png"; // No longer needed
 import SplitText from "./Pages/SplitText";
 import gsap from "gsap";
@@ -11,6 +11,7 @@ import FlipPages from "./Pages/FlipPages";
 import SchbangFooter from "./Pages/DefineUs";
 import PageTransitionFooter from "./Pages/PageTransitionFooter";
 import Solutions from "./Pages/Solutions";
+import NavbarWrapper from "./Components/NavbarWrapper";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,17 +117,14 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen bg-[#FAF4EC]">
+    <div className="relative w-full  bg-[#FAF4EC] ">
       {/* Navbar — disable cursor completely here */}
-      <div
-        className="navbar py-5 px-15"
-
-      >
-        <Navbar />
+      <div className="navbar  ">
+<NavbarWrapper />
       </div>
 
       {/* Split text */}
-      <div className="px-15">
+      <div className="">
         <SplitText />
       </div>
 
