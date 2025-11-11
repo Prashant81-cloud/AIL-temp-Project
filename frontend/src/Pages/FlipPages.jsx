@@ -91,7 +91,7 @@ useEffect(() => {
 
       <div ref={cardsContainerRef} className="cards relative w-[100vw]">
 
-          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-[90vh] sticky w-full top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#b51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
         <span className={`absolute z-0 text-9xl font-extrabold  opacity-20 top-4 right-12`}>

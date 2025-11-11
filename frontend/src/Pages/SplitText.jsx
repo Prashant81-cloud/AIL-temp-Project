@@ -64,7 +64,7 @@ gsap.to(imgRef.current, {
       {/* 2️⃣ Third text (hidden initially) */}
       <div
         ref={txt3Ref}
-        className="lg:w-90  w-50 ml-[7.9rem] font-normal lg:text-[17px] [@media(max-width:639px)]:ml-[7.5rem] [@media(max-width:639px)]:text-[12px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80  txt3 sm:ml-[10.5rem] md:ml-[14rem] lg:ml-[16.5rem] xl:ml-[19.5rem]  absolute mt-3"
+        className="lg:w-90  w-50 ml-[7.9rem] font-normal lg:text-[17px] [@media(max-width:639px)]:ml-[6rem] [@media(max-width:639px)]:text-[12px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80  txt3 sm:ml-[10.5rem] md:ml-[14rem] lg:ml-[16.5rem] xl:ml-[19.5rem]  absolute mt-3"
       >
 A Full-Stack Storytelling Studio Transforming How Brands Speak
 to the World

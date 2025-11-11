@@ -24,14 +24,14 @@ function Video() {
 
       gsap.to(videoRef.current, {
         width:'100vw',
-        height:'100vh',
+
         scrollTrigger: {
           trigger: containerRef.current, // ✅ must exist
           start: "top bottom",
           end: "bottom top",
           scrub: true,
         },
-        scale: 1.2,
+scale:1.05
       });
     }, containerRef);
 
@@ -39,9 +39,9 @@ function Video() {
   }, []);
 
   return (
-<div 
+<div
   ref={containerRef}
-  className="w-full h-[110vh] flex justify-center items-center overflow-hidden bg-[#FAF4EC]"
+  className="w-full  flex flex-col justify-start items-center bg-[#FAF4EC] mt-30 sm:mt-35  md:mt-35  lg:mt-30  xl:mt-40 "
   id="page2"
 >
   <video
@@ -52,12 +52,11 @@ function Video() {
     muted
     playsInline
     onClick={handleVideoClick}
-    className="w-[80%] h-[80%] max-h-full object-fill cursor-pointer mt-20"
+    className="w-[80%] object-cover cursor-pointer "
     style={{ outline: "none" }}
-    onMouseEnter={() => setHover(true)}
-    onMouseLeave={() => setHover(false)}
   />
 </div>
+
 
   );
 }

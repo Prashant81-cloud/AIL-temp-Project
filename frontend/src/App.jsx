@@ -12,6 +12,7 @@ import SchbangFooter from "./Pages/DefineUs";
 import PageTransitionFooter from "./Pages/PageTransitionFooter";
 import Solutions from "./Pages/Solutions";
 import NavbarWrapper from "./Components/NavbarWrapper";
+import Random from "./Pages/Random";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,13 +125,13 @@ export default function App() {
       </div>
 
       {/* Split text */}
-      <div className="">
+      <div  className="mt-17">
         <SplitText />
       </div>
 
       {/* Video Section — show “See Magic!” cursor here */}
       <div
-        className="mt-15 video h-full w-full"
+        className=" video  w-full"
         onMouseEnter={() => setCursorMode("text")}
         onMouseLeave={() => setCursorMode("image")}
       >
@@ -140,7 +141,9 @@ export default function App() {
       <div>
         <FlipPages />
       </div>
+<div>
 
+</div>
       <div>
         <InfiniteHorizontalAnimation />
       </div>
