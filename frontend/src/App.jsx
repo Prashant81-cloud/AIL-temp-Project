@@ -131,7 +131,7 @@ export default function App() {
 
       {/* Video Section — show “See Magic!” cursor here */}
       <div
-        className=" video  w-full"
+        className=" video  w-full "
         onMouseEnter={() => setCursorMode("text")}
         onMouseLeave={() => setCursorMode("image")}
       >

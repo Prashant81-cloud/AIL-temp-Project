@@ -56,7 +56,7 @@ gsap.to(imgRef.current, {
   return (
     <div  className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 ">
       {/* 1️⃣ First line */}
-      <div ref={txt1Ref} className="font-normal   leading-none flex items-center txt1  sm:text-[2.7rem] md:text-[clamp(3rem,5.8vw,93px)]  [@media(max-width:639px)]:text-[1.5rem] ">
+      <div ref={txt1Ref} className="font-normal   leading-none flex items-center txt1  sm:text-[2.7rem] md:text-[clamp(3rem,5.8vw,93px)]  [@media(max-width:639px)]:text-[1.4rem] ">
         <img ref={imgRef} className="xl:h-[100px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[28px]" src={rmbgOrig} alt="logo" />
         <p className="font-semibold"> HUMANIZING BRANDS, </p>
       </div>
@@ -64,7 +64,7 @@ gsap.to(imgRef.current, {
       {/* 2️⃣ Third text (hidden initially) */}
       <div
         ref={txt3Ref}
-        className="lg:w-90  w-50 ml-[7.9rem] font-normal lg:text-[17px] [@media(max-width:639px)]:ml-[6rem] [@media(max-width:639px)]:text-[12px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80  txt3 sm:ml-[10.5rem] md:ml-[14rem] lg:ml-[16.5rem] xl:ml-[19.5rem]  absolute mt-3"
+        className="lg:w-90  w-40 ml-[7.9rem] font-normal lg:text-[17px] [@media(max-width:639px)]:ml-[6rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80  txt3 sm:ml-[10.5rem] md:ml-[14rem] lg:ml-[16.5rem] xl:ml-[19.5rem]  absolute mt-3"
       >
 A Full-Stack Storytelling Studio Transforming How Brands Speak
 to the World
@@ -72,7 +72,7 @@ to the World
 
 
       {/* 3️⃣ Second line */}
-      <div ref={txt2Ref}  className="txt2 xl:ml-[117px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[1.5rem] ml-[50px] ">
+      <div ref={txt2Ref}  className="txt2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[1.4rem] ml-[30px] ">
         <div className="font-normal  sm:text-[2.7rem] md:text-[clamp(3rem,5.7vw,93px)] leading-none font-semibold">
  THROUGH BELIEVABLE STORIES
         </div>
