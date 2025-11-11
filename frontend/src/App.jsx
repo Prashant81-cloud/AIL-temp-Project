@@ -125,7 +125,7 @@ export default function App() {
       </div>
 
       {/* Split text */}
-      <div  className="mt-10">
+      <div  className="sm:mt-5">
         <SplitText />
       </div>
 
