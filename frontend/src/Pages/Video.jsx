@@ -41,7 +41,7 @@ scale:1.05
   return (
 <div
   ref={containerRef}
-  className="w-full  flex flex-col justify-start items-center bg-[#FAF4EC] mt-30 sm:mt-35 xl:  md:mt-35  lg:mt-30  xl:mt-40 "
+  className="w-full  flex flex-col justify-start items-center bg-[#FAF4EC] mt-30 sm:mt-35   md:mt-35  lg:mt-30  xl:mt-15 "
   id="page2"
 >
   <video
@@ -52,7 +52,7 @@ scale:1.05
     muted
     playsInline
     onClick={handleVideoClick}
-    className="sm:w-[80%] w-[70%] object-cover cursor-pointer "
+    className="sm:w-[80%] w-[90%] object-cover cursor-pointer "
     style={{ outline: "none" }}
   />
 </div>

@@ -13,6 +13,7 @@ import PageTransitionFooter from "./Pages/PageTransitionFooter";
 import Solutions from "./Pages/Solutions";
 import NavbarWrapper from "./Components/NavbarWrapper";
 import Random from "./Pages/Random";
+import Marquee from "./Pages/Marquee";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -128,7 +129,9 @@ export default function App() {
       <div  className="sm:mt-5">
         <SplitText />
       </div>
-
+<div>
+  <Marquee/>
+</div>
       {/* Video Section — show “See Magic!” cursor here */}
       <div
         className=" video  w-full "

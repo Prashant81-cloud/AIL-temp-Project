@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+.marquee {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+    margin-top: 130px;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee h3 {
+  font-size: 44px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.marquee-wrapper {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marqueeScroll 15s linear infinite;
+}
+
+.marquee-title {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.text-stroke-black {
+  color: transparent;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #000000;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 992px) {
+  .marquee h3 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 549px) {
+  .marquee h3 {
+    font-size: 50px;
+  }
+}
