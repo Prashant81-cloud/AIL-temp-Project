@@ -54,7 +54,7 @@ gsap.to(imgRef.current, {
   }, []);
 
   return (
-    <div  className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 ">
+    <div  className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 relative z-1000">
       {/* 1️⃣ First line */}
       <div ref={txt1Ref} className="font-normal   leading-none flex items-center txt1  sm:text-[2.7rem] md:text-[clamp(3rem,5.8vw,93px)]  [@media(max-width:639px)]:text-[1.4rem] ">
         <img ref={imgRef} className="xl:h-[100px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[28px]" src={rmbgOrig} alt="logo" />
