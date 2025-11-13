@@ -6,6 +6,7 @@ import { useState } from 'react';
 import CalypsoButton from './CalypsoButton';
 import tfb from '../assets/tfb.png'
 import AILLOGO from '../assets/AIL BRONZE.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
@@ -17,7 +18,7 @@ function Navbar() {
 
     return (
     <div className='flex justify-between items-center mx-15 my-5'>
-<div
+<Link to='/'
   className="logo relative flex w-[] h-[130px] items-center justify-center bg-center bg-no-repeat bg-contain"
   style={{
     backgroundImage: `url(${AILLOGO})`,
@@ -35,7 +36,7 @@ function Navbar() {
   <div className="font-bold text-xl mt-[px] ml-0.5 text-[#c99a5b] z-10">
     <PauseOnHover />
   </div>
-</div>
+</Link>
 <div className='navMenu flex gap-1 font-semibold text-[15px] bg-white py-2 px-4 rounded-xl '>
 <CalypsoButton/>
 </div>

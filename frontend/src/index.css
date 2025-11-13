@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 
 body {
   cursor: none; /* hide cursor globally */
@@ -19,4 +21,13 @@ body {
 
 button, .cursor-pointer {
   cursor: pointer !important;
+}
+
+.archivo-black {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.zoom-content {
+  transform-origin: center;
+  will-change: transform, opacity, filter;
 }

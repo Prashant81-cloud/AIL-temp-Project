@@ -1,59 +1,49 @@
-import React, { useEffect } from "react";
-import "../InfiniteHorizontalAnimation.css";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-const App = () => {
+export default function InfiniteMarquee({
+  words = ["WE", "CREATE", "WHAT", "YOU", "LOVE", "THE", "MOST"],
+  direction = "left",
+  speed = 50,
+}) {
+  const containerRef = useRef(null);
+  const trackRef = useRef(null);
+
   useEffect(() => {
-    const scrollers = document.querySelectorAll(".scroller");
+    const container = containerRef.current;
+    const track = trackRef.current;
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      addAnimation();
-    }
+    if (!container || !track) return;
 
-    function addAnimation() {
-      scrollers.forEach((scroller) => {
-        scroller.setAttribute("data-animated", "true");
+    const totalWidth = track.offsetWidth;
 
-        const scrollerInner = scroller.querySelector(".scroller__inner");
-        const scrollerContent = Array.from(scrollerInner.children);
+    gsap.set(track, {
+      x: direction === "left" ? 0 : -totalWidth,
+    });
 
-        scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          duplicatedItem.setAttribute("aria-hidden", "true");
-          scrollerInner.appendChild(duplicatedItem);
-        });
-      });
-    }
+    gsap.to(track, {
+      x: direction === "left" ? -totalWidth : 0,
+      duration: speed,
+      ease: "none",
+      repeat: -1,
+    });
   }, []);
 
   return (
-    <div className="App">
-      {/* 👇 First scroller - moves LEFT */}
-      <div className="scroller" data-direction="left" data-speed="fast">
-        <ul className="tag-list scroller__inner">
-          <li>WE</li>
-          <li>CREATE</li>
-          <li>WHAT</li>
-          <li>YOU</li>
-          <li>LOVE</li>
-          <li>THE</li>
-          <li>MOST</li>
-        </ul>
-      </div>
-
-      {/* 👇 Second scroller - moves RIGHT */}
-      <div className="scroller" data-direction="right" data-speed="fast">
-        <ul className="tag-list scroller__inner">
-          <li>WE</li>
-          <li>CREATE</li>
-          <li>WHAT</li>
-          <li>YOU</li>
-          <li>LOVE</li>
-          <li>THE</li>
-          <li>MOST</li>
-        </ul>
+    <div
+      ref={containerRef}
+      className="overflow-hidden whitespace-nowrap w-full py-4 bg-transparent"
+    >
+      <div
+        ref={trackRef}
+        className="inline-flex gap-8 font-bold text-3xl tracking-wide"
+      >
+        {[...words, ...words].map((word, i) => (
+          <span key={i} className="uppercase">
+            {word}
+          </span>
+        ))}
       </div>
     </div>
   );
-};
-
-export default App;
+}

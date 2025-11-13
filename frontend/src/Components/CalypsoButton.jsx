@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CalypsoButton() {
   const buttonClass = `
@@ -80,13 +81,19 @@ export default function CalypsoButton() {
       </style>
 
       <div className="flex flex-wrap justify-center gap-3">
-        {["Solutions", "Upcoming Series", "About Us", "Projects"].map(
-          (text, i) => (
-            <button key={i} className={`button ${buttonClass}`}>
-              <span className={buttonSpanClass}>{text}</span>
-            </button>
-          )
-        )}
+
+            <Link  to='/content-intellegence' className={`button ${buttonClass}`}>
+              <span className={buttonSpanClass}>Content Intellegence</span>
+            </Link>
+            <Link  to='/solutions' className={`button ${buttonClass}`}>
+              <span className={buttonSpanClass}>Solutions</span>
+            </Link>
+            <Link to='/about-us' className={`button ${buttonClass}`}>
+              <span className={buttonSpanClass}>About us</span>
+            </Link>
+            <Link to='/faqs' className={`button ${buttonClass}`}>
+              <span className={buttonSpanClass}>FAQs</span>
+            </Link>
       </div>
     </>
   );
