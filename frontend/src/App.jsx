@@ -1,7 +1,7 @@
 // App.jsx
 import React from "react";
-import AppRoutes from "./routes/AppRoutes";
-import MainLayout from "./layout/MainLayout";
+import AppRoutes from "./Routes/AppRoutes";
+import MainLayout from "./Layout/MainLayout";
 
 export default function App() {
   return (
