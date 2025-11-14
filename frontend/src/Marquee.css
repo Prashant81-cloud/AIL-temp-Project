@@ -1,57 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-
+/* BASE */
 .marquee {
   width: 100%;
-  font-family: "Lato", sans-serif;
-    margin-top: 130px;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
 }
 
-.marquee h3 {
-  font-size: 44px;
-  font-weight: 700;
-  text-transform: uppercase;
+.marquee-inner {
   display: inline-block;
-}
-
-.marquee-wrapper {
-  display: inline-flex;
+  padding-right: 2rem;
+  will-change: transform;
   white-space: nowrap;
-  animation: marqueeScroll 15s linear infinite;
 }
 
-.marquee-title {
-  display: inline-block;
-  margin-right: 40px;
+/* LEFT direction marquee */
+.marquee-left .marquee-inner {
+  animation: marquee-left 18s linear infinite;
 }
 
-.text-stroke-black {
-  color: transparent;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: #000000;
+/* RIGHT direction marquee */
+.marquee-right .marquee-inner {
+  animation: marquee-right 24s linear infinite;
 }
 
-@keyframes marqueeScroll {
-  0% {
+/* Keyframes */
+@keyframes marquee-left {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
-@media (max-width: 992px) {
-  .marquee h3 {
-    font-size: 60px;
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
-@media (max-width: 549px) {
-  .marquee h3 {
-    font-size: 50px;
+/* Pause on hover (desktop only) */
+@media (hover: hover) {
+  .marquee-inner:hover {
+    animation-play-state: paused;
   }
 }

@@ -125,7 +125,7 @@ el.addEventListener("mouseleave", () => {
 
       {/* LEFT COLUMN */}
       <div className="flex flex-col gap-34 h-150">
-        <h1 className="archivo-black text-8xl font-semibold tracking-[-0.1rem]">
+        <h1 className="archivo-black text-7xl font-semibold tracking-[-0.1rem]">
           ABOUT US
         </h1>
 

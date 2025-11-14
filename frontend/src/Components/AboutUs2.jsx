@@ -200,7 +200,7 @@ export default function AboutUs2Animated() {
               </ul>
 
               <p className="text-xl font-[500] opacity-70 text-gray-800 mr-[200px]">
-Our flagship series — Gods of Gourmet, The Bharat Chapters, Brands of Tomorrow, Rising Bharat, and Super Founders — have become some of India’s most credible platforms for brand storytelling and founder visibility.
+Our flagship series — Gods of Gourmet, The Bharat Chapters, Brands of Tomorrow, Rising Bharat, and Super Founders — have become some of India's most credible platforms for brand storytelling and founder visibility.
               </p>
             </div>
           </div>
@@ -238,8 +238,8 @@ While traditional agencies produce videos and hope they perform, we distribute s
               </ul>
 
               <p className="text-xl font-[500] opacity-70 text-gray-900 mr-[200px]">
-Your content doesn’t vanish in a feed.  It gets streamed, discovered, and remembered.
-Our media partners include India’s leading OTT platforms and broadcasters — enabling seamless, organic brand integrations across entertainment, business, lifestyle, and culture-driven content.
+Your content doesn't vanish in a feed. It gets streamed, discovered, and remembered.
+Our media partners include India's leading OTT platforms and broadcasters — enabling seamless, organic brand integrations across entertainment, business, lifestyle, and culture-driven content.
               </p>
             </div>
           </div>
