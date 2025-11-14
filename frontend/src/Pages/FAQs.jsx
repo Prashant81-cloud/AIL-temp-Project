@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIos } from "react-icons/md";
-import faqImage from '../assets/Faq-image3.png'
+import faqImage from '../assets/FAQ-image3.png'
 
 // --- Data for the FAQ items ---
 // Added more data to demonstrate pagination
