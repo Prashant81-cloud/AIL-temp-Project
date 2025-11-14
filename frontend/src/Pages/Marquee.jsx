@@ -1,6 +1,6 @@
 // src/components/DoubleMarquee.jsx
 import React from "react";
-import "../marquee.css";
+import "../Marquee.css";
 
 export default function DoubleMarquee() {
   return (
