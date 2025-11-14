@@ -123,14 +123,14 @@ const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 py-4">
+    <div className="border-b border-gray-200  mt-10">
       <button
         className="w-full flex justify-between items-center text-left"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${question.replace(/\s/g, '-')}`}
       >
-        <span className="text-lg font-medium text-gray-800 group-hover:text-[#5C8AC9]">
+        <span className="text-2xl font-medium text-gray-800 group-hover:text-[#5C8AC9]">
           {question}
         </span>
         <span className="flex-shrink-0 ml-4">
@@ -167,17 +167,13 @@ export default function FAQs() {
   const currentFaqItems = faqData.slice(startIndex, endIndex);
 
   return (
-    <div className=" flex ">
-      <div className="w-full max-w-6xl mx-auto  rounded-2xl shadow-lg overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+
+      <div className="w-full max-w-6xl mx-auto  flex items-center justify-center rounded-2xl shadow-lg overflow-hidden">
+
           
-          {/* Left Column: Illustration (Unchanged) */}
-          <div className="hidden md:flex items-center justify-center  p-8">
-<img src={faqImage} alt="" />
-          </div>
           
           {/* Right Column: FAQ Content */}
-          <div className="p-8 md:p-12 flex flex-col">
+          <div className="p-8 md:p-12 flex w-full flex-col items-center justify-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">
                 Frequently asked questions
@@ -217,8 +213,7 @@ export default function FAQs() {
             </div>
             
           </div>
-        </div>
       </div>
-    </div>
+
   );
 }
