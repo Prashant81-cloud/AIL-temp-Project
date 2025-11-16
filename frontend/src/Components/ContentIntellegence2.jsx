@@ -22,29 +22,29 @@ function ContentIntellegence2() {
     lines.forEach((text) => {
       tl.fromTo(
         el,
-        { x: "-100%", opacity: 0 },   // Start OFF-SCREEN LEFT
+        { x: "-120%", opacity: 0 },   // enter from LEFT
         { 
-          duration: 0.8, 
-          x: "0%", 
+          duration: 0.8,
+          x: "0%",
           opacity: 1,
-          onStart: () => { el.textContent = text; },
+          onStart: () => { el.textContent = text; }, 
           ease: "power3.out"
         }
       )
       .to(el, {
-        duration: 1.8, // Hold the text in CENTER fully visible
+        duration: 2,     // hold while fully visible
         x: "0%",
         opacity: 1
       })
       .to(el, {
         duration: 0.8,
-        x: "100%",    // Slide OUT to the RIGHT
+        x: "120%",        // exit to RIGHT
         opacity: 0,
         ease: "power3.in"
       });
     });
 
-    // hover pause
+    // Pause & resume on hover
     const pause = () => tl.pause();
     const resume = () => tl.resume();
 
@@ -67,11 +67,11 @@ function ContentIntellegence2() {
         <div className='flex h-80 ml-5 gap-5'>
           <div className='border-black border-t-2 w-80 mt-44'></div>
 
-          {/* ⭐ Wrapper (fixes clipping + ensures full text is visible) */}
-          <div className="w-80 mt-40 overflow-hidden">
+          {/* ⭐ Text wrapper → allows wrapping into 2+ lines */}
+          <div className="w-80 mt-40 overflow-hidden leading-tight">
             <p 
               ref={sliderRef}
-              className="text-3xl italic whitespace-nowrap slider"
+              className="text-3xl italic slider"
             ></p>
           </div>
         </div>
