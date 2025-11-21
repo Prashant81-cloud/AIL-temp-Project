@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import rmbgOrig from "../assets/removebg orig.png";
 import gsap from "gsap";
+import rmbgOrig1 from '../assets/Screenshot_2025-11-19_at_11.13.08_AM-removebg-preview.png'
 
 function SplitText() {
   const txt1Ref = useRef(null);
@@ -27,7 +28,6 @@ function SplitText() {
       { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" },
       "-=0.8"
     );
-
     // Step 3 — reveal txt3 safely
     tl.current.add(() => {
       if (txt3Ref.current) {
@@ -67,27 +67,31 @@ function SplitText() {
   }, []);
 
   return (
-    <div className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 relative z-1000">
+    <div className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 relative z-1000 ">
 
       {/* 1️⃣ First line */}
-      <div ref={txt1Ref} className="font-normal leading-none flex items-center txt1 sm:text-[2.7rem] md:text-[clamp(3rem,5.8vw,93px)] [@media(max-width:639px)]:text-[1.4rem]">
-        <img ref={imgRef} className="xl:h-[100px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[28px]" src={rmbgOrig} alt="logo" />
-        <p className="font-semibold"> HUMANIZING BRANDS, </p>
+      <div ref={txt1Ref} className="font-normal leading-none flex items-center txt1 sm:text-[2.7rem] gap-4 md:text-[clamp(3rem,8.8vw,103px)] [@media(max-width:639px)]:text-[2.1rem]">
+        <img ref={imgRef} className="xl:h-[75px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[22px] mb-[17px]" src={rmbgOrig1} alt="logo" />
+        <p className="font-medium   league-spartan ">  Humanizing Brands </p>
       </div>
 
       {/* 2️⃣ Third text */}
       <div
         ref={txt3Ref}
-        className="hidden lg:w-90 w-40 ml-[7.9rem] font-normal lg:text-[17px] [@media(max-width:639px)]:ml-[6rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80 absolute mt-3"
+        className="hidden lg:w-90 w-40 ml-[19.9rem] font-normal lg:text-[20px] [@media(max-width:639px)]:ml-[6rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80 absolute mt-3 league-spartan"
       >
         A Full-Stack Storytelling Studio Transforming How Brands Speak to the World
       </div>
 
       {/* 3️⃣ Second line */}
-      <div ref={txt2Ref} className="txt2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[1.4rem] ml-[30px]">
-        <div className="font-normal sm:text-[2.7rem] md:text-[clamp(3rem,5.7vw,93px)] leading-none font-semibold">
-          THROUGH BELIEVABLE STORIES
+      <div ref={txt2Ref} className="txt2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[2.1rem] ml-[30px]">
+        <div className=" sm:text-[2.7rem] md:text-[clamp(3rem,8.8vw,103px)] leading-none font-medium league-spartan">
+          Through Belivebale Stories
         </div>
+      </div>
+      {/* 4️⃣ First line */}
+      <div>
+        <p className="border-black border-b-1 w-fit mt-40 text-4xl ml-[11.9rem]">Here's how we can help</p>
       </div>
     </div>
   );

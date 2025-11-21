@@ -1,10 +1,10 @@
-// src/layout/MainLayout.jsx
 import React, { useEffect, useRef, useState } from "react";
 import NavbarWrapper from "../Components/NavbarWrapper";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CursorPortal from "../Components/CursorPortal";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,30 +18,15 @@ export default function MainLayout({ children }) {
   const [visible, setVisible] = useState(true);
   const [cursorMode, setCursorMode] = useState("image");
 
-  // Smooth Scroll (Lenis)
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-    });
+  // LENIS SETUP
 
-    function raf(time) {
-      lenis.raf(time);
-      ScrollTrigger.update();
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
-  }, []);
-
-  // Cursor Follower
+  // Cursor follower (unchanged)
   useEffect(() => {
     const handleMouseMove = (e) => {
       targetRef.current = { x: e.clientX, y: e.clientY };
       setVisible(true);
     };
-
     const handleMouseLeave = () => setVisible(false);
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -55,9 +40,8 @@ export default function MainLayout({ children }) {
       p.y += (t.y - p.y) * SMOOTHING;
 
       if (followerRef.current) {
-        followerRef.current.style.transform = `translate3d(${p.x + OFFSET.x}px, ${
-          p.y + OFFSET.y
-        }px, 0)`;
+        followerRef.current.style.transform =
+          `translate3d(${p.x + OFFSET.x}px, ${p.y + OFFSET.y}px, 0)`;
         followerRef.current.style.opacity = visible ? 1 : 0;
       }
 
@@ -89,17 +73,18 @@ export default function MainLayout({ children }) {
     transition: "opacity 150ms ease",
   };
 
+
+
   return (
-    <div className="relative bg-[#FAF4EC] w-full">
+    <div className="relative bg-[#FAF4EC]">
       <NavbarWrapper />
       {children}
 
-<CursorPortal>
-  <div ref={followerRef} style={followerStyle}>
-    {cursorMode === "text" && "See Magic!"}
-  </div>
-</CursorPortal>
-
+      <CursorPortal>
+        <div ref={followerRef} style={followerStyle}>
+          {cursorMode === "text" && "See Magic!"}
+        </div>
+      </CursorPortal>
     </div>
   );
 }

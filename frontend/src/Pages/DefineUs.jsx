@@ -1,31 +1,53 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../DefineUs.css';
 import ButtonHover from '../Components/ButtonHover';
-import { VscArrowDown } from "react-icons/vsc";
+import AILlogo from '../assets/AIL BRONZE.png';
+import Logo2 from '../assets/AIL_BRONZE__1_-removebg-preview.png'; // This is the one-time swap
+
 
 const DefineUs = () => {
   const arrowRef = useRef(null);
 
+  // 🔥 initially show first image
+  const [currentImg, setCurrentImg] = useState(AILlogo);
+
+  let totalRotation = 0;  // track how much rotation has happened
+  let swapped = false;    // ensure swap happens only once
+
   useEffect(() => {
+    let currentAngle = 0;
+
+    const lerp = (start, end, amt) => start + (end - start) * amt;
+
     const handleMouseMove = (e) => {
       if (!arrowRef.current) return;
 
       const rect = arrowRef.current.getBoundingClientRect();
       const arrowX = rect.left + rect.width / 2;
+      const arrowY = rect.top + rect.height / 2;
 
-      // Map cursor’s X position on screen → 0° to 90°
-      const screenWidth = window.innerWidth;
       const mouseX = e.clientX;
+      const mouseY = e.clientY;
 
-      // Normalize between 0 and 1
-      let normalized = (mouseX - arrowX + screenWidth / 2) / screenWidth;
-      normalized = Math.max(0, Math.min(1, normalized)); // clamp 0–1
+      const angleRad = Math.atan2(mouseY - arrowY, mouseX - arrowX);
+      let targetAngle = angleRad * (180 / Math.PI) + 90;
 
-      // Convert to degrees between 0–90
-      const rotateDeg = normalized * 150;
+      const newAngle = lerp(currentAngle, targetAngle, 0.15);
 
-      // Apply rotation
-      arrowRef.current.style.transform = `rotate(${rotateDeg}deg)`;
+      // Add how much rotation happens
+      const diff = Math.abs(newAngle - currentAngle);
+      totalRotation += diff; // accumulate angle change
+
+      currentAngle = newAngle;
+
+      // 🟢 Apply rotation
+      arrowRef.current.style.transform = `rotate(${currentAngle}deg)`;
+
+      // 🟠 Check if total rotation exceeded 720° (2 spins)
+      if (!swapped && totalRotation > 720) {
+        swapped = true; // prevent future swaps
+        setCurrentImg(Logo2); // 🔥 change to second image ONCE
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -37,25 +59,23 @@ const DefineUs = () => {
       <div className="left-content">
         <h2 className="title">The Advaita Way</h2>
 
-        {/* Arrow rotates only 0–90° based on cursor movement */}
+        {/* Rotating + one-time swap image */}
         <div
           ref={arrowRef}
-          className="text-[300px] transition-transform duration-150 rotate-230 ease-linear"
+          style={{ transformOrigin: "center center" }}
+          className="text-[300px] ease-linear"
         >
-          <VscArrowDown />
+          <img className='h-50' src={currentImg} alt="dynamic-logo" />
         </div>
       </div>
 
       <div className="right-content">
         <p className="headline">
           We’re storytellers at heart, innovators by craft, and technologists by instinct.
-          At Advaita Innovation Labs, creativity meets consciousness — where ideas aren’t just
-          made, they’re felt.
         </p>
+
         <p className="description">
           Our mission is simple yet bold: to take Indian storytelling to the world.
-          We partner with creators, strategists, and platforms to craft believable stories that move
-          people, build culture, and create measurable impact for brands that dare to dream bigger.
         </p>
 
         <div><ButtonHover /></div>

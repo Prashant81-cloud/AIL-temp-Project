@@ -198,14 +198,6 @@ Collaborate with top streaming and broadcast platforms for maximum visibility.
         </p>
       )
     },
-        {
-      title: "AI-Backed Media Planning",
-      content: (
-        <p>
-Optimize where and how your story performs best
-        </p>
-      )
-    },
   ];
 
   return (

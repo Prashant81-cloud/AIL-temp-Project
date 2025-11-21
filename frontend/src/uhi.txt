@@ -1,96 +1,109 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+// AboutUs2Animated.jsx — FIXED & CLEAN (Option D)
 
-function ContentIntellegence2() {
+import React, { useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  const sliderRef = useRef(null);
+gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
-    const lines = [
-      "Understand audiences more deeply",
-      "Create content faster and smarter",
-      "Build personalized storytelling at scale",
-      "Produce high-quality scripts, visuals, edits, and language variations",
-      "Predict what content will perform best",
-      "Improve ROI and reduce production time"
-    ];
+export default function AboutUs2Animated() {
+  const containerRef = useRef(null);
+  const panelsRef = useRef([]);
 
-    const el = sliderRef.current;
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const container = containerRef.current;
+      const panels = panelsRef.current;
 
-    const tl = gsap.timeline({ repeat: -1, paused: false });
+      if (!container || panels.length === 0) return;
 
-    lines.forEach((text) => {
-      tl.fromTo(
-        el,
-        { x: "-100%", opacity: 0 },   // Start OFF-SCREEN LEFT
-        { 
-          duration: 0.8, 
-          x: "0%", 
-          opacity: 1,
-          onStart: () => { el.textContent = text; },
-          ease: "power3.out"
-        }
-      )
-      .to(el, {
-        duration: 1.8, // Hold the text in CENTER fully visible
-        x: "0%",
-        opacity: 1
-      })
-      .to(el, {
-        duration: 0.8,
-        x: "100%",    // Slide OUT to the RIGHT
-        opacity: 0,
-        ease: "power3.in"
+      // Reset all panel states
+      panels.forEach((panel, i) => {
+        gsap.set(panel, {
+          opacity: 0,
+          scale: 0.75,
+          filter: "blur(20px)",
+          zIndex: i,
+          position: "absolute",
+          inset: 0,
+        });
       });
-    });
 
-    // hover pause
-    const pause = () => tl.pause();
-    const resume = () => tl.resume();
+      // FIRST PANEL visible instantly
+      gsap.set(panels[0], {
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px)",
+        zIndex: 10
+      });
 
-    el.addEventListener("mouseenter", pause);
-    el.addEventListener("mouseleave", resume);
+      // Build unified timeline
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.out", duration: 1 }
+      });
 
-    return () => {
-      el.removeEventListener("mouseenter", pause);
-      el.removeEventListener("mouseleave", resume);
-    };
+      panels.forEach((panel, i) => {
+        if (i === 0) return; // skip first panel, already visible
 
+        // ENTER animation
+        tl.to(panel, {
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        });
+
+        // EXIT animation for all except last
+        if (i < panels.length - 1) {
+          tl.to(panel, {
+            opacity: 0,
+            scale: 0.85,
+            filter: "blur(12px)",
+          });
+        }
+      });
+
+      // Scroll logic
+      ScrollTrigger.create({
+        trigger: container,
+        animation: tl,
+        start: "top top",
+        end: `+=${(panels.length - 1) * window.innerHeight}`,
+        scrub: 1.1,
+        pin: true,
+        anticipatePin: 1,
+      });
+
+      ScrollTrigger.refresh();
+    }, containerRef);
+
+    // CLEANUP only this component's triggers + animations
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className='flex h-screen px-15 py-12'>
-      <div>
-        <h1 className='text-[#aa0867] text-8xl archivo-black'>Why GenAI Matters</h1> 
-        <h1 className='archivo-black text-8xl'> for Modern Storytelling</h1> 
+    <div
+      ref={containerRef}
+      className="w-screen h-screen relative overflow-hidden"
+    >
+      {/* ⭐ PANEL 1 — paste your full original content here */}
+      <section ref={(el) => (panelsRef.current[0] = el)}>
+        {/* YOUR ORIGINAL PANEL 1 JSX */}
+      </section>
 
-        <div className='flex h-80 ml-5 gap-5'>
-          <div className='border-black border-t-2 w-80 mt-44'></div>
+      {/* ⭐ PANEL 2 */}
+      <section ref={(el) => (panelsRef.current[1] = el)}>
+        {/* YOUR ORIGINAL PANEL 2 JSX */}
+      </section>
 
-          {/* ⭐ Wrapper (fixes clipping + ensures full text is visible) */}
-          <div className="w-80 mt-40 overflow-hidden">
-            <p 
-              ref={sliderRef}
-              className="text-3xl italic whitespace-nowrap slider"
-            ></p>
-          </div>
-        </div>
-      </div>
+      {/* ⭐ PANEL 3 */}
+      <section ref={(el) => (panelsRef.current[2] = el)}>
+        {/* YOUR ORIGINAL PANEL 3 JSX */}
+      </section>
 
-      <div>
-        <img 
-          className='h-80 w-150 object-cover rounded-md' 
-          src="https://i.pinimg.com/736x/b6/8c/eb/b68ceb7fad6b27572db82fdfcb107e5e.jpg" 
-          alt=""
-        />
-
-        <h2 className='nunito-sans p-1 text-5xl font-extrabold mt-34 w-140'>
-          <span className='text-[#aa0867]'>At AIL,</span> we harness all of this —
-          without losing the human heart of storytelling.
-        </h2>
-      </div>
+      {/* ⭐ PANEL 4 */}
+      <section ref={(el) => (panelsRef.current[3] = el)}>
+        {/* YOUR ORIGINAL PANEL 4 JSX */}
+      </section>
     </div>
   );
 }
-
-export default ContentIntellegence2;

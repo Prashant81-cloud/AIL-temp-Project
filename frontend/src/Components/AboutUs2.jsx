@@ -1,98 +1,44 @@
-// AboutUs2Animated.jsx
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function AboutUs2Animated() {
+export default function AboutUs2() {
   const containerRef = useRef(null);
   const panelsRef = useRef([]);
 
-  useEffect(() => {
-    ScrollTrigger.getAll().forEach((t) => t.kill());
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const container = containerRef.current;
+      const panels = panelsRef.current;
+      const n = panels.length;
+      const tl = gsap.timeline();
+console.log("AboutUs2 GSAP INIT", ScrollTrigger.getAll().length);
 
-    const container = containerRef.current;
-    const panels = panelsRef.current;
-    const n = panels.length;
-    const tl = gsap.timeline();
 
-    if (!container || panels.length === 0) return;
+      if (!container || panels.length === 0) return;
 
-    /* -----------------------------------------------------------
-       PANEL 1 — fully visible on load (no animation)
-    ----------------------------------------------------------- */
-    const panel1 = panels[0];
+      /* -----------------------------------------------------------
+         PANEL 1 — fully visible on load (no animation)
+      ----------------------------------------------------------- */
+      const panel1 = panels[0];
 
-    gsap.set(panel1, {
-      scale: 1,
-      opacity: 1,
-      filter: "blur(0px)",
-      zIndex: 20,
-    });
-
-    gsap.set(panel1.querySelectorAll("h1, p, li"), {
-      opacity: 1,
-      filter: "blur(0px)",
-    });
-
-    // Panel 1 Exit (starts on scroll)
-    tl.to(
-      panel1,
-      {
-        scale: 0.9,
-        opacity: 0,
-        filter: "blur(12px)",
-        duration: 1,
-        ease: "power2.inOut",
-      },
-      0.5
-    );
-
-    /* -----------------------------------------------------------
-       PANELS 2 → n-1
-       Smooth single zoom (NO settle bounce)
-    ----------------------------------------------------------- */
-    for (let i = 1; i < n - 1; i++) {
-      const panel = panels[i];
-
-      // Initial hidden state
-      gsap.set(panel, {
-        scale: 0.75,
-        opacity: 0,
-        filter: "blur(18px)",
-        zIndex: 10,
+      gsap.set(panel1, {
+        scale: 1,
+        opacity: 1,
+        filter: "blur(0px)",
+        zIndex: 20,
       });
 
-      // ENTER — smooth single zoom: 0.75 → 1
-      tl.to(
-        panel,
-        {
-          scale: 1,
-          opacity: 1,
-          filter: "blur(0px)",
-          duration: 1,
-          ease: "power2.out",
-        },
-        i * 1
-      );
+      gsap.set(panel1.querySelectorAll("h1, p, li"), {
+        opacity: 1,
+        filter: "blur(0px)",
+      });
 
-      // TEXT reveal
-      tl.from(
-        panel.querySelectorAll("h1, p, li"),
-        {
-          opacity: 0,
-          filter: "blur(12px)",
-          duration: 0.8,
-          ease: "power2.out",
-          stagger: 0,
-        },
-        i * 1
-      );
-
-      // EXIT — after enter completes
+      // Panel 1 Exit (starts on scroll)
       tl.to(
-        panel,
+        panel1,
         {
           scale: 0.9,
           opacity: 0,
@@ -100,70 +46,121 @@ export default function AboutUs2Animated() {
           duration: 1,
           ease: "power2.inOut",
         },
-        i * 1 + 0.9
+        0.5
       );
-    }
 
-    /* -----------------------------------------------------------
-       LAST PANEL — no exit
-    ----------------------------------------------------------- */
-    const last = panels[n - 1];
+      /* -----------------------------------------------------------
+         PANELS 2 → n-1
+         Smooth single zoom (NO settle bounce)
+      ----------------------------------------------------------- */
+      for (let i = 1; i < n - 1; i++) {
+        const panel = panels[i];
 
-    gsap.set(last, {
-      scale: 0.75,
-      opacity: 0,
-      filter: "blur(18px)",
-      zIndex: 20,
-    });
+        // Initial hidden state
+        gsap.set(panel, {
+          scale: 0.75,
+          opacity: 0,
+          filter: "blur(18px)",
+          zIndex: 10,
+        });
 
-    tl.to(
-      last,
-      {
-        scale: 1,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power2.out",
-      },
-      (n - 1) * 1
-    );
+        // ENTER — smooth single zoom: 0.75 → 1
+        tl.to(
+          panel,
+          {
+            scale: 1,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 1,
+            ease: "power2.out",
+          },
+          i * 1
+        );
 
-    tl.from(
-      last.querySelectorAll("h1, p, li"),
-      {
+        // TEXT reveal
+        tl.from(
+          panel.querySelectorAll("h1, p, li"),
+          {
+            opacity: 0,
+            filter: "blur(12px)",
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0,
+          },
+          i * 1
+        );
+
+        // EXIT — after enter completes
+        tl.to(
+          panel,
+          {
+            scale: 0.9,
+            opacity: 0,
+            filter: "blur(12px)",
+            duration: 1,
+            ease: "power2.inOut",
+          },
+          i * 1 + 0.9
+        );
+      }
+
+      /* -----------------------------------------------------------
+         LAST PANEL — no exit
+      ----------------------------------------------------------- */
+      const last = panels[n - 1];
+
+      gsap.set(last, {
+        scale: 0.75,
         opacity: 0,
-        filter: "blur(12px)",
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: 0,
-      },
-      (n - 1) * 1
-    );
+        filter: "blur(18px)",
+        zIndex: 20,
+      });
 
-    /* -----------------------------------------------------------
-       ScrollTrigger — pin + scrub + snap
-    ----------------------------------------------------------- */
-    ScrollTrigger.create({
-      animation: tl,
-      trigger: container,
-      start: "top top",
-      end: `+=${(n - 1) * window.innerHeight}`,
-      scrub: 0.8,
-      pin: true,
-      snap: {
-        snapTo: 1 / (n - 1),
-        duration: { min: 0.2, max: 0.5 },
-        ease: "power2.out",
-      },
-    });
+      tl.to(
+        last,
+        {
+          scale: 1,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power2.out",
+        },
+        (n - 1) * 1
+      );
 
-    ScrollTrigger.refresh();
+      tl.from(
+        last.querySelectorAll("h1, p, li"),
+        {
+          opacity: 0,
+          filter: "blur(12px)",
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0,
+        },
+        (n - 1) * 1
+      );
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-      tl.kill();
-    };
+      /* -----------------------------------------------------------
+         ScrollTrigger — pin + scrub
+      ----------------------------------------------------------- */
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: container,
+        start: "top top",
+        end: `+=${(n - 1) * window.innerHeight}`,
+        scrub: 0.8,
+        pin: true,
+        invalidateOnRefresh: true,
+      });
+
+      ScrollTrigger.refresh();
+    }, containerRef);
+
+    return () => ctx.revert(); // CLEANUP — FIX #3
   }, []);
+
+
+
 
   return (
     <div ref={containerRef} className="w-screen h-screen relative overflow-hidden">

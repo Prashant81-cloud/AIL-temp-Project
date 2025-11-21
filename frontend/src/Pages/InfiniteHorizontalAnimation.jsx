@@ -1,49 +1,34 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { Marquee } from "@/components/ui/marquee"
 
-export default function InfiniteMarquee({
-  words = ["WE", "CREATE", "WHAT", "YOU", "LOVE", "THE", "MOST"],
-  direction = "left",
-  speed = 50,
-}) {
-  const containerRef = useRef(null);
-  const trackRef = useRef(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const track = trackRef.current;
-
-    if (!container || !track) return;
-
-    const totalWidth = track.offsetWidth;
-
-    gsap.set(track, {
-      x: direction === "left" ? 0 : -totalWidth,
-    });
-
-    gsap.to(track, {
-      x: direction === "left" ? -totalWidth : 0,
-      duration: speed,
-      ease: "none",
-      repeat: -1,
-    });
-  }, []);
-
+export default function AILMarquee() {
   return (
-    <div
-      ref={containerRef}
-      className="overflow-hidden whitespace-nowrap w-full py-4 bg-transparent"
-    >
-      <div
-        ref={trackRef}
-        className="inline-flex gap-8 font-bold text-3xl tracking-wide"
-      >
-        {[...words, ...words].map((word, i) => (
-          <span key={i} className="uppercase">
-            {word}
-          </span>
-        ))}
-      </div>
+    <div className="relative w-full overflow-hidden ">
+
+      {/* LEFT FADE SHADOW */}
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent z-20" />
+
+      {/* RIGHT FADE SHADOW */}
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent z-20" />
+
+      {/* FIRST ROW — big text */}
+      <Marquee pauseOnHover className="[--duration:10s]"> 
+        <div className="mx-5 flex items-center ">
+          <p className="text-6xl font-semibold whitespace-nowrap">
+            Advaita Innovation Labs — India’s Largest Brand Storytelling Studio •
+          </p>
+        </div>
+      </Marquee>
+
+      {/* SECOND ROW — smaller text, reverse direction */}
+      <Marquee reverse pauseOnHover className="[--duration:10s] ">
+        <div className="mx-5 flex items-center gap-4">
+          <p className="text-4xl opacity-80 whitespace-nowrap">
+            We create believable stories and distribute them through OTT and TV networks, 
+            helping brands reach audiences that matter.
+          </p>
+        </div>
+      </Marquee>
+
     </div>
-  );
+  )
 }

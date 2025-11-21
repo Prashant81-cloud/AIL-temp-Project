@@ -108,7 +108,7 @@ const Solutions = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row text-black p-10 md:p-20 ">
+    <div className="flex flex-col md:flex-row text-black p-10 md:p-20 mt-30">
       {/* Left Section */}
       <div className="md:w-1/2 flex flex-col ">
       <div>        <h1 className="text-6xl md:text-7xl mb-5">Solutions</h1>

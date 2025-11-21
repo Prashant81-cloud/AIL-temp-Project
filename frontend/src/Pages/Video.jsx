@@ -1,3 +1,5 @@
+// ✅ FINAL — Video.jsx (100% Fixed & Production Safe)
+
 import React, { useRef, useState, useLayoutEffect } from "react";
 import websiteMov from "../assets/website1.mp4";
 import gsap from "gsap";
@@ -9,7 +11,6 @@ function Video() {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [hover, setHover] = useState(false);
 
   const handleVideoClick = () => {
     const video = videoRef.current;
@@ -19,45 +20,48 @@ function Video() {
   };
 
   useLayoutEffect(() => {
+    // 🔥 Wrap GSAP inside context so cleanup is 100% safe
     const ctx = gsap.context(() => {
-      if (!containerRef.current) return; // Safety check
+      const vid = videoRef.current;
+      const box = containerRef.current;
+      if (!vid || !box) return;
 
-      gsap.to(videoRef.current, {
-        width:'100vw',
-
+      gsap.to(vid, {
+        width: "100%",
+        height: "105vh",
+        scale: 1.05,
         scrollTrigger: {
-          trigger: containerRef.current, // ✅ must exist
+          trigger: box,
           start: "top bottom",
           end: "bottom top",
           scrub: true,
-        },
-scale:1.05
+        }
       });
     }, containerRef);
 
-    return () => ctx.revert(); // ✅ cleanup on unmount
+    return () => {
+      ctx.revert(); // 🔥 Cleans up ST + animations perfectly
+    };
   }, []);
 
   return (
-<div
-  ref={containerRef}
-  className="w-full  flex flex-col justify-start items-center bg-[#FAF4EC] mt-30 sm:mt-35   md:mt-35  lg:mt-30  xl:mt-50 "
-  id="page2"
->
-  <video
-    ref={videoRef}
-    src={websiteMov}
-    autoPlay
-    loop
-    muted
-    playsInline
-    onClick={handleVideoClick}
-    className=" w-[88%] object-cover rounded-md cursor-pointer "
-    style={{ outline: "none" }}
-  />
-</div>
-
-
+    <div
+      ref={containerRef}
+      className="w-full h-[110vh] flex flex-col justify-start items-center bg-[#FAF4EC] mt-20 overflow-hidden"
+      id="page2"
+    >
+      <video
+        ref={videoRef}
+        src={websiteMov}
+        autoPlay
+        loop
+        muted
+        playsInline
+        onClick={handleVideoClick}
+        className="w-[88%] h-full object-cover rounded-lg cursor-pointer"
+        style={{ outline: "none" }}
+      />
+    </div>
   );
 }
 

@@ -1,23 +1,33 @@
 import SplitText from "./SplitText";
-import Marquee from "./Marquee";
 import Video from "./Video";
 import FlipPages from "./FlipPages";
 import Solutions from "./Solutions";
-import PageTransitionFooter from "./PageTransitionFooter";
+import DefineUs from "./DefineUs";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import PageTransitionFooter from "./PageTransitionFooter";
 
 export default function HomePage() {
+  const location = useLocation();
 
-const location = useLocation();
-
+  // 👉 Scroll to #solutions-section when coming from navbar
   useEffect(() => {
     if (location.hash === "#solutions") {
       const el = document.getElementById("solutions-section");
-      if (el) {
-        el.scrollIntoView({ behavior: "auto" });  // 👈 INSTANT JUMP
-      }
+      if (el) el.scrollIntoView({ behavior: "auto" });
     }
+  }, [location]);
+
+  // 👉 FIX: Remove #solutions from URL when user scrolls back to top
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 150 && location.hash === "#solutions") {
+        window.history.replaceState({}, "", "/"); // remove hash without reload
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [location]);
 
   return (
@@ -25,11 +35,18 @@ const location = useLocation();
       <SplitText />
 
       <Video />
+
       <FlipPages />
-<div id="solutions-section">
-  <Solutions />
-</div>
-      <Marquee />
+
+      {/* Solutions Section */}
+      <div id="solutions-section">
+        <Solutions />
+      </div>
+
+      <div className="mt-50">
+        <DefineUs />
+      </div>
+
     </>
   );
 }

@@ -3,45 +3,26 @@ import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 const contentBlocks = [
   {
-    title: "Our GenAI Philosophy",
-    body: [
-      "AI should enhance creativity, not replace it.",
-      "At Advaita Innovation Labs, humans define the story.",
-      "AI accelerates the craft. Distribution creates the impact.",
-      "This is storytelling built for the future — grounded in emotion, powered by data, and delivered at scale.",
-    ],
-  },
-  {
-    title: "Unlock the Future of Storytelling",
-    body: [
-      "Whether you want to create a branded web series, high-impact campaign, founder-led narrative, or AI-optimized social storytelling, AIL’s GenAI capabilities help you do it:",
-      "✔ Faster",
-      "✔ Smarter",
-      "✔ Better",
-      "✔ And with greater distribution power",
-      "Advaita Innovation Labs — Where GenAI meets human imagination and global media scale.",
-    ],
-  },
-  {
-    title: "✔ AI + Human Storytelling",
+    title: "@ AI + Human Storytelling",
     body: ["We don’t replace creators — we empower them."],
   },
   {
-    title: "✔ End-to-End Intelligent Workflow",
+    title: " End-to-End Intelligent Workflow",
     body: ["From idea → script → visuals → edit → distribution."],
   },
   {
-    title: "✔ AI Tools Integrated with OTT Media Reach",
+    title: " AI Tools Integrated with OTT Media Reach",
     body: ["A unique advantage no traditional agency can match."],
   },
   {
-    title: "✔ Higher ROI & Faster Turnaround",
+    title: " Higher ROI & Faster Turnaround",
     body: ["AI reduces effort. AIL increases impact."],
   },
   {
-    title: "✔ Transparent, Ethical & Brand-Safe AI",
+    title: " Transparent, Ethical & Brand-Safe AI",
     body: ["Transparent, accountable, and safe deployment of GenAI for brands."],
   },
 ];

@@ -2,8 +2,10 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import risingBharat from '../assets/Rising bharat.png'
-import BOT from '../assets/BOT.png'
+import BOTs3 from '../assets/BOTs3.png'
 import TBC from '../assets/The Bharat Chapters.png'
+import GOG from '../assets/GOG.jpg'
+import BOTs2 from '../assets/BOTs2.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,6 +93,8 @@ useEffect(() => {
 
       <div ref={cardsContainerRef} className="cards relative w-[100vw]">
 
+{/*Page-1 */}
+
           <div  className="card h-[90vh] sticky w-full top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#b51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
@@ -140,7 +144,7 @@ resilience, and bold transformation shaping the nation’s global rise.</p>
             </div>
           </div>
 
-
+{/*Page-2 */}
           <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#2f3a4e]   rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
@@ -153,7 +157,7 @@ resilience, and bold transformation shaping the nation’s global rise.</p>
               Expertise
             </span>
              <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl ">
-              <img className="rounded-xl" src={BOT} alt="" />
+              <img className="rounded-xl" src={BOTs3} alt="" />
              </div>
 
           </div>
@@ -189,6 +193,7 @@ D2C to healthcare — telling stories of innovation and impact in a rapidly chan
             </div>
           </div>
 
+{/*Page-3 */}
           <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#152b6e] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 
@@ -241,7 +246,102 @@ access and opportunity.</p>
             </div>
           </div>
 
+{/*Page-5 */}
+          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B6B6B6] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+
+        <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
+          04       
+        </span>
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
+              <img className="rounded-xl h-46 w-200 " src={GOG} alt="" />
+             </div>
+
+          </div>
+        <div className="flex items-center justify-between">
+        <div className="mt-15">
+          <h1 className="text-2xl font-medium text-black"></h1>
+          <p className="w-200 mt-1  font-normal text-xl text-white">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food.</p>
+<button
+  className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
+  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</button>
+
+
+        </div>
+        <div>
+             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl w-65 h-auto"
+               />
+             </div>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
   
+          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4F4F4F] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+
+        <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
+          05       
+        </span>
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
+              <img className="rounded-xl h-46 w-200 " src={BOTs2} alt="" />
+             </div>
+
+          </div>
+        <div className="flex items-center justify-between">
+        <div className="mt-15">
+          <h1 className="text-2xl font-medium text-black"></h1>
+          <p className="w-200 mt-1  font-normal text-xl text-white">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. The season continues the show's focus on blending cinematic storytelling with the challenges and triumphs of contemporary Indian entrepreneurship.</p>
+<button
+  className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
+  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</button>
+
+
+        </div>
+        <div>
+             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl w-65 h-auto"
+               />
+             </div>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
 
       </div>
 
