@@ -67,31 +67,31 @@ function SplitText() {
   }, []);
 
   return (
-    <div className="xl:mt-22 sm:mt-0 xl:ml-[3rem] sm:ml-6 ml-6 relative z-1000 ">
+    <div className="xl:mt-22 sm:mt-0 xl:px-[3rem] sm:px-6 px-6 relative z-1000 bg-[#FAF4EC] ">
 
       {/* 1️⃣ First line */}
-      <div ref={txt1Ref} className="font-normal leading-none flex items-center txt1 sm:text-[2.7rem] gap-4 md:text-[clamp(3rem,8.8vw,103px)] [@media(max-width:639px)]:text-[2.1rem]">
-        <img ref={imgRef} className="xl:h-[75px] lg:h-[90px] md:h-[clamp(0px,70px,90px)] sm:h-[55px] h-[22px] mb-[17px]" src={rmbgOrig1} alt="logo" />
+      <div ref={txt1Ref} className="font-normal leading-none flex items-center txt1 sm:text-[4rem] gap-1 md:gap-4 md:text-[clamp(3rem,8.8vw,103px)] [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)] text-[4rem]">
+        <img ref={imgRef} className="xl:h-[75px] lg:h-[65px] md:h-[clamp(50px,5.8vw,65px)] sm:h-[clamp(20px,5.8vw,103px)] h-[clamp(20px,5.8vw,103px)] sm:mb-[10px]   md:mb-[17px]  mb-[10px]" src={rmbgOrig1} alt="logo" />
         <p className="font-medium   league-spartan ">  Humanizing Brands </p>
       </div>
 
       {/* 2️⃣ Third text */}
       <div
         ref={txt3Ref}
-        className="hidden lg:w-90 w-40 ml-[19.9rem] font-normal lg:text-[20px] [@media(max-width:639px)]:ml-[6rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-90 sm:text-[15px] sm:w-80 absolute mt-3 league-spartan"
+        className="hidden lg:w-90 w-35 lg:ml-[19.9rem] font-normal lg:text-[20px] [@media(max-width:639px)]:ml-[6.5rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-70 md:ml-[16rem] sm:text-[15px] sm:w-68 sm:ml-[9rem] absolute mt-3 league-spartan"
       >
         A Full-Stack Storytelling Studio Transforming How Brands Speak to the World
       </div>
 
       {/* 3️⃣ Second line */}
-      <div ref={txt2Ref} className="txt2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] md:mt-5 sm:ml-[60px] [@media(max-width:639px)]:text-[2.1rem] ml-[30px]">
-        <div className=" sm:text-[2.7rem] md:text-[clamp(3rem,8.8vw,103px)] leading-none font-medium league-spartan">
+      <div ref={txt2Ref} className="txt2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] sm:mt-6 md:mt-5 sm:ml-[45px] [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)] ml-[clamp(30px,7vw,45px)]">
+        <div className=" sm:text-[4rem] md:text-[clamp(3rem,8.8vw,103px)] leading-none font-medium league-spartan">
           Through Belivebale Stories
         </div>
       </div>
       {/* 4️⃣ First line */}
       <div>
-        <p className="border-black border-b-1 w-fit mt-40 text-4xl ml-[11.9rem]">Here's how we can help</p>
+        <p className="border-black border-b-1 w-fit mt-42 sm:mt-45  lg:ml-[11.9rem] md:ml-[9rem] sm:ml-[6rem] ml-[2rem] sm:text-2xl  md:text-3xl lg:text-4xl mb-5">Here's how we can help</p>
       </div>
     </div>
   );

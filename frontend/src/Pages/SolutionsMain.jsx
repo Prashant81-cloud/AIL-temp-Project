@@ -5,7 +5,7 @@ import ContentSolutions from '../Components/ContentSolutions'
 
 function SolutionsMain() {
   return (
-    <div>
+    <div className='bg-[#FAF4EC]'>
       <div><BrandSolutions/></div>
       <div><MediaSolutions/></div>
       <div><ContentSolutions/></div>

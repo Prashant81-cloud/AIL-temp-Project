@@ -85,13 +85,13 @@ useEffect(() => {
 
   return (
     <>
-      <div className="h-1/4 flex items-center justify-center font-sans">
+      <div className="h-1/4 flex items-center justify-center font-sans ">
         <h1 className="text-4xl md:text-6xl font-bold text-center p-4">
            <br /> 
         </h1>
       </div>
 
-      <div ref={cardsContainerRef} className="cards relative w-[100vw]">
+      <div ref={cardsContainerRef} className="cards relative w-[100vw] bg-[#FAF4EC]">
 
 {/*Page-1 */}
 

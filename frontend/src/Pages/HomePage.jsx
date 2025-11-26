@@ -5,7 +5,9 @@ import Solutions from "./Solutions";
 import DefineUs from "./DefineUs";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import PageTransitionFooter from "./PageTransitionFooter";
+import Random from "./Random";
+import DoubleMarquee from "./Marquee";
+
 
 export default function HomePage() {
   const location = useLocation();
@@ -34,19 +36,22 @@ export default function HomePage() {
     <>
       <SplitText />
 
-      <Video />
 
-      <FlipPages />
+        <Video />
+
+
+<div className=" sm:mt-0">      <FlipPages /></div>
 
       {/* Solutions Section */}
       <div id="solutions-section">
         <Solutions />
       </div>
-
-      <div className="mt-50">
+<div className="mt-20">
+  <DoubleMarquee/>
+</div>
+      <div className="mt-40">
         <DefineUs />
       </div>
-
     </>
   );
 }

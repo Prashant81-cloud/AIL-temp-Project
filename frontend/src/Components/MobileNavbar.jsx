@@ -8,9 +8,9 @@ export default function MobileNavbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className=" bg-[#FAF4EC] px-6  flex flex-col relative z-50">
+    <nav className=" bg-[#FAF4EC] px-6  flex flex-col  relative z-50 ">
       {/* Top Bar */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center ">
 <div
   className="logo relative flex  h-[130px] items-center justify-center bg-center bg-no-repeat bg-contain"
   style={{
@@ -21,7 +21,7 @@ export default function MobileNavbar() {
   }}
 >
   {/* Inner content (text + hover component) */}
-  <div className="flex font-bold text-xl items-center justify-center flex-col text-[#c99a5b] z-10">
+  <div className="flex font-bold text-xl items-center justify-center flex-col text-[#c99a5b] z-10 ">
     <h1 style={{ fontFamily: 'Alata, sans-serif' }}>ADVAITA</h1>
     <h2 className="text-[8px]">INNOVATION LABS.</h2>
   </div>
@@ -32,7 +32,7 @@ export default function MobileNavbar() {
 </div>
 
         {/* Hamburger Icon */}
-        <button onClick={() => setOpen(!open)} className="p-2 text-[#c99a5b] bg-[#FCB8FA] p-3 rounded-lg">
+        <button onClick={() => setOpen(!open)} className="p-2 text-[#c99a5b] bg-[#FCB8FA] p-3 rounded-lg ">
           <div className="space-y-1 bg-">
             <span
               className={`block h-0.5 w-6 bg-black  transition-all duration-300 ${
@@ -55,7 +55,7 @@ export default function MobileNavbar() {
 
       {/* Dropdown Menu */}
       {open && (
-        <div className="flex flex-col items-center mt-4 bg-white rounded-xl shadow-md p-4 animate-fadeIn">
+        <div className="flex flex-col items-center mt-4 bg-white rounded-xl shadow-md p-4 animate-fadeIn ">
           <CalypsoButton />
           <div className="mt-4 flex items-center justify-center bg-[#fcb8fa] rounded-lg p-2 shadow">
             <p className="font-semibold text-[14px]">Theory of Branding</p>

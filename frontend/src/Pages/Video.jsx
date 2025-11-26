@@ -47,7 +47,7 @@ function Video() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-[110vh] flex flex-col justify-start items-center bg-[#FAF4EC] mt-20 overflow-hidden"
+      className="w-full h-full flex flex-col justify-start   items-center  overflow-hidden "
       id="page2"
     >
       <video
@@ -58,7 +58,7 @@ function Video() {
         muted
         playsInline
         onClick={handleVideoClick}
-        className="w-[88%] h-full object-cover rounded-lg cursor-pointer"
+        className="w-[88%] h-[100vh] object-top   cursor-pointer"
         style={{ outline: "none" }}
       />
     </div>

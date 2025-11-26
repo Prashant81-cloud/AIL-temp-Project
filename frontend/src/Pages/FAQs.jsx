@@ -142,8 +142,8 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="w-full flex justify-center py-14 bg-[#FAF4EC]">
-      <div className="w-[90%] max-w-6xl flex gap-44 items-center">
+    <div className="w-full flex justify-center  bg-[#FAF4EC] ">
+      <div className="w-[90%] max-w-6xl flex gap-44 items-center ">
 
         {/* LEFT SIDEBAR */}
         <aside className="w-1/4">

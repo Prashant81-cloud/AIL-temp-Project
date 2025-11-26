@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function ButtonHover() {
+export default function ButtonHover({ label = "Click Me" }) {
   return (
     <div
       className="flex justify-center items-center w-full"
-      onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-      onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+      onMouseEnter={() =>
+        window.dispatchEvent(new CustomEvent("disableCustomCursor"))
+      }
+      onMouseLeave={() =>
+        window.dispatchEvent(new CustomEvent("enableCustomCursor"))
+      }
     >
-      <AnimatedButton />
+      <AnimatedButton label={label} />
     </div>
   );
 }
 
-const AnimatedButton = () => {
+const AnimatedButton = ({ label }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -34,12 +38,12 @@ const AnimatedButton = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Text (front layer) */}
+      {/* Front Text */}
       <span className="relative z-10 flex items-center justify-center gap-2">
-        Dive Into Our Culture →
+        {label}
       </span>
 
-      {/* Animated background (hover reveal) */}
+      {/* Hover Background Animation */}
       <motion.div
         className="absolute inset-0 z-20 flex items-center justify-center gap-2 bg-[#faf4ec] text-black"
         initial={{
@@ -55,7 +59,7 @@ const AnimatedButton = () => {
           ease: [0.22, 1, 0.36, 1],
         }}
       >
-        Dive Into Our Culture →
+        {label}
       </motion.div>
     </motion.button>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../DefineUs.css';
 import ButtonHover from '../Components/ButtonHover';
 import AILlogo from '../assets/AIL BRONZE.png';
-import Logo2 from '../assets/AIL_BRONZE__1_-removebg-preview.png'; // This is the one-time swap
+import Logo2 from '../assets/AIL_BRONZE__4_-removebg-preview (1).png'; // This is the one-time swap
 
 
 const DefineUs = () => {
@@ -14,71 +14,82 @@ const DefineUs = () => {
   let totalRotation = 0;  // track how much rotation has happened
   let swapped = false;    // ensure swap happens only once
 
-  useEffect(() => {
-    let currentAngle = 0;
+useEffect(() => {
+  let currentAngle = 0;
 
-    const lerp = (start, end, amt) => start + (end - start) * amt;
+  const lerp = (start, end, amt) => start + (end - start) * amt;
 
-    const handleMouseMove = (e) => {
-      if (!arrowRef.current) return;
+  const handleMouseMove = (e) => {
+    if (!arrowRef.current) return;
 
-      const rect = arrowRef.current.getBoundingClientRect();
-      const arrowX = rect.left + rect.width / 2;
-      const arrowY = rect.top + rect.height / 2;
+    const rect = arrowRef.current.getBoundingClientRect();
+    const arrowX = rect.left + rect.width / 2;
+    const arrowY = rect.top + rect.height / 2;
 
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
 
-      const angleRad = Math.atan2(mouseY - arrowY, mouseX - arrowX);
-      let targetAngle = angleRad * (180 / Math.PI) + 90;
+    const angleRad = Math.atan2(mouseY - arrowY, mouseX - arrowX);
+    // 🔥 keep your +90 so it matches how your logo is drawn
+    let targetAngle = (angleRad * 180) / Math.PI + 90;
 
-      const newAngle = lerp(currentAngle, targetAngle, 0.15);
+    // 🧠 Make sure we always rotate via the shortest path (no 360° random spin)
+    let delta = targetAngle - currentAngle;
+    if (delta > 180) delta -= 360;
+    if (delta < -180) delta += 360;
 
-      // Add how much rotation happens
-      const diff = Math.abs(newAngle - currentAngle);
-      totalRotation += diff; // accumulate angle change
+    const newAngle = currentAngle + delta * 0.15; // same smoothness as before
 
-      currentAngle = newAngle;
+    // 👇 rotation amount for swap logic (keep your totalRotation behavior)
+    const step = Math.abs(newAngle - currentAngle);
+    totalRotation += step;
 
-      // 🟢 Apply rotation
-      arrowRef.current.style.transform = `rotate(${currentAngle}deg)`;
+    currentAngle = newAngle;
 
-      // 🟠 Check if total rotation exceeded 720° (2 spins)
-      if (!swapped && totalRotation > 720) {
-        swapped = true; // prevent future swaps
-        setCurrentImg(Logo2); // 🔥 change to second image ONCE
-      }
-    };
+    // 🟢 Apply rotation
+    arrowRef.current.style.transform = `rotate(${currentAngle}deg)`;
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+    // 🟠 Keep your one-time image change after 720° total rotation
+    if (!swapped && totalRotation > 720) {
+      swapped = true;
+      setCurrentImg(Logo2);
+    }
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+  return () => window.removeEventListener("mousemove", handleMouseMove);
+}, []);
+
+
 
   return (
-    <div className="about-us-container">
-      <div className="left-content">
+    <div className="about-us-container bg-[#FAF4EC]">
+      <div className="left-content  ">
         <h2 className="title">The Advaita Way</h2>
 
         {/* Rotating + one-time swap image */}
         <div
           ref={arrowRef}
           style={{ transformOrigin: "center center" }}
-          className="text-[300px] ease-linear"
+          className=" ease-linear"
         >
-          <img className='h-50' src={currentImg} alt="dynamic-logo" />
+          <img className='h-80' src={currentImg} alt="dynamic-logo" />
         </div>
       </div>
 
       <div className="right-content">
         <p className="headline">
-          We’re storytellers at heart, innovators by craft, and technologists by instinct.
+At Advaita Innovation Labs, creativity meets consciousness — where ideas aren’t just
+made, they’re felt.
         </p>
 
         <p className="description">
-          Our mission is simple yet bold: to take Indian storytelling to the world.
+Our mission is simple yet bold: to take Indian storytelling to the world.
+We partner with creators, strategists, and platforms to craft believable stories that move
+people, build culture, and create measurable impact for brands that dare to dream bigger.
         </p>
 
-        <div><ButtonHover /></div>
+        <div><ButtonHover label="Dive Into Our Culture →" /></div>
       </div>
     </div>
   );
