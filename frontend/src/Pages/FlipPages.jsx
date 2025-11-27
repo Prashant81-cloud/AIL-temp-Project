@@ -295,15 +295,15 @@ access and opportunity.</p>
             </div>
           </div>
 {/*Page-5 */}
-          <div  className="card h-auto sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-[80vh] md:h-[95vh] lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4d677a] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-<div className="flex items-center justify-between">
+<div className="flex items-start justify-between">
 
-            <span className={` inline-block px-4 py-1 text-lg font-semibold text-sm bg-white rounded-lg text-black`}>
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
               Expertise
             </span>
 
-        <span className={`text-5xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           05       
         </span>
 
@@ -314,12 +314,12 @@ access and opportunity.</p>
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
 
-             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img className="rounded-xl  w-30 object-contain  " src={BOTs2} alt="" />
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-30 sm:w-40 md:w-45 lg:w-50  " src={BOTs2} alt="" />
              </div>
 
           </div>
-        <div className=" mt-10">
+        <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -339,14 +339,14 @@ access and opportunity.</p>
 
         </div>
 
-        <div className="hidden sm:flex items-center ">
+        <div className="hidden sm:flex items-center justify-between ">
 
 
 
-          <p className="   font-normal text-[1rem] text-white mt-10">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
 
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
                <img 
                  src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
                  alt="Man on the phone" 
@@ -360,7 +360,7 @@ access and opportunity.</p>
 
         <div>
 <button
-  className="watchNowBtn text-sm flex items-center gap-3 px-3 py-2 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
