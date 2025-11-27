@@ -295,7 +295,7 @@ access and opportunity.</p>
             </div>
           </div>
 {/*Page-5 */}
-          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4d677a] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-center justify-between">
 
