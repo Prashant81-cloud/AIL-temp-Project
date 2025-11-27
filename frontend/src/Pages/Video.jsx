@@ -28,7 +28,6 @@ function Video() {
 
       gsap.to(vid, {
         width: "100%",
-        height: "105vh",
         scale: 1.05,
         scrollTrigger: {
           trigger: box,
@@ -58,7 +57,7 @@ function Video() {
         muted
         playsInline
         onClick={handleVideoClick}
-        className="w-[88%] h-[100vh] object-top   cursor-pointer"
+        className="w-[88%] xl:h-[100vh] object-top   cursor-pointer"
         style={{ outline: "none" }}
       />
     </div>

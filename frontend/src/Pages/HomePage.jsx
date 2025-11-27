@@ -40,7 +40,7 @@ export default function HomePage() {
         <Video />
 
 
-<div className=" sm:mt-0">      <FlipPages /></div>
+<div className=" mt-0">      <FlipPages /></div>
 
       {/* Solutions Section */}
       <div id="solutions-section">

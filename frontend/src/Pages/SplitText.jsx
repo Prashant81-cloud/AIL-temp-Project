@@ -91,7 +91,7 @@ function SplitText() {
       </div>
       {/* 4️⃣ First line */}
       <div>
-        <p className="border-black border-b-1 w-fit mt-42 sm:mt-45  lg:ml-[11.9rem] md:ml-[9rem] sm:ml-[6rem] ml-[2rem] sm:text-2xl  md:text-3xl lg:text-4xl mb-5">Here's how we can help</p>
+        <p className="border-black border-b-1 w-fit mt-32 sm:mt-45  lg:ml-[11.9rem] md:ml-[9rem] sm:ml-[6rem] ml-[2rem] sm:text-2xl  md:text-3xl lg:text-4xl mb-5">Here's how we can help</p>
       </div>
     </div>
   );
