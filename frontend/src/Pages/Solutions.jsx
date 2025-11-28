@@ -8,6 +8,8 @@ const Solutions = () => {
   const divRefs = useRef({});
   const contentRefs = useRef({});
   const navigate = useNavigate();
+const isMobile = window.innerWidth < 768;  // md = 768px
+
 
   // 🔥 RAW OBJECT DATA WITH LINKS
   const services = {
@@ -38,74 +40,89 @@ const Solutions = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
-  const handleMouseEnter = (title) => {
-    setActive(title);
+const handleMouseEnter = (title) => {
+  if (isMobile) return;  // ❌ No animation on mobile
 
-    const div = divRefs.current[title];
-    const content = contentRefs.current[title];
-    const heading = div.querySelector("h2");
+  setActive(title);
 
-    gsap.killTweensOf([div, content, heading]);
+  const div = divRefs.current[title];
+  const content = contentRefs.current[title];
+  const heading = div.querySelector("h2");
 
-    gsap.to(div, {
-      backgroundColor: randomColor(),
-      color: "#fff",
-      duration: 0.4,
-      ease: "power2.out",
-    });
+  gsap.killTweensOf([div, content, heading]);
 
-    gsap.to(heading, {
-      color: "#fff",
-      opacity: 1,
-      duration: 0.3,
-      ease: "power2.out",
-    });
+  gsap.to(div, {
+    backgroundColor: randomColor(),
+    color: "#fff",
+    duration: 0.4,
+    ease: "power2.out",
+  });
 
-    gsap.to(content, {
-      height: "auto",
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  };
+  gsap.to(heading, {
+    color: "#fff",
+    opacity: 1,
+    duration: 0.3,
+    ease: "power2.out",
+  });
 
-  const handleMouseLeave = (title) => {
-    setActive(null);
+  gsap.to(content, {
+    height: "auto",
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+};
 
-    const div = divRefs.current[title];
-    const content = contentRefs.current[title];
-    const heading = div.querySelector("h2");
+const handleMouseLeave = (title) => {
+  if (isMobile) return;  // ❌ No animation on mobile
 
-    gsap.killTweensOf([div, content, heading]);
+  setActive(null);
 
-    gsap.to(div, {
-      backgroundColor: "transparent",
-      color: "#000",
-      duration: 0.4,
-      ease: "power2.inOut",
-    });
+  const div = divRefs.current[title];
+  const content = contentRefs.current[title];
+  const heading = div.querySelector("h2");
 
-    gsap.to(heading, {
-      color: "#6b7280",
-      opacity: 0.5,
-      duration: 0.3,
-      ease: "power2.inOut",
-    });
+  gsap.killTweensOf([div, content, heading]);
 
-    gsap.to(content, {
-      height: 0,
-      opacity: 0,
-      duration: 0.4,
-      ease: "power2.inOut",
-    });
-  };
+  gsap.to(div, {
+    backgroundColor: "transparent",
+    color: "#000",
+    duration: 0.4,
+    ease: "power2.inOut",
+  });
 
-  useEffect(() => {
-    Object.keys(services).forEach((title) => {
-      const el = contentRefs.current[title];
-      if (el) gsap.set(el, { height: 0, opacity: 0, overflow: "hidden" });
-    });
-  }, []);
+  gsap.to(heading, {
+    color: "#6b7280",
+    opacity: 0.5,
+    duration: 0.3,
+    ease: "power2.inOut",
+  });
+
+  gsap.to(content, {
+    height: 0,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power2.inOut",
+  });
+};
+
+
+useEffect(() => {
+  Object.keys(services).forEach((title) => {
+    const el = contentRefs.current[title];
+
+    if (!el) return;
+
+    if (isMobile) {
+      // 🔥 Mobile: Always open
+      gsap.set(el, { height: "auto", opacity: 1 });
+    } else {
+      // 🔥 Desktop: Start collapsed
+      gsap.set(el, { height: 0, opacity: 0, overflow: "hidden" });
+    }
+  });
+}, [isMobile]);
+
 
   return (
     <div className="flex flex-col md:flex-row text-black p-10 md:p-20 mt-30 bg-[#FAF4EC]">
@@ -129,7 +146,7 @@ const Solutions = () => {
             onMouseEnter={() => handleMouseEnter(title)}
             onMouseLeave={() => handleMouseLeave(title)}
           >
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-500 opacity-50">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-500 opacity-50">
               {title}
             </h2>
 
