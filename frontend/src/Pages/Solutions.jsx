@@ -1,17 +1,18 @@
+
+
 import React, { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { VscArrowDown } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
+import useIsMobile from "./useIsMobile";
 
 const Solutions = () => {
+  const isMobile = useIsMobile(768); // < md
   const [active, setActive] = useState(null);
   const divRefs = useRef({});
   const contentRefs = useRef({});
   const navigate = useNavigate();
-const isMobile = window.innerWidth < 768;  // md = 768px
 
-
-  // 🔥 RAW OBJECT DATA WITH LINKS
   const services = {
     "Brand Solutions": {
       heading:" Brand Storytelling Agency in India | AIL",
@@ -40,125 +41,85 @@ const isMobile = window.innerWidth < 768;  // md = 768px
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
-const handleMouseEnter = (title) => {
-  if (isMobile) return;  // ❌ No animation on mobile
+  const handleMouseEnter = (title) => {
+    if (isMobile) return; // disable animation on mobile
 
-  setActive(title);
+    setActive(title);
 
-  const div = divRefs.current[title];
-  const content = contentRefs.current[title];
-  const heading = div.querySelector("h2");
+    const div = divRefs.current[title];
+    const content = contentRefs.current[title];
+    const heading = div.querySelector("h2");
 
-  gsap.killTweensOf([div, content, heading]);
+    gsap.killTweensOf([div, content, heading]);
 
-  gsap.to(div, {
-    backgroundColor: randomColor(),
-    color: "#fff",
-    duration: 0.4,
-    ease: "power2.out",
-  });
+    gsap.to(div, { backgroundColor: randomColor(), color: "#fff", duration: 0.4 });
+    gsap.to(heading, { color: "#fff", opacity: 1, duration: 0.3 });
+    gsap.to(content, { height: "auto", opacity: 1, duration: 0.5 });
+  };
 
-  gsap.to(heading, {
-    color: "#fff",
-    opacity: 1,
-    duration: 0.3,
-    ease: "power2.out",
-  });
+  const handleMouseLeave = (title) => {
+    if (isMobile) return; // disable animation on mobile
 
-  gsap.to(content, {
-    height: "auto",
-    opacity: 1,
-    duration: 0.5,
-    ease: "power2.out",
-  });
-};
+    setActive(null);
 
-const handleMouseLeave = (title) => {
-  if (isMobile) return;  // ❌ No animation on mobile
+    const div = divRefs.current[title];
+    const content = contentRefs.current[title];
+    const heading = div.querySelector("h2");
 
-  setActive(null);
+    gsap.killTweensOf([div, content, heading]);
 
-  const div = divRefs.current[title];
-  const content = contentRefs.current[title];
-  const heading = div.querySelector("h2");
+    gsap.to(div, { backgroundColor: "transparent", color: "#000", duration: 0.4 });
+    gsap.to(heading, { color: "#6b7280", opacity: 0.5, duration: 0.3 });
+    gsap.to(content, { height: 0, opacity: 0, duration: 0.4 });
+  };
 
-  gsap.killTweensOf([div, content, heading]);
+  useEffect(() => {
+    Object.keys(services).forEach((title) => {
+      const section = contentRefs.current[title];
 
-  gsap.to(div, {
-    backgroundColor: "transparent",
-    color: "#000",
-    duration: 0.4,
-    ease: "power2.inOut",
-  });
+      if (!section) return;
 
-  gsap.to(heading, {
-    color: "#6b7280",
-    opacity: 0.5,
-    duration: 0.3,
-    ease: "power2.inOut",
-  });
-
-  gsap.to(content, {
-    height: 0,
-    opacity: 0,
-    duration: 0.4,
-    ease: "power2.inOut",
-  });
-};
-
-
-useEffect(() => {
-  Object.keys(services).forEach((title) => {
-    const el = contentRefs.current[title];
-
-    if (!el) return;
-
-    if (isMobile) {
-      // 🔥 Mobile: Always open
-      gsap.set(el, { height: "auto", opacity: 1 });
-    } else {
-      // 🔥 Desktop: Start collapsed
-      gsap.set(el, { height: 0, opacity: 0, overflow: "hidden" });
-    }
-  });
-}, [isMobile]);
-
+      if (isMobile) {
+        // always open on mobile
+        gsap.set(section, { height: "auto", opacity: 1 });
+      } else {
+        // collapsed by default on desktop
+        gsap.set(section, { height: 0, opacity: 0, overflow: "hidden" });
+      }
+    });
+  }, [isMobile]);
 
   return (
     <div className="flex flex-col md:flex-row text-black p-10 md:p-20 mt-30 bg-[#FAF4EC]">
-      {/* Left Section */}
-      <div className="md:w-1/2 flex flex-col ">
-      <div>        <h1 className="text-6xl md:text-7xl mb-5">Solutions</h1>
-        <p className="text-xl leading-relaxed max-w-md">
- We humanize brands through believable stories distributed via OTT & TV networks. Where creativity, culture & technology unite to build belief.
-        </p></div>
-
+      {/* LEFT SECTION */}
+      <div className="md:w-1/2">
+        <h1 className="text-[clamp(2.1rem,7.8vw,103px)] md:text-7xl font-medium">Solutions</h1>
+        <p className="text-[clamp(14pxrem,1.8vw,17px)] max-w-md leading-[21px]"> We humanize brands through believable stories distributed via OTT & TV networks. Where creativity, culture & technology unite to build belief.</p>
       </div>
 
-      {/* Right Section */}
-      <div className="md:w-1/2 flex flex-col mt-10 md:mt-0">
+      {/* RIGHT SECTION */}
+      <div className="md:w-1/2 mt-10 md:mt-0">
         {Object.keys(services).map((title) => (
           <div
             key={title}
             ref={(el) => (divRefs.current[title] = el)}
-            className="border-t border-gray-300 pt-4 p-5 transition-all cursor-pointer relative"
-            onClick={() => navigate(services[title].link)}   // 🟢 CLICK → NAVIGATE
+            className="border-t border-gray-300 pt-4 py-5 cursor-pointer"
+            onClick={() => navigate(services[title].link)}
             onMouseEnter={() => handleMouseEnter(title)}
             onMouseLeave={() => handleMouseLeave(title)}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-500 opacity-50">
+            <h2 className="text-[1.7rem] md:text-4xl lg:text-5xl md:text-gray-500 md:opacity-50 font-semibold">
               {title}
             </h2>
 
             <div ref={(el) => (contentRefs.current[title] = el)} className="overflow-hidden">
-              <div className="flex items-center gap-13 mt-3">
+              <div className="flex flex-col items-start gap-8 mt-3">
                 <div>
-                <h1 className="text-white text-2xl font-bold">{services[title].heading}</h1>
-                <p className="max-w-md text-white text-xl mb-5 mt-5">
-                  {services[title].content}
-                </p>
+                  <h1 className="md:text-white text-black text-[1.3rem] leading-[25px] font-medium">{services[title].heading}</h1>
+                  <p className="md:text-white text-[16px] leading-[21px] mt-3">{services[title].content}</p>
                 </div>
-                <span className="rotate-270 text-black text-4xl bg-white rounded-full p-3 border-black border-[0.5px]">
+
+                <span className="rotate-270 text-black text-4xl bg-white rounded-full p-3 border">
                   <VscArrowDown />
                 </span>
               </div>
