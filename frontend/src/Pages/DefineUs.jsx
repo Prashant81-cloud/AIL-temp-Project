@@ -63,9 +63,9 @@ useEffect(() => {
 
 
   return (
-    <div className="about-us-container bg-[#FAF4EC]">
-      <div className="left-content  ">
-        <h2 className="title">The Advaita Way</h2>
+    <div className="about-us-container w-screen">
+      <div className="left-content w-full">
+        <h2 className="title  w-full">The Advaita Way</h2>
 
         {/* Rotating + one-time swap image */}
         <div
@@ -73,7 +73,8 @@ useEffect(() => {
           style={{ transformOrigin: "center center" }}
           className=" ease-linear"
         >
-          <img className='h-80' src={currentImg} alt="dynamic-logo" />
+<img  className="hidden md:block h-70 lg:h-80 object-cover"  src={currentImg}  alt="dynamic-logo"/>
+
         </div>
       </div>
 

@@ -90,11 +90,11 @@ const Solutions = () => {
   }, [isMobile]);
 
   return (
-    <div className="flex flex-col md:flex-row text-black p-10 md:p-20 mt-30 bg-[#FAF4EC]">
+    <div className="flex flex-col md:flex-row text-black p-10 md:p-20 mt-30 bg-[#FAF4EC] gap-20">
       {/* LEFT SECTION */}
       <div className="md:w-1/2">
         <h1 className="text-[clamp(2.1rem,7.8vw,103px)] md:text-7xl font-medium">Solutions</h1>
-        <p className="text-[clamp(14pxrem,1.8vw,17px)] max-w-md leading-[21px]"> We humanize brands through believable stories distributed via OTT & TV networks. Where creativity, culture & technology unite to build belief.</p>
+        <p className="text-[clamp(14pxrem,1.8vw,17px)] max-w-md leading-[21px] md:text-xl md:leading-normal md:mt-5"> We humanize brands through believable stories distributed via OTT & TV networks. Where creativity, culture & technology unite to build belief.</p>
       </div>
 
       {/* RIGHT SECTION */}
@@ -103,7 +103,7 @@ const Solutions = () => {
           <div
             key={title}
             ref={(el) => (divRefs.current[title] = el)}
-            className="border-t border-gray-300 pt-4 py-5 cursor-pointer"
+            className="border-t border-gray-300 pt-4 py-5 md:px-5 transition-all cursor-pointer "
             onClick={() => navigate(services[title].link)}
             onMouseEnter={() => handleMouseEnter(title)}
             onMouseLeave={() => handleMouseLeave(title)}
@@ -115,8 +115,8 @@ const Solutions = () => {
             <div ref={(el) => (contentRefs.current[title] = el)} className="overflow-hidden">
               <div className="flex flex-col items-start gap-8 mt-3">
                 <div>
-                  <h1 className="md:text-white text-black text-[1.3rem] leading-[25px] font-medium">{services[title].heading}</h1>
-                  <p className="md:text-white text-[16px] leading-[21px] mt-3">{services[title].content}</p>
+                  <h1 className="md:text-white text-black text-[1.3rem] md:text-2xl leading-[25px] font-medium">{services[title].heading}</h1>
+                  <p className="md:text-white text-[16px] leading-[21px] mt-3 md:text-xl md:mb-5 md:mt-5">{services[title].content}</p>
                 </div>
 
                 <span className="rotate-270 text-black text-4xl bg-white rounded-full p-3 border">
