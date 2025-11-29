@@ -12,6 +12,7 @@ import {
 } from "https://esm.sh/react-icons/fa";
 import AILLOGO from "../assets/AIL BRONZE.png";
 import Random from "@/Pages/Random";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,26 +88,28 @@ export default function MainLayout({ children }) {
         <Random/>
       </div>
 
-      {/* UNDERLAY FOOTER – fixed at bottom, behind content */}
+      {/* UNDERLAY FOOTER – fixed at bottom, behind content [clamp(450px,30vw,800px)] */}
       <footer
         className="
           absolute
           sticky bottom-0 
           z-0
-          h-140
+          md:h-140
+          sm:h-160
+          h-115
         "
       >
-      <footer className="absolute bottom-0 left-0 w-full bg-black text-[#faf4ec] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center font-sans">
+      <footer className="absolute bottom-0 left-0 w-full  bg-black text-[#faf4ec] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center font-sans">
         <div className="max-w-7xl mx-auto">
           <div
-            className="relative flex flex-col items-center justify-center w-full h-[60vh] bg-center bg-no-repeat bg-contain"
+            className="relative flex flex-col items-center justify-center w-full h-[60vw] sm:h-[60vh] bg-center bg-no-repeat bg-contain"
             style={{ backgroundImage: `url(${AILLOGO})` }}
           >
             <div className="relative z-1 text-center">
-              <h1 style={{ fontFamily: "Alata, sans-serif" }} className="text-[12vw] tracking-[0.2em] leading-none">
+              <h1 style={{ fontFamily: "Alata, sans-serif" }} className="text-[15vw] tracking-[0.1em] sm:text-[12vw]  sm:tracking-[0.2em] leading-none">
                 ADVAITA
               </h1>
-              <h2 className="text-[3vw] tracking-[15px]">INNOVATION LABS.</h2>
+              <h2 className="text-[5vw] tracking-[4px] sm:text-[3vw]  sm:tracking-[15px]">INNOVATION LABS</h2>
             </div>
           </div>
 
@@ -120,16 +123,22 @@ export default function MainLayout({ children }) {
               <a className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaFacebookF /></a>
             </div>
 
-            <nav className="flex flex-wrap justify-center space-x-6 mb-6 md:mb-0">
-              <a className="hover:text-gray-400">Solutions</a>
-              <a className="hover:text-gray-400">Upcoming Series</a>
-              <a className="hover:text-gray-400">About Us</a>
-              <a className="hover:text-gray-400">Projects</a>
+            <nav className="flex text-[11px]  flex-wrap justify-center space-x-6 mb-6 md:mb-0">
+
+
+<Link  to='/content-intellegence' className="hover:text-gray-400" > Content Intellegence </Link>
+<Link  to="/#solutions" className="hover:text-gray-400" > Solutions </Link>
+<Link to='/about-us' className="hover:text-gray-400" > About Us </Link>
+<Link to='/faqs' className="hover:text-gray-400" > FAQs </Link>
+
             </nav>
 
             <div className="text-right text-gray-400">
-              <p className="mb-1">Proudly created in India.</p>
-              <p>All Right Reserved, All Wrong Reversed.</p>
+
+<a href="mailto:example@gmail.com">
+  <button>Contact Us</button>
+</a>
+<p>© 2023 by AIL-India </p>
             </div>
           </div>
         </div>
