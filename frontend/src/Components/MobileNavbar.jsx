@@ -48,7 +48,7 @@ export default function MobileNavbar() {
 <button
   onClick={() => setOpen(!open)}
   className={`
-    p-3 rounded-lg fixed top-6 right-6 z-[100] transition-all duration-300
+    p-3 rounded-lg   z-[100] transition-all duration-300
     ${open ? "bg-white" : "bg-[#FCB8FA]"} 
   `}
 >
