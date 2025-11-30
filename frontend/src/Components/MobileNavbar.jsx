@@ -12,7 +12,8 @@ export default function MobileNavbar() {
       {/* Top Bar */}
       <div className="flex justify-between items-center">
         {/* Company Logo */}
-        <div
+        <Link
+        to='/'
           className="logo relative flex h-[130px] items-center justify-center bg-center bg-no-repeat bg-contain"
           style={{
             backgroundImage: `url(${AILLOGO})`,
@@ -28,7 +29,7 @@ export default function MobileNavbar() {
           <div className="font-bold text-[12px] mb-[3px] ml-0.5 text-[#c99a5b] z-10">
             <PauseOnHover />
           </div>
-        </div>
+        </Link>
 
         {/* Hamburger / Close Icon */}
 <button
@@ -75,6 +76,7 @@ export default function MobileNavbar() {
             rounded-lg 
             z-[90]
             p-10
+            overflow-hidden
           "
         >
 
