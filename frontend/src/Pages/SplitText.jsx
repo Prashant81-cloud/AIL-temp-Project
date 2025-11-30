@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import rmbgOrig from "../assets/removebg orig.png";
 import gsap from "gsap";
 import rmbgOrig1 from '../assets/Screenshot_2025-11-19_at_11.13.08_AM-removebg-preview.png'
+import HoverAnimation from "./HoverAnimation";
+
 
 function SplitText() {
   const txt1Ref = useRef(null);
@@ -67,7 +69,7 @@ function SplitText() {
   }, []);
 
   return (
-    <div className="xl:mt-22 sm:mt-0 xl:px-[3rem] sm:px-6 px-6 relative z-1000 bg-[#FAF4EC] ">
+    <div className="xl:mt-22 sm:mt-0 xl:px-[3rem] sm:px-6 px-6  z-1000 bg-[#FAF4EC] ">
 
       {/* 1️⃣ First line */}
       <div ref={txt1Ref} className="font-normal leading-none flex items-center txt1 sm:text-[4rem] gap-1 md:gap-4 md:text-[clamp(3rem,8.8vw,103px)] [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)] text-[4rem]">
@@ -91,7 +93,8 @@ function SplitText() {
       </div>
       {/* 4️⃣ First line */}
       <div>
-        <p className="border-black border-b-1 w-fit mt-32 sm:mt-45  lg:ml-[11.9rem] md:ml-[9rem] sm:ml-[6rem] ml-[2rem] sm:text-2xl  md:text-3xl lg:text-4xl mb-5">Here's how we can help</p>
+<HoverAnimation/>
+        {/* <p className="border-black border-b-1 w-fit mt-32 sm:mt-45  lg:ml-[11.9rem] md:ml-[9rem] sm:ml-[6rem] ml-[2rem] sm:text-2xl  md:text-3xl lg:text-4xl mb-5">Here's how we can help</p> */}
       </div>
     </div>
   );

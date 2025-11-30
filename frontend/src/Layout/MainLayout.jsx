@@ -133,13 +133,15 @@ export default function MainLayout({ children }) {
 
             </nav>
 
-            <div className="text-right text-gray-400">
+            <div className="text-right text-gray-400 flex items-center justify-between w-full">
 
 <a href="mailto:example@gmail.com">
   <button>Contact Us</button>
 </a>
-<p>© 2023 by AIL-India </p>
+<Link to='/privacy-policy' > Privacy & Policy</Link>
+
             </div>
+<p className="mt-5"> © 2023 by AIL-India </p>
           </div>
         </div>
       </footer>
