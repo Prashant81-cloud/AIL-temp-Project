@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,  useEffect  } from "react";
 import AILLOGO from "../assets/AIL BRONZE.png";
 import PauseOnHover from "./VerticalScroll";
 import tfb from '../assets/Screenshot_2025-11-19_at_9.44.00_PM-removebg-preview.png';
@@ -6,6 +6,19 @@ import { Link } from "react-router-dom";
 
 export default function MobileNavbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+  if (open) {
+    document.body.style.overflow = "hidden";   // Stop scrolling
+  } else {
+    document.body.style.overflow = "auto";     // Restore scrolling
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";     // Cleanup
+  };
+}, [open]);
+
 
   return (
     <nav className="px-6 flex flex-col relative z-50">
