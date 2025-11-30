@@ -84,7 +84,7 @@ export default function MobileNavbar() {
             fixed inset-0 
             bg-[#fcb8fa] 
             flex flex-col items-center justify-center 
-            gap-3 text-2xl font-semibold 
+            gap-3 text-xl font-semibold 
             border-[#FAF4EC] border-[1rem]
             rounded-lg 
             z-[90]

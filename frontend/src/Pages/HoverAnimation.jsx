@@ -8,11 +8,11 @@ function HoverAnimation() {
   useEffect(() => {
     const lines = [
       "Watchworthy Brand Stories",
+      "Born for OTT. Built for Audiences",
       "Made for the Big Screen",
       "Scripted for Impact",
       "Crafted Like Cinema",
       "From Script to Stream",
-      "Born for OTT. Built for Audiences",
       "Your Brand in Lights"
     ];
 
@@ -33,13 +33,13 @@ lines.forEach((text) => {
     }
   )
   .to(el, {
-    duration: 2,
+    duration: 0.7,
     y: "0%",
     opacity: 1,
   })
   .to(el, {
     duration: 0.8,
-    y: "-120%",   // exit to TOP
+    y: "-70%",   // exit to TOP
     opacity: 0,
     ease: "power3.in"
   });
@@ -63,17 +63,17 @@ lines.forEach((text) => {
 
   return (
     <div>
-        <div className='flex h-60  ml-25 mr-20 gap-5 '>
+        <div className='flex h-30 mb-10   gap-5 '>
 
-
-          {/* ⭐ Text wrapper → allows wrapping into 2+ lines */}
-          <div className="w-50 mt-31 overflow-hidden leading-tight">
+          <div className='border-black border-t-[0.1rem] w-170 mt-24'></div>
+          {/* ⭐ Text wrapper → allows wrapping into 2+ lines   ml-25 mr-20*/}
+          <div className="w-80  mt-22  leading-tight">
             <p 
               ref={sliderRef}
-              className="text-[1.8rem] italic slider"
+              className="text-[0.9rem] italic slider"
             ></p>
           </div>
-          <div className='border-black border-t-2 w-240 mt-34'></div>
+
         </div>
     </div>
   )
