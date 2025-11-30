@@ -57,7 +57,7 @@ function Video() {
         muted
         playsInline
         onClick={handleVideoClick}
-        className="w-[88%] xl:h-[100vh] object-top   cursor-pointer"
+        className="sm:w-[88%] w-[80%] xl:h-[100vh] object-top   cursor-pointer"
         style={{ outline: "none" }}
       />
     </div>
