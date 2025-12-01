@@ -16,7 +16,7 @@ function AboutUs() {
   }, []);
 
   return (
-    <div className="w-screen overflow-x-hidden">
+    <div className="w-screen ">
       <section>
         <AboutUs1 />
       </section>

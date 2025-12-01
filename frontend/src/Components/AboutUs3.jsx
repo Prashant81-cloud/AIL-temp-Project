@@ -2,31 +2,66 @@ import React from 'react'
 
 function AboutUs3() {
   return (
-    <div className='h-[40vw] w-screen flex flex-col'>
-      
-      <div className='flex justify-between items-center px-15 border border-black py-5'>
-        <h1 className='text-4xl font-semibold'>OUR MISSION</h1>
-        <p className='w-160 text-xl'>
+    <>
+    {/* For screens greater then "sm" */}
+    <div className='h-auto w-screen sm:flex sm:flex-col hidden'>
+      <div className='flex justify-between items-center px-15 border-t-1 border-black py-5 gap-15'>
+        <h1 className='xl:text-4xl lg:text-3xl font-semibold md:text-2xl sm:text-xl'>OUR MISSION</h1>
+        <p className='w-160 xl:text-xl lg:text-lg'>
           To take Indian creativity, branded content, and storytelling innovation to the world — powered by Gen AI, premium media networks, and storytelling that feels real.
         </p>
-        <img className='h-45 w-50' 
+        <img className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 ' 
           src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL3JtNTk3ZGVzaWduLWMtYnVzLTAwMS5qcGc.jpg" 
           alt="" 
         />
       </div>
 
-      <div className='flex justify-between items-center px-15 border-b border-black py-5 mt-5'>
-        <h1 className='text-4xl font-semibold'>OUR PROMISE</h1>
-        <p className='w-160 text-xl'>
+      <div className='flex justify-between items-center px-15  py-5 mt-5 border-t-1 border-black gap-15'>
+        <h1 className='xl:text-4xl lg:text-3xl font-semibold md:text-2xl sm:text-xl'>OUR PROMISE</h1>
+        <p className='w-160 xl:text-xl lg:text-lg'>
           We help brands do more than advertise. We help them be believed — everywhere their audience is.
         </p>
-        <img className='h-45 w-50'  
+        <img className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 '  
           src="https://images-cdn.ubuy.co.in/648da17529b1e553c0001483-pastel-sunset-poster-beach-aesthetic.jpg" 
           alt="" 
         />
       </div>
-
     </div>
+
+
+    {/* For screens smaller then "sm" */}
+    <div className='h-auto w-screen flex flex-col sm:hidden'>
+      <div className='flex flex-col justify-center items-center px-15 border-t-1 border-black py-5 '>
+        <div className='flex items-center justify-between w-full'>
+        <h1 className='xl:text-4xl lg:text-3xl font-semibold md:text-2xl sm:text-xl'>OUR MISSION</h1>
+                <img className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-20 w-30  ' 
+          src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL3JtNTk3ZGVzaWduLWMtYnVzLTAwMS5qcGc.jpg" 
+          alt="" 
+        />
+        </div>
+        <p className=' xl:text-xl lg:text-lg text-sm mt-7'>
+          To take Indian creativity, branded content, and storytelling innovation to the world — powered by Gen AI, premium media networks, and storytelling that feels real.
+        </p>
+
+      </div>
+
+      <div className='flex flex-col justify-center items-center px-15  py-5 mt-5 border-t-1 border-black '>
+        <div className='flex items-center justify-between w-full'>
+        <h1 className='xl:text-4xl lg:text-3xl font-semibold md:text-2xl sm:text-xl'>OUR PROMISE</h1>
+        <img className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-20 w-30 '  
+          src="https://images-cdn.ubuy.co.in/648da17529b1e553c0001483-pastel-sunset-poster-beach-aesthetic.jpg" 
+          alt="" 
+        />
+        </div>
+
+        <p className=' xl:text-xl lg:text-lg text-sm mt-7'>
+          We help brands do more than advertise. We help them be believed — everywhere their audience is.
+        </p>
+
+      </div>
+    </div>
+
+    </>
   )
 }
 

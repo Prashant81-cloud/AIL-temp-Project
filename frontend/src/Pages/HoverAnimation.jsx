@@ -63,7 +63,7 @@ lines.forEach((text) => {
 
   return (
     <div>
-        <div className='flex h-30 mb-10 sm:mb-30 md:mb-35  gap-2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] sm:ml-[45px] ml-[clamp(30px,7vw,45px)]'>
+        <div className='flex h-30 mb-10 sm:mt-10 sm:mb-30 md:mb-35  gap-2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] sm:ml-[45px] ml-[clamp(30px,7vw,45px)]'>
 
 <div className="mt-24 flex justify-center">
   <div className="border-black border-t-[0.1rem] w-[45vw] sm:w-[55vw] md:w-[58vw] lg:w-[60vw] xl:w-[70vw]"></div>
