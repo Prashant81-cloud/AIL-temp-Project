@@ -104,7 +104,7 @@ el.addEventListener("mouseleave", () => {
 
 
   return (
-    <div className="sm:flex sm:flex-col flex flex-col sm:gap-15 gap-12 md:flex sm:px-15 px-7 w-[100vw] lg:gap-44 md:gap-15   relative intro-text">
+    <div className="sm:flex sm:flex-col flex flex-col sm:gap-15 gap-12 md:flex md:flex-row sm:px-15 px-7 w-[100vw] lg:gap-44 md:gap-15   relative intro-text">
 
       {/* Hidden floating images */}
       <img
