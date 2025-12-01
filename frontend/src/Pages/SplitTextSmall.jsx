@@ -1,30 +1,15 @@
-// tailwind.config.js (default)
-theme: {
-  screens: {
-    sm: "640px",   // small devices
-    md: "768px",   // medium devices (tablets)
-    lg: "1024px",  // large devices (small laptops)
-    xl: "1280px",  // extra large
-    "2xl": "1536px",
-  },
-}
-
-
 
 import React, { useRef, useEffect } from "react";
 import rmbgOrig1 from "../assets/Screenshot_2025-11-19_at_11.13.08_AM-removebg-preview.png";
 import HoverAnimation from "./HoverAnimation";
 
-function SplitText() {
+function SplitTextSmall() {
   const txt1Ref = useRef(null);
   const txt2Ref = useRef(null);
   const txt3Ref = useRef(null);
   const imgRef = useRef(null);
 
-  // REMOVE ALL GSAP ANIMATIONS
-  useEffect(() => {
-    return; // stops GSAP completely
-  }, []);
+
 
   return (
     <div className="xl:mt-22 sm:mt-0 xl:px-[3rem] sm:px-6 px-6 z-1000 bg-[#FAF4EC]">
@@ -79,7 +64,7 @@ function SplitText() {
           league-spartan
           mt-3
           lg:w-[70%] md:w-[75%] sm:w-[80%] w-[80%]
-          ml-7
+          ml-[clamp(22px,7vw,45px)]
         "
       >
         A Full-Stack Storytelling Studio Transforming How Brands Speak to the World
@@ -93,4 +78,4 @@ function SplitText() {
   );
 }
 
-export default SplitText;
+export default SplitTextSmall;

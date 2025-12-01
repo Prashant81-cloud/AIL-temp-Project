@@ -63,14 +63,17 @@ lines.forEach((text) => {
 
   return (
     <div>
-        <div className='flex h-30 mb-10   gap-5 '>
+        <div className='flex h-30 mb-10 sm:mb-30 md:mb-35  gap-2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] sm:ml-[45px] ml-[clamp(30px,7vw,45px)]'>
 
-          <div className='border-black border-t-[0.1rem] w-170 mt-24'></div>
-          {/* ⭐ Text wrapper → allows wrapping into 2+ lines   ml-25 mr-20*/}
-          <div className="w-80  mt-22  leading-tight">
+<div className="mt-24 flex justify-center">
+  <div className="border-black border-t-[0.1rem] w-[45vw] sm:w-[55vw] md:w-[58vw] lg:w-[60vw] xl:w-[70vw]"></div>
+</div>
+
+          {/* ⭐ Text wrapper → allows wrapping into 2+ lines 200px 400px  ml-25 mr-20*/}
+          <div className="w-25  mt-22 sm:mt-21 md:mt-20 leading-tight">
             <p 
               ref={sliderRef}
-              className="text-[0.9rem] italic slider"
+              className="text-[0.9rem]  slider sm:text-[1.2rem] md:text-[1.4rem] lg:text-[1.6rem]"
             ></p>
           </div>
 
