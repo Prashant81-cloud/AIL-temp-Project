@@ -37,7 +37,7 @@ export default function AboutUs2Small() {
                 right audience.
               </p>
 
-              <ul className="gap-[0.1px] flex flex-col  xl:ml-80 lg:ml-60 md:ml-30 sm:ml-30   xl:mt-0 lg:mt-15 md:mt-10 sm:mt-10 mt-10  w-26">
+              <ul className="gap-[0.1px] flex flex-col  xl:ml-80 lg:ml-60 md:ml-30 sm:ml-30   xl:mt-0 lg:mt-15 md:mt-10 sm:mt-10 mt-10 sm:w-auto w-26">
                 <li className="xl:text-2xl lg:text-xl md:text-lg sm:text-md text-sm">We combine:</li>
                 <li className="font-[500] xl:text-lg lg:text-md md:text-sm sm:text-sm text-[0.7rem]"># Creative storytelling</li>
                 <li className="font-[500] xl:text-lg lg:text-md md:text-sm sm:text-sm text-[0.7rem]"># Cinematic content production</li>
@@ -46,7 +46,7 @@ export default function AboutUs2Small() {
                 <li className="font-[500] xl:text-lg lg:text-md md:text-sm sm:text-sm text-[0.7rem]"># OTT distribution intelligence</li>
               </ul>
 
-              <p className="xl:text-xl lg:text-lg md:text-md sm:text-sm text-[.55rem] sm:mt-0 mt-7  font-[500] opacity-70 text-gray-800 xl:mr-[200px]  lg:mr-[150px] md:mr-[70px] mr-[10px] w-35 ">
+              <p className="xl:text-xl lg:text-lg md:text-md sm:text-sm text-[.55rem] sm:mt-0 sm:mt-7 mt-7  font-[500] opacity-70 text-gray-800 xl:mr-[200px]  lg:mr-[150px] md:mr-[70px] mr-[10px] w-35 sm:w-auto ">
 Our flagship series — Gods of Gourmet, The Bharat Chapters, Brands of Tomorrow, Rising Bharat, and Super Founders — have become some of India's most credible platforms for brand storytelling and founder visibility.
               </p>
             </div>
