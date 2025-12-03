@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // --- SVG Icons ---
-// Using inline SVGs for icons as requested
 const ChevronDown = ({ className = "w-6 h-6" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -32,37 +31,30 @@ const ChevronUp = ({ className = "w-6 h-6" }) => (
   </svg>
 );
 
-
 // --- Accordion Components ---
 
-/**
- * AccordionItem Component
- * Renders a single item in the accordion.
- * @param {string} title - The title of the accordion item.
- * @param {React.ReactNode} children - The content to display when open.
- * @param {boolean} isOpen - Whether the item is currently open.
- * @param {function} onToggle - Function to call when the item is clicked.
- */
 const AccordionItem = ({ title, children, isOpen, onToggle }) => {
   return (
     <div className="border-b border-gray-200 last:border-b-0">
-      {/* Header for the accordion item */}
+      {/* Header */}
       <button
-        className="flex justify-between items-center w-full py-5 px-1 text-left"
+        className="flex justify-between items-center w-full py-4 sm:py-5 px-1 sm:px-2 text-left"
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="font-semibold text-lg text-gray-800">{title}</span>
+        <span className="font-semibold text-base sm:text-lg text-gray-800">
+          {title}
+        </span>
         {isOpen ? (
-          <ChevronUp className="w-5 h-5 text-gray-600" />
+          <ChevronUp className="w-5 h-5 text-gray-600 flex-shrink-0" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-gray-600" />
+          <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0" />
         )}
       </button>
-      
-      {/* Content of the accordion item */}
+
+      {/* Content */}
       {isOpen && (
-        <div className="pb-5 px-1 text-gray-600 space-y-4">
+        <div className="pb-4 sm:pb-5 px-1 sm:px-2 text-sm sm:text-base text-gray-600 space-y-3 sm:space-y-4">
           {children}
         </div>
       )}
@@ -70,23 +62,15 @@ const AccordionItem = ({ title, children, isOpen, onToggle }) => {
   );
 };
 
-/**
- * Accordion Component
- * Manages the state for a group of AccordionItems.
- * @param {Array} items - Array of objects with {title, content}.
- */
 const Accordion = ({ items }) => {
-  // State to track the currently open accordion item
-  // Defaulting to 0 (first item) as per the image
   const [openIndex, setOpenIndex] = useState(0);
 
   const handleToggle = (index) => {
-    // If the clicked item is already open, close it. Otherwise, open it.
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-xl lg:max-w-2xl mx-auto">
       {items.map((item, index) => (
         <AccordionItem
           key={index}
@@ -101,128 +85,106 @@ const Accordion = ({ items }) => {
   );
 };
 
+// --- Left Column ---
 
-// --- Main Page Components ---
-
-/**
- * LeftColumn Component
- * Renders the main content on the left side.
- */
 const LeftColumn = () => {
-  // Partner logo data - using placeholders
-  const partners = [
-    { name: "Shopify Partner", url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Shopify" },
-    { name: "Google Partner", url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Google+Partner" },
-    { name: "HubSpot", url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=HubSpot" },
-    { name: "Adobe Solution Partner", url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Adobe" },
-    { name: "Partner 5", url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Partner" },
-    { name: "ONDC", url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=ONDC" },
-  ];
-
   return (
-    <div className="space-y-6">
-      <h1 className="text-5xl font-bold text-gray-900">
+    <div className="space-y-4 sm:space-y-6">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
         Brand Solutions
       </h1>
-      
-      <p className="text-xl text-gray-900 leading-relaxed">
-While many agencies create content, Advaita Innovation Labs builds stories that travel. We don't just help brands communicate — we help them connect, using the power of storytelling and the reach of India's largest OTT and TV networks.
+
+      <p className="text-base sm:text-lg lg:text-xl text-gray-900 leading-relaxed">
+        While many agencies create content, Advaita Innovation Labs builds
+        stories that travel. We don't just help brands communicate — we help
+        them connect, using the power of storytelling and the reach of India's
+        largest OTT and TV networks.
       </p>
-      
-      <p className="text-xl text-gray-900 leading-relaxed">
-Our Brand Solutions team blends insight, creativity, and technology to craft narratives that audiences believe in — stories that are strategically built, beautifully designed, and powerfully distributed.
+
+      <p className="text-base sm:text-lg lg:text-xl text-gray-900 leading-relaxed">
+        Our Brand Solutions team blends insight, creativity, and technology to
+        craft narratives that audiences believe in — stories that are
+        strategically built, beautifully designed, and powerfully distributed.
       </p>
-      
-      <hr className="border-t-2 border-gray-900 w-30 my-8" />
-      
-      <h3 className="text-[23px] font-bold text-gray-800 italic">
+
+      <hr className="border-t-2 border-gray-900 w-16 sm:w-24 my-6 sm:my-8" />
+
+      <h3 className="text-lg sm:text-xl lg:text-[23px] font-bold text-gray-800 italic">
         Where Brands Find Their Voice — and Their Audience.
       </h3>
-      
-      {/* Partner logos grid */}
-
     </div>
   );
 };
 
-/**
- * RightColumn Component
- * Renders the accordion on the right side.
- */
+// --- Right Column ---
+
 const RightColumn = () => {
-  // Content for the accordion items
   const accordionItems = [
     {
       title: "Brand Storytelling Strategy",
       content: (
-        <>
-          <p>
-Define your story's purpose and design the narrative that makes people believe.
-          </p>
-        </>
-      )
+        <p>
+          Define your story&apos;s purpose and design the narrative that makes
+          people believe.
+        </p>
+      ),
     },
     {
       title: "Campaign Creation",
       content: (
-        <>
-          <p>
-End-to-end storytelling across digital, OTT, and on-ground channels
-          </p>
-        </>
-      )
+        <p>
+          End-to-end storytelling across digital, OTT, and on-ground channels.
+        </p>
+      ),
     },
     {
       title: "Visual & Verbal Identity",
-      content: (
-        <p>
-Express your story consistently across every platform.
-        </p>
-      )
+      content: <p>Express your story consistently across every platform.</p>,
     },
     {
       title: "Film & Video Production",
       content: (
         <p>
-Create cinematic brand films and series with emotional depth and global quality.
+          Create cinematic brand films and series with emotional depth and
+          global quality.
         </p>
-      )
+      ),
     },
-        {
+    {
       title: "AI-Driven Insights",
       content: (
         <p>
-Identify what stories work best, when, and where — powered by data and creativity.
+          Identify what stories work best, when, and where — powered by data and
+          creativity.
         </p>
-      )
-    }
+      ),
+    },
   ];
 
   return (
-    <div>
-        <img className='h-60 w-300 object-fill' src="https://media.gettyimages.com/id/1770279962/photo/smiling-man-levitating-in-mid-air.jpg?s=612x612&w=gi&k=20&c=JCGG07ipNnVF9FIRPYF6E50ttPLEH31KWkS1U7wT2gg=" alt="" />
+    <div className="flex flex-col gap-6 ">
+      {/* Responsive image */}
+      <img
+        className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover rounded-xl shadow-sm"
+        src="https://media.gettyimages.com/id/1770279962/photo/smiling-man-levitating-in-mid-air.jpg?s=612x612&w=gi&k=20&c=JCGG07ipNnVF9FIRPYF6E50ttPLEH31KWkS1U7wT2gg="
+        alt="Brand storytelling visual"
+      />
+
       <Accordion items={accordionItems} />
     </div>
   );
 };
 
-/**
- * Main App Component
- * Renders the entire page layout.
- */
+// --- Main Page ---
+
 export default function BrandSolutions() {
   return (
-    <div className="font-sans text-gray-900 mt-5 ">
-      <div className="container mx-auto max-w-7xl ">
+    <div className="font-sans text-gray-900 mt-4 sm:mt-6 min-h-screen">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 sm:pb-16">
         {/* Main 2-column grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
-          
-          {/* Left Column */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-24 items-start">
           <LeftColumn />
-          
-          {/* Right Column */}
           <RightColumn />
-          
         </div>
       </div>
     </div>
