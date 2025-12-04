@@ -10,6 +10,9 @@ import FAQs from "../Pages/FAQs";
 import BrandSolutions from "../Components/BrandSolutions";
 import MediaSolutions from "../Components/MediaSolutions";
 import ContentSolutions from "../Components/ContentSolutions";
+import Privacy from "@/Pages/Privacy";
+import TermsConditions from "@/Pages/TermsConditions";
+
 
 export default function AppRoutes() {
   return (
@@ -22,6 +25,9 @@ export default function AppRoutes() {
       <Route path="/brand-solutions" element={<BrandSolutions/>}/>
       <Route path="/media-solutions" element={<MediaSolutions/>}/>
       <Route path="/content-solutions" element={<ContentSolutions/>}/>
+      <Route path="/privacy-policy" element={<Privacy/>} />
+      <Route path="/terms-conditions" element={<TermsConditions />} />
+      <Route path="*" element={<div>404 Not Found</div>} />
     </Routes>
   );
 }

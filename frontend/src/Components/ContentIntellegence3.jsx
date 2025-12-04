@@ -22,7 +22,7 @@ const DATA = [
     description: "What used to take days can now happen in hours — without losing cinematic quality. we are the one of most talented proples.",
     other: ["Smart cuts detection","Multi-language subtitling","Noise & grain cleanup","Color reference matching","Motion graphics automation","AI voice enhancement","AI music exploration"],
   },
-  { title: "AI-Driven Personalization at Scale", bg:"#3685ed",
+  { title: "AI-Driven Tailoring at Scale", bg:"#3685ed",
     description: "More relevant & contextual This makes branded content more relevant, more contextual, and more effective. This makes branded content more relevant, more contextual.",
     other: ["Region","Demographics","Industry","Platform behavior","Language preferences", "Purchase intent"],
   },
@@ -72,17 +72,46 @@ useEffect(() => {
 
   return (
     <div className="relative w-full bg-[#FAF4EC] font-sans sticky">
-      <div className="flex max-w-[1500px] mx-auto ">
+
+      {/* Mobile VIEW  (<<md)*/}
+      <div className="md:hidden w-full px-5 py-10 flex flex-col gap-10">
+        {DATA.map((item, index) => (
+          <div
+            key={index}
+            className="w-full rounded-xl p-6 text-white"
+            style={{ backgroundColor: item.bg }}
+          >
+            <h2 className="text-2xl font-bold mb-4"># {item.title}</h2>
+
+            <p className="text-base mb-6 text-white/90">{item.description}</p>
+
+            <ul className="space-y-2 text-sm">
+              {item.other.map((line, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <AiOutlineRise className="text-white text-lg" />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+
+
+
+      {/* DESKTOP & TABLET VIEW  (>>md)*/}
+      <div className="hidden md:flex max-w-[1500px] mx-auto ">
 
         {/* LEFT — Sticky Panel */}
-        <div className="w-[70%] sticky top-[0.1px] h-screen">
+        <div className="xl:w-[70%] lg:w-[60%] md:w-[70%] sticky top-[0.1px] h-screen">
           <div
             style={{ backgroundColor: DATA[activeIndex].bg }}
             className="text-white p-8 h-full transition-all duration-500 flex items-center justify-end"
           >
             <h2
               ref={titleRef}
-              className="text-7xl font-bold mb-4 archivo-black"
+              className="xl:text-7xl lg:text-6xl md:text-4xl font-bold mb-4 archivo-black"
             >
               # {DATA[activeIndex].title}
             </h2>
@@ -101,7 +130,7 @@ useEffect(() => {
           <div className="h-full w-full gap-10 p-10 border-black border-t-2 flex flex-col transition-all duration-300">
             
             {/* DESCRIPTION (animated by GSAP) */}
-            <p ref={descRef} className=" text-4xl league-spartan  mb-10 font-bold">
+            <p ref={descRef} className=" xl:text-4xl lg:text-3xl md:text-2xl league-spartan  mb-10 font-bold">
               {item.description}
             </p>
 
@@ -111,7 +140,7 @@ useEffect(() => {
                 
                 <li
                   key={i}
-                  className={`p-1  text-2xl flex items-center justofy-center gap-2 font-semibold transition ${
+                  className={`p-1  xl:text-2xl lg:text-xl flex items-center justofy-center gap-2 font-semibold transition ${
                     activeIndex === index ? "" : "opacity-60"
                   }`}
                 >

@@ -97,10 +97,11 @@ export default function MainLayout({ children }) {
           md:h-140
           sm:h-160
           h-115
+          w-screen
         "
       >
-      <footer className="absolute bottom-0 left-0 w-full  bg-black text-[#faf4ec] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center font-sans">
-        <div className="max-w-7xl mx-auto">
+      <footer className="absolute bottom-0 left-0 w-full  bg-black text-[#faf4ec] py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center font-sans w-full">
+        <div className="w-full mx-auto">
           <div
             className="relative flex flex-col items-center justify-center w-full h-[60vw] sm:h-[60vh] bg-center bg-no-repeat bg-contain"
             style={{ backgroundImage: `url(${AILLOGO})` }}
@@ -115,34 +116,38 @@ export default function MainLayout({ children }) {
 
           <div className="w-full border-t border-gray-700 mb-8"></div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm">
-            <div className="flex space-x-4 mb-6 md:mb-0">
-              <a className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaLinkedinIn /></a>
-              <a className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaInstagram /></a>
-              <a className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaYoutube /></a>
-              <a className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaFacebookF /></a>
+          <div className="flex md:flex-row md:gap-0 gap-5 flex-col  justify-between items-center w-full ">
+
+<div className="text-sm nunito-sans flex items-center md:space-x-10  space-x-4 justify-center  "> 
+<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4">
+  <Link to="/privacy-policy" className=" ">Privacy </Link>
+  <Link to="/terms-conditions" className=" ">Terms & Conditions</Link>
+</div>
+<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4">
+    <a href="mailto:corporate@ail-india.com">  <button>Contact Us</button>   </a>
+  <Link to="/about-us" className=" ">About Us</Link>
+</div>
+</div>
+
+            <div className="flex space-x-4 lg:text-2xl">
+              <a href='https://www.linkedin.com/company/advaita-innovation-labs/?viewAsMember=true'  target="_blank"   rel="noopener noreferrer" className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaLinkedinIn /></a>
+              <a href='https://www.instagram.com/advaitainnovationlabs.official/'  target="_blank"   rel="noopener noreferrer"  className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaInstagram /></a>
+              <a href='https://www.youtube.com/@AIL-India'  target="_blank"   rel="noopener noreferrer"  className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaYoutube /></a>
+              <a href='https://www.facebook.com/AdvaitaInnovationLabs'  target="_blank"   rel="noopener noreferrer"  className="p-2 border border-gray-700 rounded-full hover:bg-gray-800"><FaFacebookF /></a>
             </div>
 
-            <nav className="flex text-[11px]  flex-wrap justify-center space-x-6 mb-6 md:mb-0">
+<div className="text-sm nunito-sans flex flex-col items-start  justify-start ">
+  <p>Indian DNA. Global drive.</p>
+  <p> Creative on purpose.</p>
+  <p>All Rights Reserved.</p>
+</div>
 
 
-<Link  to='/content-intellegence' className="hover:text-gray-400" > Content Intellegence </Link>
-<Link  to="/#solutions" className="hover:text-gray-400" > Solutions </Link>
-<Link to='/about-us' className="hover:text-gray-400" > About Us </Link>
-<Link to='/faqs' className="hover:text-gray-400" > FAQs </Link>
 
-            </nav>
-
-            <div className="text-right text-gray-400 flex items-center justify-between w-full">
-
-<a href="mailto:example@gmail.com">
-  <button>Contact Us</button>
-</a>
-<Link to='/privacy-policy' > Privacy & Policy</Link>
-
-            </div>
-<p className="mt-5"> © 2023 by AIL-India </p>
           </div>
+
+
+
         </div>
       </footer>
       </footer>

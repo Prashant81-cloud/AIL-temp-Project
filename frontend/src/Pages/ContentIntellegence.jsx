@@ -7,13 +7,7 @@ import { useEffect } from 'react'
 
 function ContentIntellegence() {
 
-    useEffect(() => {
-    if (!sessionStorage.getItem("ReloadedOnce")) {
-      sessionStorage.setItem("ReloadedOnce", "true");
-      window.location.reload();  // Full hard reload once
-    }
-    return () => sessionStorage.removeItem("ReloadedOnce");
-  }, []);
+
 
   return (
     <div className="overflow-visible !overflow-visible">
@@ -21,7 +15,7 @@ function ContentIntellegence() {
       <ContentIntellegence3/>
       <ContentIntellegence2/>
 
-      <ContentIntellegence4/>
+
     </div>
   )
 }

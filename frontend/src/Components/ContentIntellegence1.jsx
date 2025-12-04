@@ -1,36 +1,80 @@
-import React from 'react'
+import React from "react";
 
 function ContentIntellegence1() {
   return (
-    <div className='px-15 flex gap-30 font-sans h-screen'>
-        <div className=''>
-            <img className='h-150 w-150 rounded-md ' src="https://i.pinimg.com/1200x/0b/a6/13/0ba61386dfacd3cc669b3254c794b2aa.jpg" alt="" />
-        </div>
-        <div className='flex flex-col gap-15'>
-            <h1 className='archivo-black text-5xl'>GenAI Capabilities</h1>
-            <div className='flex gap-20'>
-                <div className='gap-30 flex flex-col'>
-                    <h1 className='text-3xl w-70 italic font-bold'>Where Human Creativity Meets Generative Intelligence</h1>
-                    <p className='w-70 text-lg font-medium text-gray-700'>At Advaita Innovation Labs, Generative AI isn’t a feature — it’s a core capability. We use GenAI to accelerate storytelling, enhance creativity, personalize content, and scale distribution across OTT, digital, and social ecosystems.</p>
-                </div>
-                <div className='flex flex-col gap-16 '>
-                    <p className='w-70 text-lg font-medium'>While most agencies use AI as an add-on, AIL blends AI + Data + Storytelling + Media Distribution into one unified ecosystem — giving brands a competitive, intelligent, and future-ready edge.</p>
-                    <div className='flex flex-col gap-4'>
-                        <p className='w-60 text-gray-600 '>We combine the intuition of humans with the precision of AI to build stories that are more:</p>
-                        <ul className='w-40'>
-                            <li>  Effective</li>
-                            <li>  Insight-driven</li>
-                            <li>  Culturally relevant</li>
-                            <li>  Efficient to produce</li>
-                            <li>   Precisely distributed</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div className="font-sans min-h-screen px-4 sm:px-6 lg:px-16  flex flex-col md:flex-row gap-10 md:gap-14 items-start">
 
+      {/* ---------------- MOBILE: TITLE + SUBTITLE ---------------- */}
+      <div className="md:hidden flex flex-col gap-4">
+        <h1 className="archivo-black text-3xl sm:text-4xl font-bold leading-tight">
+          GenAI Capabilities
+        </h1>
+
+        <h2 className="text-2xl sm:text-3xl italic font-bold leading-tight">
+          Where Human Creativity Meets Generative Intelligence
+        </h2>
+      </div>
+
+      {/* ---------------- DESKTOP IMAGE (unchanged from improved layout) ----------------  w-full max-w-sm aspect-[4/5] object-cover rounded-lg shadow-md */}
+      <div className="hidden md:flex w-1/2 justify-start">
+        <img
+          className="lg:h-150 lg:w-150 md:h-130 md:w-130 object-cover rounded-lg shadow-md"
+          src="https://i.pinimg.com/1200x/0b/a6/13/0ba61386dfacd3cc669b3254c794b2aa.jpg"
+          alt=""
+        />
+      </div>
+
+      {/* ---------------- RIGHT SIDE CONTENT ---------------- */}
+      <div className="w-full md:w-1/2 flex flex-col gap-6">
+
+        {/* DESKTOP: Title */}
+        <h1 className="archivo-black text-4xl lg:text-5xl font-bold hidden md:block leading-tight">
+          GenAI Capabilities
+        </h1>
+
+        {/* DESKTOP: Subtitle */}
+        <h2 className="text-3xl italic font-bold hidden md:block leading-tight">
+          Where Human Creativity Meets Generative Intelligence
+        </h2>
+
+        {/* ---------------- MOBILE IMAGE (AFTER subtitle) ---------------- */}
+        <div className="md:hidden w-full flex justify-center mt-2">
+          <img
+            className="h-70 w-100 object-cover rounded-lg shadow-md"
+            src="https://i.pinimg.com/1200x/0b/a6/13/0ba61386dfacd3cc669b3254c794b2aa.jpg"
+            alt=""
+          />
         </div>
+
+        {/* MAIN CONTENT SECTION (same as improved version) */}
+        <p className="text-base sm:text-lg font-medium text-gray-700 leading-relaxed">
+          At Advaita Innovation Labs, Generative AI isn’t a feature — it’s a core capability.
+          We use GenAI to accelerate storytelling, enhance creativity, personalize content,
+          and scale distribution across OTT, digital, and social ecosystems.
+        </p>
+
+        <p className="text-base sm:text-lg font-medium leading-relaxed">
+          While most agencies use AI as an add-on, AIL blends AI + Data + Storytelling +
+          Media Distribution into one unified ecosystem — giving brands a competitive,
+          intelligent, and future-ready edge.
+        </p>
+
+        <div className="flex flex-col gap-3">
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            We combine the intuition of humans with the precision of AI to build stories that are:
+          </p>
+
+          <ul className="list-disc list-inside text-sm sm:text-base space-y-1">
+            <li>Effective</li>
+            <li>Insight-driven</li>
+            <li>Culturally relevant</li>
+            <li>Efficient to produce</li>
+            <li>Precisely distributed</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default ContentIntellegence1
+export default ContentIntellegence1;
