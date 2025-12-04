@@ -22,7 +22,7 @@ function ContentIntellegence2() {
     lines.forEach((text) => {
       tl.fromTo(
         el,
-        { x: "-120%", opacity: 0 },   // enter from LEFT
+        { x: "-120%", opacity: 0 },
         { 
           duration: 0.8,
           x: "0%",
@@ -32,19 +32,18 @@ function ContentIntellegence2() {
         }
       )
       .to(el, {
-        duration: 2,     // hold while fully visible
+        duration: 2,
         x: "0%",
         opacity: 1
       })
       .to(el, {
         duration: 0.8,
-        x: "120%",        // exit to RIGHT
+        x: "120%",
         opacity: 0,
         ease: "power3.in"
       });
     });
 
-    // Pause & resume on hover
     const pause = () => tl.pause();
     const resume = () => tl.resume();
 
@@ -59,36 +58,44 @@ function ContentIntellegence2() {
   }, []);
 
   return (
-    <div className='flex h-screen px-15 py-12'>
-      <div>
-        <h1 className='text-[#aa0867] text-8xl archivo-black'>Why GenAI Matters</h1> 
-        <h1 className='archivo-black text-8xl'> for Modern Storytelling</h1> 
+    <div className="flex flex-col lg:flex-row h-auto lg:h-screen px-6 md:px-12 py-10 gap-12 lg:gap-0">
 
-        <div className='flex h-80 ml-5 gap-5'>
-          <div className='border-black border-t-2 w-80 mt-44'></div>
+      {/* LEFT SECTION */}
+      <div className="flex-1">
+        <h1 className="text-[#aa0867] text-4xl md:text-6xl lg:text-8xl archivo-black leading-tight">
+          Why GenAI Matters
+        </h1>
 
-          {/* ⭐ Text wrapper → allows wrapping into 2+ lines */}
-          <div className="w-80 mt-40 overflow-hidden leading-tight">
+        <h1 className="archivo-black text-4xl md:text-6xl lg:text-8xl leading-tight">
+          for Modern Storytelling
+        </h1>
+
+        <div className="flex mt-10 md:mt-0 gap-5">
+          <div className="border-black border-t-2 w-20 md:w-52 lg:w-80 mt-6 md:mt-20"></div>
+
+          <div className="w-60 md:w-72 lg:w-80 mt-4 md:mt-16 overflow-hidden leading-tight">
             <p 
               ref={sliderRef}
-              className="text-3xl italic slider"
+              className="text-xl md:text-2xl lg:text-3xl italic"
             ></p>
           </div>
         </div>
       </div>
 
-      <div>
+      {/* RIGHT SECTION */}
+      <div className="flex-1 flex flex-col items-start">
         <img 
-          className='h-80 w-150 object-cover rounded-md' 
-          src="https://i.pinimg.com/736x/b6/8c/eb/b68ceb7fad6b27572db82fdfcb107e5e.jpg" 
+          className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-md"
+          src="https://i.pinimg.com/736x/b6/8c/eb/b68ceb7fad6b27572db82fdfcb107e5e.jpg"
           alt=""
         />
 
-        <h2 className='nunito-sans p-1 text-5xl font-extrabold mt-34 w-140'>
-          <span className='text-[#aa0867]'>At AIL,</span> we harness all of this —
+        <h2 className="nunito-sans text-2xl md:text-4xl lg:text-5xl font-extrabold mt-6 md:mt-10 leading-snug">
+          <span className="text-[#aa0867]">At AIL,</span> we harness all of this —
           without losing the human heart of storytelling.
         </h2>
       </div>
+
     </div>
   );
 }
