@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import rmbgOrig from "../assets/removebg orig.png";
 import gsap from "gsap";
-import rmbgOrig1 from '../assets/Screenshot_2025-11-19_at_11.13.08_AM-removebg-preview.png'
 import HoverAnimation from "./HoverAnimation";
 
 
@@ -69,26 +67,26 @@ function SplitTextLarge() {
   }, []);
 
   return (
-    <div className="xl:mt-22 sm:mt-0 xl:px-[3rem] sm:px-6 px-6  z-1000 bg-[#FAF4EC] ">
+    <div className="xl:mt-22 sm:mt-0 xl:px-[4rem] sm:px-6 px-6  z-1000 bg-[#FAF4EC] ">
 
       {/* 1️⃣ First line */}
       <div ref={txt1Ref} className="font-normal leading-none flex items-center txt1 sm:text-[4rem] gap-1 md:gap-4 md:text-[clamp(3rem,8.8vw,103px)] [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)] text-[4rem]">
-        <img ref={imgRef} className="xl:h-[75px] lg:h-[65px] md:h-[clamp(50px,5.8vw,65px)] sm:h-[clamp(20px,5.8vw,103px)] h-[clamp(20px,5.8vw,103px)] sm:mb-[10px]   md:mb-[17px]  mb-[10px]" src={rmbgOrig1} alt="logo" />
+        {/* <img ref={imgRef} className="xl:h-[75px] lg:h-[65px] md:h-[clamp(50px,5.8vw,65px)] sm:h-[clamp(20px,5.8vw,103px)] h-[clamp(20px,5.8vw,103px)] sm:mb-[10px]   md:mb-[17px]  mb-[10px]" src={rmbgOrig1} alt="logo" /> */}
         <p className="font-medium   league-spartan ">  Humanizing Brands </p>
       </div>
 
       {/* 2️⃣ Third text */}
       <div
         ref={txt3Ref}
-        className="hidden lg:w-90 w-35 lg:ml-[19.9rem] font-normal lg:text-[20px] [@media(max-width:639px)]:ml-[6.5rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-70 md:ml-[16rem] sm:text-[15px] sm:w-68 sm:ml-[12rem] absolute mt-3 league-spartan"
+        className="hidden lg:w-90 w-35 lg:ml-[15rem] font-normal lg:text-[20px] [@media(max-width:639px)]:ml-[6.5rem] [@media(max-width:639px)]:text-[10px] md:text-[16px] md:w-70 md:ml-[12rem] sm:text-[15px] sm:w-68 sm:ml-[10rem] absolute mt-3 league-spartan"
       >
         A Full-Stack Storytelling Studio Transforming How Brands Speak to the World
       </div>
 
       {/* 3️⃣ Second line */}
-      <div ref={txt2Ref} className="txt2 xl:ml-[105px] lg:ml-[105px] md:ml-[80px] sm:ml-[45px] ml-[clamp(30px,7vw,45px)] sm:mt-6 md:mt-5  [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)] ">
+      <div ref={txt2Ref} className="txt2  sm:mt-6 md:mt-5  [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)] ">
         <div className=" sm:text-[4rem] md:text-[clamp(3rem,8.8vw,103px)] leading-none font-medium league-spartan">
-          Through Belivebale Stories
+          Through Believable Stories
         </div>
       </div>
       {/* 4️⃣ First line */}

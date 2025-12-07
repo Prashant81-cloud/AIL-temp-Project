@@ -9,7 +9,7 @@ const DefineUs = () => {
   const arrowRef = useRef(null);
 
   // 🔥 initially show first image
-  const [currentImg, setCurrentImg] = useState(AILlogo);
+  const [currentImg, setCurrentImg] = useState(Logo2);
 
   let totalRotation = 0;  // track how much rotation has happened
   let swapped = false;    // ensure swap happens only once
@@ -52,7 +52,7 @@ useEffect(() => {
     // 🟠 Keep your one-time image change after 720° total rotation
     if (!swapped && totalRotation > 720) {
       swapped = true;
-      setCurrentImg(Logo2);
+      setCurrentImg(AILlogo);
     }
   };
 

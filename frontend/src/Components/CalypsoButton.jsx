@@ -88,7 +88,7 @@ export default function CalypsoButton() {
             <Link  to="/#solutions" className={`button ${buttonClass}`}>
               <span className={buttonSpanClass}>Solutions</span>
             </Link>
-            <Link to='/about-us' className={`button ${buttonClass}`}>
+            <Link to='/about' className={`button ${buttonClass}`}>
               <span className={buttonSpanClass}>About us</span>
             </Link>
             <Link to='/faqs' className={`button ${buttonClass}`}>

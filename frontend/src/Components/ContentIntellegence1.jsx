@@ -1,4 +1,5 @@
 import React from "react";
+import CI1 from '../assets/website AI page.mp4'
 
 function ContentIntellegence1() {
   return (
@@ -15,12 +16,15 @@ function ContentIntellegence1() {
         </h2>
       </div>
 
-      {/* ---------------- DESKTOP IMAGE (unchanged from improved layout) ----------------  w-full max-w-sm aspect-[4/5] object-cover rounded-lg shadow-md */}
+      {/* ---------------- DESKTOP IMAGE (unchanged from improved layout) -------lg:h-150 lg:w-150 md:h-130 md:w-130 object-cover rounded-lg shadow-md---------  w-full max-w-sm aspect-[4/5] object-cover rounded-lg shadow-md */}
       <div className="hidden md:flex w-1/2 justify-start">
-        <img
+        <video
           className="lg:h-150 lg:w-150 md:h-130 md:w-130 object-cover rounded-lg shadow-md"
-          src="https://i.pinimg.com/1200x/0b/a6/13/0ba61386dfacd3cc669b3254c794b2aa.jpg"
-          alt=""
+          src={CI1}
+        autoPlay
+        loop
+        muted
+        playsInline
         />
       </div>
 
@@ -39,10 +43,13 @@ function ContentIntellegence1() {
 
         {/* ---------------- MOBILE IMAGE (AFTER subtitle) ---------------- */}
         <div className="md:hidden w-full flex justify-center mt-2">
-          <img
+          <video
             className="h-70 w-100 object-cover rounded-lg shadow-md"
-            src="https://i.pinimg.com/1200x/0b/a6/13/0ba61386dfacd3cc669b3254c794b2aa.jpg"
-            alt=""
+          src={CI1}
+        autoPlay
+        loop
+        muted
+        playsInline
           />
         </div>
 

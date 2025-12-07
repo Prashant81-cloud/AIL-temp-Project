@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BrandImage from '@/assets/SolutionsImage/website solutions 3.png'
 
 // --- SVG Icons ---
 const ChevronDown = ({ className = "w-6 h-6" }) => (
@@ -165,8 +166,8 @@ const RightColumn = () => {
     <div className="flex flex-col gap-6 ">
       {/* Responsive image */}
       <img
-        className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover rounded-xl shadow-sm"
-        src="https://media.gettyimages.com/id/1770279962/photo/smiling-man-levitating-in-mid-air.jpg?s=612x612&w=gi&k=20&c=JCGG07ipNnVF9FIRPYF6E50ttPLEH31KWkS1U7wT2gg="
+        className="w-full h-56 sm:h-64 md:h-72 lg:h-80  rounded-xl shadow-sm"
+        src={BrandImage}
         alt="Brand storytelling visual"
       />
 

@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import risingBharat from '../assets/Rising bharat.png'
-import BOTs3 from '../assets/BOTs3.png'
-import TBC from '../assets/The Bharat Chapters.png'
-import GOG from '../assets/GOG.jpg'
-import BOTs2 from '../assets/BoT_for_editor__1_-removebg-preview.png'
+import TBC from '@/assets/ShowsLogos/TBC.png'
+import GOG from '@/assets/ShowsLogos/GOG.png'
+import BOTs1 from '@/assets/ShowsLogos/BOTs1.png'
+import BOTs2 from '@/assets/ShowsLogos/BOTs2.png'
+import BOTs3 from '@/assets/ShowsLogos/BOTs3.png'
+import RB from '@/assets/ShowsLogos/RB.png'  
+import SF from '@/assets/ShowsLogos/SF.png'
+import RBvid from '@/assets/RB Short for website (2).mp4'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,209 +97,345 @@ useEffect(() => {
       <div ref={cardsContainerRef} className="cards relative w-[100vw] bg-[#FAF4EC]">
 
 {/*Page-1 */}
+<a href="" target="_blank">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
 
-          <div  className="card h-[90vh] sticky w-full top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#b51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-
-        <span className={`absolute z-0 text-9xl font-extrabold  opacity-20 top-4 right-12`}>
-          01    
-        </span>
-        <div className="relative z-10  md:flex-row ">
-          <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
               Expertise
             </span>
-             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img className="rounded-xl" src={risingBharat} alt="" />
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          01       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={RB} alt="" />
              </div>
 
           </div>
-        <div className="flex items-center justify-between">
-        <div className="mt-30">
-          <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200  font-normal text-xl text-white">A first-time-in-India series spotlighting generational legacy businesses—the backbone of
-India’s economy—celebrating visionary leaders redefining industries with innovation,
-resilience, and bold transformation shaping the nation’s global rise.</p>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
 <button
-  className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
   <span>Watch now</span>
-  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full">
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
 </button>
-
-        </div>
-        <div>
-             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
-                 className="rounded-2xl w-65 h-auto"
-               />
-             </div>
         </div>
         </div>
         </div>
 
             </div>
           </div>
+</a>
 
+<a href="" target="_blank">
 {/*Page-2 */}
-          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto bg-[#2f3a4e]   rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#445066] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
 
-        <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           02       
         </span>
+
+
+            
+</div>
+
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
-              Expertise
-            </span>
-             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl ">
-              <img className="rounded-xl" src={BOTs3} alt="" />
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs1} alt="" />
              </div>
 
           </div>
-        <div className="flex items-center justify-between">
-        <div className="mt-37">
-          <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200  font-normal text-xl text-white">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from
-D2C to healthcare — telling stories of innovation and impact in a rapidly changing world.</p>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
 <button
-  className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
   <span>Watch now</span>
-  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full">
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
 </button>
-
-        </div>
-        <div>
-             <div className="p-2 bg-white rounded-3xl shadow-2xl transform rotate-3 ">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
-                 className="rounded-2xl w-65 h-auto"
-               />
-             </div>
         </div>
         </div>
         </div>
 
             </div>
           </div>
+</a>
 
+<a href="" target="_blank">
 {/*Page-3 */}
-          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#152b6e] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
 
-        <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           03       
         </span>
+
+
+            
+</div>
+
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
-              Expertise
-            </span>
-             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img className="rounded-xl" src={TBC} alt="" />
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={TBC} alt="" />
              </div>
 
           </div>
-        <div className="flex items-center justify-between">
-        <div className="mt-15">
-          <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200 mt-1  font-normal text-xl text-white">The Bharat Chapter captures how digital transformation is reshaping lives across eight
-diverse Indian cities, with powerful personal journeys—especially of women—at its heart.
-Through grounded, human-centric storytelling, it highlights how ecommerce and the internet
-have quietly enabled upward mobility by empowering individuals and households with
-access and opportunity.</p>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
 <button
-  className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
   <span>Watch now</span>
-  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full">
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
 </button>
-
-
-        </div>
-        <div>
-             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
-                 className="rounded-2xl w-65 h-auto"
-               />
-             </div>
         </div>
         </div>
         </div>
 
             </div>
           </div>
+</a>
 
+<a href="" target="_blank">
 {/*Page-4 */}
-          <div  className="card h-[90vh] sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B6B6B6] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
 
-        <span className={`absolute z-0 text-9xl font-extrabold  "text-white" opacity-20 top-4 right-12`}>
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           04       
         </span>
+
+
+            
+</div>
+
         <div className="relative z-10  md:flex-row ">
           <div className="w-full md:w-1/2">
-            <span className={` inline-block px-4 py-1 text-lg font-semibold bg-white rounded-lg text-black`}>
-              Expertise
-            </span>
-             <div className="mt-4 text-6xl font-bold text-black md:text-7xl lg:text-6xl">
-              <img className="rounded-xl h-46 w-200 " src={GOG} alt="" />
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={GOG} alt="" />
              </div>
 
           </div>
-        <div className="flex items-center justify-between">
-        <div className="mt-15">
-          <h1 className="text-2xl font-medium text-black"></h1>
-          <p className="w-200 mt-1  font-normal text-xl text-white">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food.</p>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
 <button
-  className="watchNowBtn flex items-center gap-3 px-6 py-3 mt-4 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
   <span>Watch now</span>
-  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full">
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
 </button>
-
-
-        </div>
-        <div>
-             <div className="p-2 mt- bg-white rounded-3xl shadow-2xl transform rotate-3">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
-                 className="rounded-2xl w-65 h-auto"
-               />
-             </div>
         </div>
         </div>
         </div>
 
             </div>
           </div>
+</a>
+
+<a href="" target="_blank">
 {/*Page-5 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4d677a] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
@@ -315,7 +454,7 @@ access and opportunity.</p>
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-30 sm:w-40 md:w-45 lg:w-50  " src={BOTs2} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs2} alt="" />
              </div>
 
           </div>
@@ -375,6 +514,175 @@ access and opportunity.</p>
 
             </div>
           </div>
+</a>
+
+<a href="" target="_blank">
+{/*Page-6 */}
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          06       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={SF} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<button
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
+  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</button>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
+
+<a href="" target="_blank">
+{/*Page-7 */}
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Expertise
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          07       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs3} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <img 
+                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
+                 alt="Man on the phone" 
+                 className="rounded-2xl "
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<button
+  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
+  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</button>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
 
       </div>
 

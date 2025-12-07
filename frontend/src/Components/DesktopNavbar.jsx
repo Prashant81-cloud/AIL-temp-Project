@@ -49,7 +49,7 @@ href='https://www.youtube.com/@AIL-India'
       <div className="bg-[#FCB8FA] transition-all duration-500 ease-in-out p-[10px] [transform-style:preserve-3d] rounded-lg ">
         <div
         className="block font-bold h-full w-full text-[15px] transition-all duration-500 ease-in-out [transform:translate3d(0px,0px,50px)] group-hover:[transform:translate3d(0px,0px,60px)] rounded-lg flex items-center justify-center gap-2">
-          <p className=''>Watch AIL</p>
+          <p className=''>Watch Videos</p>
 <div className='h-8 w-8 '><img className='object-contain rounded-lg bg-white ' src={tfb} alt="" /></div>
         </div>
       </div>

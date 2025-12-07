@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import CI2 from '../assets/website gen AI page.jpg'
 
 function ContentIntellegence2() {
 
@@ -86,7 +87,7 @@ function ContentIntellegence2() {
       <div className="flex-1 flex flex-col items-start">
         <img 
           className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-md"
-          src="https://i.pinimg.com/736x/b6/8c/eb/b68ceb7fad6b27572db82fdfcb107e5e.jpg"
+          src={CI2}
           alt=""
         />
 

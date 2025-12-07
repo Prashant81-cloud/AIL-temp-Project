@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MediaImage from '../assets/SolutionsImage/website image 2.png'
 
 // --- SVG Icons ---
 const ChevronDown = ({ className = "w-6 h-6" }) => (
@@ -88,33 +89,7 @@ const Accordion = ({ items }) => {
 // --- Main Page Components ---
 
 const LeftColumn = () => {
-  // Partner data (kept for later if you want to show logos)
-  const partners = [
-    {
-      name: "Shopify Partner",
-      url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Shopify",
-    },
-    {
-      name: "Google Partner",
-      url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Google+Partner",
-    },
-    {
-      name: "HubSpot",
-      url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=HubSpot",
-    },
-    {
-      name: "Adobe Solution Partner",
-      url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Adobe",
-    },
-    {
-      name: "Partner 5",
-      url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=Partner",
-    },
-    {
-      name: "ONDC",
-      url: "https://placehold.co/150x80/f0f0f0/aaaaaa?text=ONDC",
-    },
-  ];
+
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -197,8 +172,8 @@ const RightColumn = () => {
   return (
     <div className="flex flex-col gap-6">
       <img
-        className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover rounded-xl shadow-sm"
-        src="https://media.gettyimages.com/id/1770279962/photo/smiling-man-levitating-in-mid-air.jpg?s=612x612&w=gi&k=20&c=JCGG07ipNnVF9FIRPYF6E50ttPLEH31KWkS1U7wT2gg="
+        className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover  rounded-xl shadow-sm"
+        src={MediaImage}
         alt="Media solutions visual"
       />
       <Accordion items={accordionItems} />

@@ -13,6 +13,7 @@ import {
 import AILLOGO from "../assets/AIL BRONZE.png";
 import Random from "@/Pages/Random";
 import { Link } from "react-router-dom";
+import useIsMobile from "@/Pages/useIsMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,9 +26,15 @@ export default function MainLayout({ children }) {
   const posRef = useRef({ x: 0, y: 0 });
   const [visible, setVisible] = useState(true);
   const [cursorMode, setCursorMode] = useState("image");
+  const isMobile = useIsMobile(768);
+
 
   // Cursor follower
   useEffect(() => {
+
+    //disable cursor on mobile.
+      if (isMobile) return;
+
     const handleMouseMove = (e) => {
       targetRef.current = { x: e.clientX, y: e.clientY };
       setVisible(true);
@@ -59,7 +66,20 @@ export default function MainLayout({ children }) {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, [isMobile]);
+
+  useEffect(() => {
+  const showText = () => setCursorMode("text");
+  const showImage = () => setCursorMode("image");
+
+  window.addEventListener("cursor-text", showText);
+  window.addEventListener("cursor-image", showImage);
+
+  return () => {
+    window.removeEventListener("cursor-text", showText);
+    window.removeEventListener("cursor-image", showImage);
+  };
+}, []);
 
   const followerStyle = {
     position: "fixed",
@@ -125,7 +145,7 @@ export default function MainLayout({ children }) {
 </div>
 <div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4">
     <a href="mailto:corporate@ail-india.com">  <button>Contact Us</button>   </a>
-  <Link to="/about-us" className=" ">About Us</Link>
+  <Link to="/about" className=" ">About Us</Link>
 </div>
 </div>
 
@@ -155,11 +175,13 @@ export default function MainLayout({ children }) {
     
 
       {/* CUSTOM CURSOR */}
-      <CursorPortal>
-        <div ref={followerRef} style={followerStyle}>
-          {cursorMode === "text" && "See Magic!"}
-        </div>
-      </CursorPortal>
+{!isMobile && (
+  <CursorPortal>
+    <div ref={followerRef} style={followerStyle}>
+      {cursorMode === "text" && "See Magic!!"}
+    </div>
+  </CursorPortal>
+)}
     </div>
   );
 }

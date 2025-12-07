@@ -111,7 +111,7 @@ export default function MobileNavbar() {
 </Link>
 
 <Link
-  to="/about-us"
+  to="/about"
   onClick={() => setOpen(false)}
   className="text-black bg-white p-3 rounded-lg"
 >

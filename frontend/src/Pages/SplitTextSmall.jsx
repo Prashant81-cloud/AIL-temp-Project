@@ -1,6 +1,5 @@
 
 import React, { useRef, useEffect } from "react";
-import rmbgOrig1 from "../assets/Screenshot_2025-11-19_at_11.13.08_AM-removebg-preview.png";
 import HoverAnimation from "./HoverAnimation";
 
 function SplitTextSmall() {
@@ -25,7 +24,7 @@ function SplitTextSmall() {
           text-[4rem]
         "
       >
-        <img
+        {/* <img
           ref={imgRef}
           className="
             xl:h-[75px] lg:h-[65px] 
@@ -36,7 +35,7 @@ function SplitTextSmall() {
           "
           src={rmbgOrig1}
           alt="logo"
-        />
+        /> */}
         <p className="font-medium league-spartan">Humanizing Brands</p>
       </div>
 
@@ -44,10 +43,10 @@ function SplitTextSmall() {
       <div
         ref={txt2Ref}
         className="
-          xl:ml-[105px] lg:ml-[105px] md:ml-[80px]
+          
           sm:mt-6 md:mt-5 sm:ml-[45px]
           [@media(max-width:639px)]:text-[clamp(2.1rem,8.8vw,103px)]
-          ml-[clamp(22px,7vw,45px)]
+          
         "
       >
         <div className="sm:text-[4rem] md:text-[clamp(3rem,8.8vw,103px)] leading-none font-medium league-spartan">
@@ -64,7 +63,7 @@ function SplitTextSmall() {
           league-spartan
           mt-3
           lg:w-[70%] md:w-[75%] sm:w-[80%] w-[80%]
-          ml-[clamp(22px,7vw,45px)]
+          
         "
       >
         A Full-Stack Storytelling Studio Transforming How Brands Speak to the World

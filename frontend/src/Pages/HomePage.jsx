@@ -34,24 +34,24 @@ export default function HomePage() {
 
   return (
     <>
+
       <SplitText />
 
-
-        <Video />
-
-
-<div className=" mt-0">      <FlipPages /></div>
-
-      {/* Solutions Section */}
-      <div id="solutions-section">
-        <Solutions />
-      </div>
-<div className="mt-20">
-  <DoubleMarquee/>
+<div
+  onMouseEnter={() => window.dispatchEvent(new CustomEvent("cursor-text"))}
+  onMouseLeave={() => window.dispatchEvent(new CustomEvent("cursor-image"))}
+>
+  <Video />
 </div>
-      <div className="mt-40">
-        <DefineUs />
-      </div>
+
+
+<div ><FlipPages /></div>
+
+<div id="solutions-section"> <Solutions /> </div>
+
+<div ><DoubleMarquee/></div>
+
+<div > <DefineUs /> </div>
     </>
   );
 }
