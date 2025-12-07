@@ -94,13 +94,7 @@ export default function MobileNavbar() {
         >
 
 
-<Link
-  to="/content-intellegence"
-  onClick={() => setOpen(false)}
-  className="text-black bg-white p-3 rounded-lg"
->
-  Content Intelligence
-</Link>
+
 
 <Link
   to="/#solutions"
@@ -126,6 +120,14 @@ export default function MobileNavbar() {
   FAQs
 </Link>
 
+<Link
+  to="/content-intellegence"
+  onClick={() => setOpen(false)}
+  className="text-black bg-white p-3 rounded-lg"
+>
+  Content Intelligence
+</Link>
+
 
 <a
 href='https://www.youtube.com/@AIL-India'
@@ -137,7 +139,7 @@ href='https://www.youtube.com/@AIL-India'
       <div className="bg-black  p-[10px] rounded-lg mt-30">
         <div
         className="block font-bold h-full w-full text-[15px] rounded-lg flex items-center justify-center gap-2">
-          <p className='text-white'>Watch AIL</p>
+          <p className='text-white'>Watch Videos</p>
 <div className='h-8 w-8 '><img className='object-contain rounded-lg bg-white ' src={tfb} alt="" /></div>
         </div>
       </div>

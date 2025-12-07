@@ -7,13 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function AboutUs() {
 
-    useEffect(() => {
-    if (!sessionStorage.getItem("ReloadedOnce")) {
-      sessionStorage.setItem("ReloadedOnce", "true");
-      window.location.reload();  // Full hard reload once
-    }
-    return () => sessionStorage.removeItem("ReloadedOnce");
-  }, []);
+useEffect(() => {
+  sessionStorage.removeItem("forceReload");
+}, []);
 
   return (
     <div className="w-screen ">

@@ -82,17 +82,27 @@ export default function CalypsoButton() {
 
       <div className="flex flex-wrap justify-center gap-3">
 
-            <Link  to='/content-intellegence' className={`button ${buttonClass}`}>
-              <span className={buttonSpanClass}>Content Intellegence</span>
-            </Link>
+
+
+
+
             <Link  to="/#solutions" className={`button ${buttonClass}`}>
               <span className={buttonSpanClass}>Solutions</span>
             </Link>
-            <Link to='/about' className={`button ${buttonClass}`}>
+            <Link to='/about'
+              onClick={(e) => {
+    e.preventDefault();       // stop default navigation
+    sessionStorage.setItem("forceReload", "true");
+    window.location.href = "/about"; // full reload BEFORE React mounts
+  }}
+            className={`button ${buttonClass}`}>
               <span className={buttonSpanClass}>About us</span>
             </Link>
             <Link to='/faqs' className={`button ${buttonClass}`}>
               <span className={buttonSpanClass}>FAQs</span>
+            </Link>
+            <Link  to='/content-intellegence' className={`button ${buttonClass}`}>
+              <span className={buttonSpanClass}>Content Intellegence</span>
             </Link>
       </div>
     </>
