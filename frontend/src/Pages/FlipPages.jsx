@@ -8,7 +8,13 @@ import BOTs2 from '@/assets/ShowsLogos/BOTs2.png'
 import BOTs3 from '@/assets/ShowsLogos/BOTs3.png'
 import RB from '@/assets/ShowsLogos/RB.png'  
 import SF from '@/assets/ShowsLogos/SF.png'
-import RBvid from '@/assets/ShowsVid/BOT 1.mp4'
+import RBvid from '@/assets/ShowsVid/RB Short for website.mp4'
+import BOT1vid from '@/assets/ShowsVid/BOT 1.mp4'
+import BOT2vid from '@/assets/ShowsVid/Brands of Tomorrow S2 I Sneak Peek I Teaser I Streaming Soon on Disney Hotstar 720p.mp4'
+import BOT3vid from '@/assets/ShowsVid/Bot 3 website video.mp4'
+import GOGvid from '@/assets/ShowsVid/Gods of Gourmet _ DisneyHotstar _ All episodes out now _ Re-discover Indias Luxury Fine Dining.mp4'
+import TBCvid from '@/assets/ShowsVid/TBC.mp4'  
+import SFvid from '@/assets/ShowsVid/SF website video.mp4'
 
 
 
@@ -218,9 +224,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={BOT1vid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -242,9 +251,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={BOT1vid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -302,9 +314,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={TBCvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -326,9 +341,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={TBCvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -386,9 +404,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={GOGvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -410,9 +431,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={GOGvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -470,9 +494,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={BOT2vid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -494,9 +521,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={BOT2vid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -554,9 +584,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={SFvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -578,9 +611,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={SFvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -638,9 +674,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={BOT3vid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -662,9 +701,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={BOT3vid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
