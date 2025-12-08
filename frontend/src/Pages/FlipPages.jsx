@@ -15,7 +15,7 @@ import BOT3vid from '@/assets/ShowsVid/Bot 3 website video.mp4'
 import GOGvid from '@/assets/ShowsVid/Gods of Gourmet _ DisneyHotstar _ All episodes out now _ Re-discover Indias Luxury Fine Dining.mp4'
 import TBCvid from '@/assets/ShowsVid/TBC.mp4'  
 import SFvid from '@/assets/ShowsVid/SF website video.mp4'
-
+import { useState } from "react";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 function FlipPages() {
   const cardsContainerRef = useRef(null);
   const cardInnersRef = useRef([]);
+const [loaded, setLoaded] = useState(false);
 
   const addToRefs = (el) => {
     if (el && !cardInnersRef.current.includes(el)) {
@@ -105,7 +106,7 @@ useEffect(() => {
       <div ref={cardsContainerRef} className="cards relative w-[100vw] bg-[#FAF4EC]">
 
 {/*Page-1 */}
-<a href="" target="_blank">
+<a href="https://www.hotstar.com/in/shows/rising-bharat/1271450329" target="_blank">
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -133,14 +134,17 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
                <video 
-                 src={RBvid}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
+                src={RBvid}
+                autoPlay
+                loop
+                muted
+                playsInline 
+                className="rounded-2xl "
+      onLoadedData={() => setLoaded(true)}
+      
                />
              </div>
 
@@ -160,14 +164,18 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="aspect-[3/3.8] p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+{!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
-                 src={RBvid}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
+                src={RBvid}
+                autoPlay
+                loop
+                muted
+                playsInline 
+                className="rounded-2xl w-full h-full object-cover"
+                onLoadedData={() => setLoaded(true)}
                />
              </div>
 
@@ -176,16 +184,14 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
 >
   <span>Watch now</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
@@ -194,7 +200,7 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="" target="_blank">
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
 {/*Page-2 */}
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#445066] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
@@ -223,7 +229,10 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+{!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={BOT1vid}
                          autoPlay
@@ -250,7 +259,10 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 aspect-[3/3.8] w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+          {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={BOT1vid}
                          autoPlay
@@ -266,8 +278,8 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
@@ -275,7 +287,7 @@ useEffect(() => {
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
@@ -284,7 +296,7 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="" target="_blank">
+<a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
 {/*Page-3 */}
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
@@ -313,7 +325,10 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={TBCvid}
                          autoPlay
@@ -340,7 +355,10 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={TBCvid}
                          autoPlay
@@ -356,8 +374,8 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
@@ -365,7 +383,7 @@ useEffect(() => {
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
@@ -374,7 +392,7 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="" target="_blank">
+<a href="https://www.youtube.com/watch?v=bnN8sPUKDN8" target="_blank">
 {/*Page-4 */}
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
@@ -403,7 +421,10 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={GOGvid}
                          autoPlay
@@ -430,7 +451,10 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={GOGvid}
                          autoPlay
@@ -446,8 +470,8 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
@@ -455,7 +479,7 @@ useEffect(() => {
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
@@ -464,7 +488,7 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="" target="_blank">
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
 {/*Page-5 */}
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
@@ -493,7 +517,10 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={BOT2vid}
                          autoPlay
@@ -520,7 +547,10 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={BOT2vid}
                          autoPlay
@@ -536,8 +566,8 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
@@ -545,7 +575,7 @@ useEffect(() => {
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
@@ -583,7 +613,10 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={SFvid}
                          autoPlay
@@ -610,7 +643,10 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={SFvid}
                          autoPlay
@@ -626,16 +662,16 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
-  <span>Watch now</span>
+  <span>Coming soon</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
@@ -644,7 +680,7 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="" target="_blank">
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
 {/*Page-7 */}
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
@@ -673,7 +709,10 @@ useEffect(() => {
         <div className=" ">
         <div className="sm:hidden block flex flex-col ">
 
-                       <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={BOT3vid}
                          autoPlay
@@ -700,7 +739,10 @@ useEffect(() => {
           <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
 
 
-                       <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+                       <div className="p-1 w-35 sm:w-40 md:w-45 aspect-[3/3.8] lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               {!loaded && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video 
                  src={BOT3vid}
                          autoPlay
@@ -716,8 +758,8 @@ useEffect(() => {
         </div>
 
         <div>
-<button
-  className="watchNowBtn text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
   onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
   onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
 >
@@ -725,7 +767,7 @@ useEffect(() => {
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
     <ArrowIcon />
   </span>
-</button>
+</p>
         </div>
         </div>
         </div>
