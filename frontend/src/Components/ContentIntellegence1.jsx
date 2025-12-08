@@ -1,8 +1,9 @@
 import React from "react";
-import CI1 from '../assets/ContentIntellegence/website AI page.webm'
 import { useInView } from "react-intersection-observer";
 
 function ContentIntellegence1() {
+
+  const CI1 = 'https://ail-media.b-cdn.net/web_CI.mp4'
 
 const { ref: ciRef, inView: ciInView } = useInView({ triggerOnce: true });
 
