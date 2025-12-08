@@ -98,15 +98,15 @@ useEffect(() => {
 
 {/*Page-1 */}
 <a href="" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl invisible md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           01       
         </span>
 
@@ -182,15 +182,15 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-2 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#445066] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           02       
         </span>
 
@@ -266,15 +266,15 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-3 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           03       
         </span>
 
@@ -350,15 +350,15 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-4 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           04       
         </span>
 
@@ -434,15 +434,15 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-5 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           05       
         </span>
 
@@ -518,15 +518,15 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-6 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           06       
         </span>
 
@@ -602,15 +602,15 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-7 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
             <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Expertise
+              Hall of Fame
             </span>
 
-        <span className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+        <span className={`text-5xl sm:text-6xl invisible md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
           07       
         </span>
 
