@@ -2,12 +2,22 @@ import React, { useEffect } from "react";
 import AboutUs1 from "../Components/AboutUs1";
 import AboutUs2 from "../Components/AboutUs2";
 import AboutUs3 from "../Components/AboutUs3";
+import { useLocation } from "react-router-dom";
 
 function AboutUs() {
 
-useEffect(() => {
-  sessionStorage.removeItem("forceReload");
-}, []);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("aboutReloaded")) {
+      sessionStorage.setItem("aboutReloaded", "true");
+      window.location.reload();
+    } else {
+      sessionStorage.removeItem("aboutReloaded");
+    }
+  }, []);
+
+
 
   return (
     <div className="w-screen ">

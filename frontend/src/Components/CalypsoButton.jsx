@@ -90,11 +90,6 @@ export default function CalypsoButton() {
               <span className={buttonSpanClass}>Solutions</span>
             </Link>
             <Link to='/about'
-              onClick={(e) => {
-    e.preventDefault();       // stop default navigation
-    sessionStorage.setItem("forceReload", "true");
-    window.location.href = "/about"; // full reload BEFORE React mounts
-  }}
             className={`button ${buttonClass}`}>
               <span className={buttonSpanClass}>About us</span>
             </Link>
