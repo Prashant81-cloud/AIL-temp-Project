@@ -24,10 +24,9 @@ import Logo25 from "@/assets/ClientLogos/25.png";
 
 export default function Example() {
   return (
-    <div className="mt-10">
-      <h1 className="w-full bg-[#C99A5B] text-center archivo-black text-white text-5xl px-15">Brands That Trust Us</h1>
+    <div className="">
 <div className="px-15">
-      <Marquee  className="marquee-mask  [--duration:19s] flex [--gap:0rem]">
+      <Marquee  className="marquee-mask  [--duration:28s] flex [--gap:0rem]">
 <img className="sm:h-40 h-25 " src={Logo1} alt="Logo 1" />
 <img className="sm:h-40 h-25 " src={Logo2} alt="Logo 2" />
 <img className="sm:h-40 h-25 " src={Logo3} alt="Logo 3" />
@@ -44,7 +43,7 @@ export default function Example() {
     </Marquee>
 </div>
 <div className="px-15">
-      <Marquee reverse  className="marquee-mask  [--duration:19s] flex [--gap:0rem]">
+      <Marquee reverse  className="marquee-mask  [--duration:28s] flex [--gap:0rem]">
 <img className="sm:h-40 h-25" src={Logo14} alt="Logo 14" />
 <img className="sm:h-40 h-25" src={Logo16} alt="Logo 16" />
 <img className="sm:h-40 h-25" src={Logo17} alt="Logo 17" />
