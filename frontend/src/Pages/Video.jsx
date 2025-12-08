@@ -1,13 +1,16 @@
 // ✅ FINAL — Video.jsx (100% Fixed & Production Safe)
 
 import React, { useRef, useState, useLayoutEffect } from "react";
-import websiteMov from "../assets/website1.mp4";
+// import websiteMov from "../assets/website1.mp4";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Video() {
+
+
+
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -51,7 +54,6 @@ function Video() {
     >
       <video
         ref={videoRef}
-        src={websiteMov}
         autoPlay
         loop
         muted
@@ -59,7 +61,11 @@ function Video() {
         onClick={handleVideoClick}
         className="sm:w-[88%] w-[80%] xl:h-[100vh] object-top   cursor-pointer"
         style={{ outline: "none" }}
-      />
+        preload="metadata"
+      >
+  <source src="https://ail-media.b-cdn.net/web_main.webm" type="video/webm" />
+  <source src="https://ail-media.b-cdn.net/web_main.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 }
