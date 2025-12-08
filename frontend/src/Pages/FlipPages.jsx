@@ -8,13 +8,13 @@ import BOTs2 from '@/assets/ShowsLogos/BOTs2.png'
 import BOTs3 from '@/assets/ShowsLogos/BOTs3.png'
 import RB from '@/assets/ShowsLogos/RB.png'  
 import SF from '@/assets/ShowsLogos/SF.png'
-import RBvid from '@/assets/ShowsVid/RB Short for website.mp4'
-import BOT1vid from '@/assets/ShowsVid/BOT 1.mp4'
-import BOT2vid from '@/assets/ShowsVid/Brands of Tomorrow S2 I Sneak Peek I Teaser I Streaming Soon on Disney Hotstar 720p.mp4'
-import BOT3vid from '@/assets/ShowsVid/Bot 3 website video.mp4'
-import GOGvid from '@/assets/ShowsVid/Gods of Gourmet _ DisneyHotstar _ All episodes out now _ Re-discover Indias Luxury Fine Dining.mp4'
-import TBCvid from '@/assets/ShowsVid/TBC.mp4'  
-import SFvid from '@/assets/ShowsVid/SF website video.mp4'
+// import RBvid from '@/assets/ShowsVid/RB Short for website.mp4'
+// import BOT1vid from '@/assets/ShowsVid/BOT 1.mp4'
+// import BOT2vid from '@/assets/ShowsVid/Brands of Tomorrow S2 I Sneak Peek I Teaser I Streaming Soon on Disney Hotstar 720p.mp4'
+// import BOT3vid from '@/assets/ShowsVid/Bot 3 website video.mp4'
+// import GOGvid from '@/assets/ShowsVid/Gods of Gourmet _ DisneyHotstar _ All episodes out now _ Re-discover Indias Luxury Fine Dining.mp4'
+// import TBCvid from '@/assets/ShowsVid/TBC.mp4'  
+// import SFvid from '@/assets/ShowsVid/SF website video.mp4'
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -24,6 +24,15 @@ gsap.registerPlugin(ScrollTrigger);
 function FlipPages() {
   const cardsContainerRef = useRef(null);
   const cardInnersRef = useRef([]);
+
+  const RBvid = 'https://ail-media.b-cdn.net/rb.mp4';
+  const BOT1vid = 'https://ail-media.b-cdn.net/bot1.mp4';
+  const TBCvid = 'https://ail-media.b-cdn.net/fk_gif.mp4';
+  const GOGvid = 'https://ail-media.b-cdn.net/gog.mp4';
+  const SFvid = 'https://ail-media.b-cdn.net/sf.mp4';
+  const BOT2vid = 'https://ail-media.b-cdn.net/bot2.mp4';
+  const BOT3vid = 'https://ail-media.b-cdn.net/bot3.mp4';
+
 
 
 const [rbLoaded, setRbLoaded] = useState(false);
@@ -123,7 +132,7 @@ useEffect(() => {
 
         // ✅ Apply tilt + fade to the current card
         gsap.to(cardInner, {
-          rotation: gsap.utils.interpolate(0, 5*(index*0.3), progress),
+          rotation: gsap.utils.interpolate(0, 5*(index*0.13), progress),
           autoAlpha: gsap.utils.interpolate(1, 0.99, progress),
           overwrite: true,
         });
@@ -187,7 +196,7 @@ useEffect(() => {
                <video
                ref={rbRefMobile} 
 
-               preload="none"
+               preload="metadata"
                 src={rbInViewMobile ? RBvid : undefined}
                 autoPlay
                 loop
@@ -222,7 +231,7 @@ useEffect(() => {
                <video
                ref={rbRef} 
 
-               preload="none"
+               preload="metadata"
                 src={rbInView ? RBvid : undefined}
                 autoPlay
                 loop
@@ -293,7 +302,7 @@ useEffect(() => {
 )}
                <video
                ref={bot1RefMobile} 
-               preload="none"
+               preload="metadata"
                  src={bot1InViewMobile ? BOT1vid : undefined}
                          autoPlay
         loop
@@ -326,7 +335,7 @@ useEffect(() => {
 )}
                <video
                ref={bot1Ref} 
-               preload="none"
+               preload="metadata"
                  src={bot1InView ? BOT1vid : undefined}
                          autoPlay
         loop
@@ -396,7 +405,7 @@ useEffect(() => {
 )}
                <video
                ref={tbcRefMobile} 
-               preload="none"
+               preload="metadata"
                  src={tbcInViewMobile ? TBCvid : undefined}
                          autoPlay
         loop
@@ -429,7 +438,7 @@ useEffect(() => {
 )}
                <video
                ref={tbcRef} 
-               preload="none"
+               preload="metadata"
                  src={tbcInView ? TBCvid : undefined}
                          autoPlay
         loop
@@ -499,7 +508,7 @@ useEffect(() => {
 )}
                <video
                ref={gogRefMobile} 
-               preload="none"
+               preload="metadata"
                  src={gogInViewMobile ? GOGvid : undefined}
                          autoPlay
         loop
@@ -532,7 +541,7 @@ useEffect(() => {
 )}
                <video
                ref={gogRef} 
-               preload="none"
+               preload="metadata"
                  src={gogInView ? GOGvid : undefined}
                          autoPlay
         loop
@@ -603,7 +612,7 @@ useEffect(() => {
 )}
                <video
                ref={bot2RefMobile} 
-               preload="none"
+               preload="metadata"
                  src={bot2InViewMobile ? BOT2vid : undefined}
                          autoPlay
         loop
@@ -636,7 +645,7 @@ useEffect(() => {
 )}
                <video
                ref={bot2Ref} 
-               preload="none"
+               preload="metadata"
                  src={bot2InView ? BOT2vid : undefined}
                          autoPlay
         loop
@@ -707,7 +716,7 @@ useEffect(() => {
 )}
                <video
                ref={sfRefMobile} 
-               preload="none"
+               preload="metadata"
                  src={sfInViewMobile ? SFvid : undefined}
                          autoPlay
         loop
@@ -740,7 +749,7 @@ useEffect(() => {
 )}
                <video
                ref={sfRef} 
-               preload="none"
+               preload="metadata"
                  src={sfInView ? SFvid : undefined}
                          autoPlay
         loop
@@ -811,7 +820,7 @@ useEffect(() => {
 )}
                <video
                ref={bot3RefMobile} 
-               preload="none"
+               preload="metadata"
                  src={bot3InViewMobile ? BOT3vid : undefined}
                          autoPlay
         loop
@@ -844,7 +853,7 @@ useEffect(() => {
 )}
                <video
                ref={bot3Ref} 
-               preload="none"
+               preload="metadata"
                  src={bot3InView ? BOT3vid : undefined}
                          autoPlay
         loop
