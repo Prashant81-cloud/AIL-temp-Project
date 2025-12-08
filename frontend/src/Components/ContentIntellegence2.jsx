@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import CI2 from '../assets/website gen AI page.jpg'
+import CI2 from '../assets/ContentIntellegence/website gen AI page.jpg'
 
 function ContentIntellegence2() {
 

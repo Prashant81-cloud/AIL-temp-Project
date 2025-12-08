@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Scrollama, Step } from "react-scrollama";
 import gsap from "gsap";
-import { AiFillFire } from "react-icons/ai";
 import { AiOutlineRise } from "react-icons/ai";
 
 const DATA = [

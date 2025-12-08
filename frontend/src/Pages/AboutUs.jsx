@@ -1,9 +1,7 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import AboutUs1 from "../Components/AboutUs1";
 import AboutUs2 from "../Components/AboutUs2";
 import AboutUs3 from "../Components/AboutUs3";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function AboutUs() {
 

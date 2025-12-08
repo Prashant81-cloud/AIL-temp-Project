@@ -1,5 +1,5 @@
 import React from "react";
-import CI1 from '../assets/website AI page.mp4'
+import CI1 from '../assets/ContentIntellegence/website AI page.mp4'
 
 function ContentIntellegence1() {
   return (

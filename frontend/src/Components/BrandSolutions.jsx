@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BrandImage from '@/assets/SolutionsImage/website solutions 3.png'
+import BrandImage from '@/assets/SolutionsImage/for solutions page - horizontal.png'
 
 // --- SVG Icons ---
 const ChevronDown = ({ className = "w-6 h-6" }) => (

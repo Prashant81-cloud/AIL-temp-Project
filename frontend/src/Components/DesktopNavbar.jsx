@@ -1,8 +1,5 @@
 import React, { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
 import PauseOnHover from './VerticalScroll'
-import gsap from 'gsap';
-import { useState } from 'react';
 import CalypsoButton from './CalypsoButton';
 import tfb from '../assets/Screenshot_2025-11-19_at_9.44.00_PM-removebg-preview.png'
 import AILLOGO from '../assets/AIL BRONZE.png';
