@@ -24,16 +24,52 @@ gsap.registerPlugin(ScrollTrigger);
 function FlipPages() {
   const cardsContainerRef = useRef(null);
   const cardInnersRef = useRef([]);
-const [loaded, setLoaded] = useState(false);
+
+
+const [rbLoaded, setRbLoaded] = useState(false);
+const [rbLoadedMobile, setRbLoadedMobile] = useState(false);
+
+const [bot1Loaded, setBot1Loaded] = useState(false);
+const [bot1LoadedMobile, setBot1LoadedMobile] = useState(false);
+
+const [tbcLoaded, setTbcLoaded] = useState(false);
+const [tbcLoadedMobile, setTbcLoadedMobile] = useState(false);
+
+const [gogLoaded, setGogLoaded] = useState(false);
+const [gogLoadedMobile, setGogLoadedMobile] = useState(false);
+
+const [bot2Loaded, setBot2Loaded] = useState(false);
+const [bot2LoadedMobile, setBot2LoadedMobile] = useState(false);
+
+const [sfLoaded, setSfLoaded] = useState(false);
+const [sfLoadedMobile, setSfLoadedMobile] = useState(false);
+
+const [bot3Loaded, setBot3Loaded] = useState(false);
+const [bot3LoadedMobile, setBot3LoadedMobile] = useState(false);
+
 
 
 const { ref: rbRef, inView: rbInView } = useInView({ triggerOnce: true });
+const { ref: rbRefMobile, inView: rbInViewMobile } = useInView({ triggerOnce: true });
+
 const { ref: bot1Ref, inView: bot1InView } = useInView({ triggerOnce: true });
+const { ref: bot1RefMobile, inView: bot1InViewMobile } = useInView({ triggerOnce: true });
+
 const { ref: tbcRef, inView: tbcInView } = useInView({ triggerOnce: true });
+const { ref: tbcRefMobile, inView: tbcInViewMobile } = useInView({ triggerOnce: true });
+
 const { ref: gogRef, inView: gogInView } = useInView({ triggerOnce: true });
+const { ref: gogRefMobile, inView: gogInViewMobile } = useInView({ triggerOnce: true });
+
 const { ref: bot2Ref, inView: bot2InView } = useInView({ triggerOnce: true });
+const { ref: bot2RefMobile, inView: bot2InViewMobile } = useInView({ triggerOnce: true });
+
 const { ref: sfRef, inView: sfInView } = useInView({ triggerOnce: true });
+const { ref: sfRefMobile, inView: sfInViewMobile } = useInView({ triggerOnce: true });
+
 const { ref: bot3Ref, inView: bot3InView } = useInView({ triggerOnce: true });
+const { ref: bot3RefMobile, inView: bot3InViewMobile } = useInView({ triggerOnce: true });
+
 
   const addToRefs = (el) => {
     if (el && !cardInnersRef.current.includes(el)) {
@@ -145,18 +181,20 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
+          {!rbLoadedMobile && (
+  <div className="absolute inset-0 bg-white rounded-2xl"></div>
+)}
                <video
-               ref={rbRef} 
+               ref={rbRefMobile} 
 
                preload="none"
-                src={rbInView ? RBvid : undefined}
+                src={rbInViewMobile ? RBvid : undefined}
                 autoPlay
                 loop
                 muted
                 playsInline 
                 className="rounded-2xl "
-      onLoadedData={() => setLoaded(true)}
+      onLoadedData={() => setRbLoadedMobile(true)}
       
                />
              </div>
@@ -178,7 +216,7 @@ useEffect(() => {
 
 
                        <div className="aspect-[3/3.8] p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-{!loaded && (
+{!rbLoaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -191,7 +229,7 @@ useEffect(() => {
                 muted
                 playsInline 
                 className="rounded-2xl w-full h-full object-cover"
-                onLoadedData={() => setLoaded(true)}
+                onLoadedData={() => setRbLoaded(true)}
                />
              </div>
 
@@ -216,8 +254,12 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
+
+
+
 {/*Page-2 */}
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
+
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#445066] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -246,18 +288,19 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-{!loaded && (
+{!bot1LoadedMobile && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={bot1Ref} 
+               ref={bot1RefMobile} 
                preload="none"
-                 src={bot1InView ? BOT1vid : undefined}
+                 src={bot1InViewMobile ? BOT1vid : undefined}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setBot1LoadedMobile(true)}
                />
              </div>
 
@@ -278,7 +321,7 @@ useEffect(() => {
 
 
                        <div className="p-1 aspect-[3/3.8] w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-          {!loaded && (
+          {!bot1Loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -290,6 +333,7 @@ useEffect(() => {
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setBot1Loaded(true)}
                />
              </div>
 
@@ -300,8 +344,7 @@ useEffect(() => {
         <div>
 <p
   className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+
 >
   <span>Watch now</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
@@ -316,8 +359,10 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
+
 {/*Page-3 */}
+<a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
+
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -346,18 +391,19 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-                {!loaded && (
+                {!tbcLoadedMobile && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={tbcRef} 
+               ref={tbcRefMobile} 
                preload="none"
-                 src={tbcInView ? TBCvid : undefined}
+                 src={tbcInViewMobile ? TBCvid : undefined}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setTbcLoadedMobile(true)}
                />
              </div>
 
@@ -378,7 +424,7 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!tbcLoaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -390,6 +436,7 @@ useEffect(() => {
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setTbcLoaded(true)}
                />
              </div>
 
@@ -400,8 +447,7 @@ useEffect(() => {
         <div>
 <p
   className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+
 >
   <span>Watch now</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
@@ -416,8 +462,10 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="https://www.youtube.com/watch?v=bnN8sPUKDN8" target="_blank">
+
+
 {/*Page-4 */}
+<a href="https://www.youtube.com/watch?v=bnN8sPUKDN8" target="_blank">
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -446,18 +494,19 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!gogLoadedMobile && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={gogRef} 
+               ref={gogRefMobile} 
                preload="none"
-                 src={gogInView ? GOGvid : undefined}
+                 src={gogInViewMobile ? GOGvid : undefined}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setGogLoadedMobile(true)}
                />
              </div>
 
@@ -478,7 +527,7 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!gogLoaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -490,6 +539,7 @@ useEffect(() => {
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setGogLoaded(true)}
                />
              </div>
 
@@ -500,8 +550,7 @@ useEffect(() => {
         <div>
 <p
   className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+
 >
   <span>Watch now</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
@@ -516,8 +565,11 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
+
+
+
 {/*Page-5 */}
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -546,18 +598,19 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!bot2LoadedMobile && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={bot2Ref} 
+               ref={bot2RefMobile} 
                preload="none"
-                 src={bot2InView ? BOT2vid : undefined}
+                 src={bot2InViewMobile ? BOT2vid : undefined}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setBot2LoadedMobile(true)}
                />
              </div>
 
@@ -578,7 +631,7 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!bot2Loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -590,6 +643,7 @@ useEffect(() => {
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setBot2Loaded(true)}
                />
              </div>
 
@@ -600,8 +654,7 @@ useEffect(() => {
         <div>
 <p
   className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+
 >
   <span>Watch now</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
@@ -616,8 +669,11 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="" target="_blank">
+
+
+
 {/*Page-6 */}
+<a href="" target="_blank">
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -646,18 +702,19 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!sfLoadedMobile && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={sfRef} 
+               ref={sfRefMobile} 
                preload="none"
-                 src={sfInView ? SFvid : undefined}
+                 src={sfInViewMobile ? SFvid : undefined}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setSfLoadedMobile(true)}
                />
              </div>
 
@@ -678,7 +735,7 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!sfLoaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -690,6 +747,7 @@ useEffect(() => {
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setSfLoaded(true)}
                />
              </div>
 
@@ -700,8 +758,7 @@ useEffect(() => {
         <div>
 <p
   className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+
 >
   <span>Coming soon</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
@@ -716,8 +773,11 @@ useEffect(() => {
           </div>
 </a>
 
-<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
+
+
+
 {/*Page-7 */}
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
@@ -746,18 +806,19 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!bot3LoadedMobile && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={bot3Ref} 
+               ref={bot3RefMobile} 
                preload="none"
-                 src={bot3InView ? BOT3vid : undefined}
+                 src={bot3InViewMobile ? BOT3vid : undefined}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setBot3LoadedMobile(true)}
                />
              </div>
 
@@ -778,7 +839,7 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 aspect-[3/3.8] lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!loaded && (
+               {!bot3Loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
@@ -790,6 +851,7 @@ useEffect(() => {
         muted
         playsInline 
                  className="rounded-2xl "
+      onLoadedData={() => setBot3Loaded(true)}
                />
              </div>
 
@@ -800,8 +862,7 @@ useEffect(() => {
         <div>
 <p
   className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-  onMouseEnter={() => window.dispatchEvent(new CustomEvent("disableCustomCursor"))}
-  onMouseLeave={() => window.dispatchEvent(new CustomEvent("enableCustomCursor"))}
+
 >
   <span>Watch now</span>
   <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
