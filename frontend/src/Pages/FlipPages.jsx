@@ -98,7 +98,7 @@ useEffect(() => {
 
 {/*Page-1 */}
 <a href="" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -182,7 +182,7 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-2 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#445066] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -266,7 +266,7 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-3 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -434,7 +434,7 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-5 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -518,7 +518,7 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-6 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -602,7 +602,7 @@ useEffect(() => {
 
 <a href="" target="_blank">
 {/*Page-7 */}
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:750px)]:h-[100vh]  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
