@@ -8,7 +8,9 @@ import BOTs2 from '@/assets/ShowsLogos/BOTs2.png'
 import BOTs3 from '@/assets/ShowsLogos/BOTs3.png'
 import RB from '@/assets/ShowsLogos/RB.png'  
 import SF from '@/assets/ShowsLogos/SF.png'
-import RBvid from '@/assets/RB Short for website (2).mp4'
+import RBvid from '@/assets/ShowsVid/BOT 1.mp4'
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -126,9 +128,12 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={RBvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
@@ -150,9 +155,12 @@ useEffect(() => {
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <img 
-                 src="https://placehold.co/350x450/4A5568/FFFFFF?text= Sample Video" 
-                 alt="Man on the phone" 
+               <video 
+                 src={RBvid}
+                         autoPlay
+        loop
+        muted
+        playsInline 
                  className="rounded-2xl "
                />
              </div>
