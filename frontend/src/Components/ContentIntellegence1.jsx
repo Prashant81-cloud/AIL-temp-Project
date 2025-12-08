@@ -1,7 +1,11 @@
 import React from "react";
-import CI1 from '../assets/ContentIntellegence/website AI page.mp4'
+import CI1 from '../assets/ContentIntellegence/website AI page.webm'
+import { useInView } from "react-intersection-observer";
 
 function ContentIntellegence1() {
+
+const { ref: ciRef, inView: ciInView } = useInView({ triggerOnce: true });
+
   return (
     <div className="font-sans min-h-screen px-4 sm:px-6 lg:px-16  flex flex-col md:flex-row gap-10 md:gap-14 items-start">
 
@@ -20,7 +24,9 @@ function ContentIntellegence1() {
       <div className="hidden md:flex w-1/2 justify-start">
         <video
           className="lg:h-150 lg:w-150 md:h-130 md:w-130 object-cover rounded-lg shadow-md"
-          src={CI1}
+          src={ciInView ? CI1 : undefined}
+          ref={ciRef}
+          preload="none"
         autoPlay
         loop
         muted

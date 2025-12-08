@@ -1,8 +1,13 @@
 import React from 'react'
 import VisionVid from '@/assets/AboutUs/our promise.mp4'
 import MissionVid from '@/assets/AboutUs/our mission.mp4'
+import { useInView } from "react-intersection-observer";
 
 function AboutUs3() {
+
+  const { ref: missionRef, inView: missionInView } = useInView({ triggerOnce: true });
+  const { ref: promiseRef, inView: promiseInView } = useInView({ triggerOnce: true });
+
   return (
     <>
     {/* For screens greater then "sm" */}
@@ -13,11 +18,13 @@ function AboutUs3() {
           To take Indian creativity, branded content, and storytelling innovation to the world — powered by Gen AI, premium media networks, and storytelling that feels real.
         </p>
         <video 
+        preload="none"
+        ref={missionRef}
         autoPlay 
         loop 
         muted 
         playsInline
-        src={MissionVid}
+        src={missionInView ? MissionVid : undefined}
         className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 ' 
         />
       </div>
@@ -28,11 +35,13 @@ function AboutUs3() {
           We help brands do more than advertise. We help them be believed — everywhere their audience is.
         </p>
         <video 
+        preload="none"
+        ref={promiseRef}
         autoPlay 
         loop 
         muted 
         playsInline
-        src={VisionVid}
+        src={promiseInView ? VisionVid : undefined}
         className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 ' 
         />
       </div>

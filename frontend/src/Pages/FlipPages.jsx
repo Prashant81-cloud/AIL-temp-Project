@@ -16,6 +16,7 @@ import GOGvid from '@/assets/ShowsVid/Gods of Gourmet _ DisneyHotstar _ All epis
 import TBCvid from '@/assets/ShowsVid/TBC.mp4'  
 import SFvid from '@/assets/ShowsVid/SF website video.mp4'
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -24,6 +25,15 @@ function FlipPages() {
   const cardsContainerRef = useRef(null);
   const cardInnersRef = useRef([]);
 const [loaded, setLoaded] = useState(false);
+
+
+const { ref: rbRef, inView: rbInView } = useInView({ triggerOnce: true });
+const { ref: bot1Ref, inView: bot1InView } = useInView({ triggerOnce: true });
+const { ref: tbcRef, inView: tbcInView } = useInView({ triggerOnce: true });
+const { ref: gogRef, inView: gogInView } = useInView({ triggerOnce: true });
+const { ref: bot2Ref, inView: bot2InView } = useInView({ triggerOnce: true });
+const { ref: sfRef, inView: sfInView } = useInView({ triggerOnce: true });
+const { ref: bot3Ref, inView: bot3InView } = useInView({ triggerOnce: true });
 
   const addToRefs = (el) => {
     if (el && !cardInnersRef.current.includes(el)) {
@@ -136,8 +146,11 @@ useEffect(() => {
 
                        <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
 
-               <video 
-                src={RBvid}
+               <video
+               ref={rbRef} 
+
+               preload="none"
+                src={rbInView ? RBvid : undefined}
                 autoPlay
                 loop
                 muted
@@ -168,8 +181,11 @@ useEffect(() => {
 {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                src={RBvid}
+               <video
+               ref={rbRef} 
+
+               preload="none"
+                src={rbInView ? RBvid : undefined}
                 autoPlay
                 loop
                 muted
@@ -233,8 +249,10 @@ useEffect(() => {
 {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={BOT1vid}
+               <video
+               ref={bot1Ref} 
+               preload="none"
+                 src={bot1InView ? BOT1vid : undefined}
                          autoPlay
         loop
         muted
@@ -263,8 +281,10 @@ useEffect(() => {
           {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={BOT1vid}
+               <video
+               ref={bot1Ref} 
+               preload="none"
+                 src={bot1InView ? BOT1vid : undefined}
                          autoPlay
         loop
         muted
@@ -329,8 +349,10 @@ useEffect(() => {
                 {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={TBCvid}
+               <video
+               ref={tbcRef} 
+               preload="none"
+                 src={tbcInView ? TBCvid : undefined}
                          autoPlay
         loop
         muted
@@ -359,8 +381,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={TBCvid}
+               <video
+               ref={tbcRef} 
+               preload="none"
+                 src={tbcInView ? TBCvid : undefined}
                          autoPlay
         loop
         muted
@@ -425,8 +449,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={GOGvid}
+               <video
+               ref={gogRef} 
+               preload="none"
+                 src={gogInView ? GOGvid : undefined}
                          autoPlay
         loop
         muted
@@ -455,8 +481,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={GOGvid}
+               <video
+               ref={gogRef} 
+               preload="none"
+                 src={gogInView ? GOGvid : undefined}
                          autoPlay
         loop
         muted
@@ -521,8 +549,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={BOT2vid}
+               <video
+               ref={bot2Ref} 
+               preload="none"
+                 src={bot2InView ? BOT2vid : undefined}
                          autoPlay
         loop
         muted
@@ -551,8 +581,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={BOT2vid}
+               <video
+               ref={bot2Ref} 
+               preload="none"
+                 src={bot2InView ? BOT2vid : undefined}
                          autoPlay
         loop
         muted
@@ -617,8 +649,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={SFvid}
+               <video
+               ref={sfRef} 
+               preload="none"
+                 src={sfInView ? SFvid : undefined}
                          autoPlay
         loop
         muted
@@ -647,8 +681,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={SFvid}
+               <video
+               ref={sfRef} 
+               preload="none"
+                 src={sfInView ? SFvid : undefined}
                          autoPlay
         loop
         muted
@@ -713,8 +749,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={BOT3vid}
+               <video
+               ref={bot3Ref} 
+               preload="none"
+                 src={bot3InView ? BOT3vid : undefined}
                          autoPlay
         loop
         muted
@@ -743,8 +781,10 @@ useEffect(() => {
                {!loaded && (
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
-               <video 
-                 src={BOT3vid}
+               <video
+               ref={bot3Ref} 
+               preload="none"
+                 src={bot3InView ? BOT3vid : undefined}
                          autoPlay
         loop
         muted
