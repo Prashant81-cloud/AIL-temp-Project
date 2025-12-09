@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import ContentImage from '../assets/SolutionsImage/solutions - websie 2.png'
+// import ContentImage from '../assets/SolutionsImage/solutions - websie 2.png'
+
+const ContentImage = 'https://ail-media.b-cdn.net/content-sol.png';
 
 // --- SVG Icons ---
 const ChevronDown = ({ className = "w-6 h-6" }) => (

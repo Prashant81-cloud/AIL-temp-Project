@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import MediaImage from '../assets/SolutionsImage/website image 2.png'
+// import MediaImage from '../assets/SolutionsImage/website image 2.png'
+
+const MediaImage = 'https://ail-media.b-cdn.net/media-sol.png';
 
 // --- SVG Icons ---
 const ChevronDown = ({ className = "w-6 h-6" }) => (

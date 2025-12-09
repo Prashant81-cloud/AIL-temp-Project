@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import CI2 from '../assets/ContentIntellegence/website gen AI page.jpg'
+// import CI2 from '../assets/ContentIntellegence/website gen AI page.jpg'
+
+const CI2 = 'https://ail-media.b-cdn.net/CI2.jpg';
+
+
 
 function ContentIntellegence2() {
 

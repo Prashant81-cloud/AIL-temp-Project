@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import BrandImage from '@/assets/SolutionsImage/brand solution-image.png'
+// import BrandImage from '@/assets/SolutionsImage/brand solution-image.png'
+
+const BrandImage = 'https://ail-media.b-cdn.net/brand-sol.png';
+
+
 
 // --- SVG Icons ---
 const ChevronDown = ({ className = "w-6 h-6" }) => (

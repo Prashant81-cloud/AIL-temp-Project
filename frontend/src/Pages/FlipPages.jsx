@@ -1,20 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TBC from '@/assets/ShowsLogos/TBC.png'
-import GOG from '@/assets/ShowsLogos/GOG.png'
-import BOTs1 from '@/assets/ShowsLogos/BOTs1.png'
-import BOTs2 from '@/assets/ShowsLogos/BOTs2.png'
-import BOTs3 from '@/assets/ShowsLogos/BOTs3.png'
-import RB from '@/assets/ShowsLogos/RB.png'  
-import SF from '@/assets/ShowsLogos/SF.png'
-// import RBvid from '@/assets/ShowsVid/RB Short for website.mp4'
-// import BOT1vid from '@/assets/ShowsVid/BOT 1.mp4'
-// import BOT2vid from '@/assets/ShowsVid/Brands of Tomorrow S2 I Sneak Peek I Teaser I Streaming Soon on Disney Hotstar 720p.mp4'
-// import BOT3vid from '@/assets/ShowsVid/Bot 3 website video.mp4'
-// import GOGvid from '@/assets/ShowsVid/Gods of Gourmet _ DisneyHotstar _ All episodes out now _ Re-discover Indias Luxury Fine Dining.mp4'
-// import TBCvid from '@/assets/ShowsVid/TBC.mp4'  
-// import SFvid from '@/assets/ShowsVid/SF website video.mp4'
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -32,6 +18,19 @@ function FlipPages() {
   const SFvid = 'https://ail-media.b-cdn.net/sf.mp4';
   const BOT2vid = 'https://ail-media.b-cdn.net/bot2.mp4';
   const BOT3vid = 'https://ail-media.b-cdn.net/bot3.mp4';
+
+
+
+
+  const RBimg = 'https://ail-media.b-cdn.net/RB.png';
+  const BOTs1img = 'https://ail-media.b-cdn.net/BOTs1.png';
+  const TBCimg = 'https://ail-media.b-cdn.net/TBClg.png';
+  const GOGimg = 'https://ail-media.b-cdn.net/GOG.png';
+  const SFimg = 'https://ail-media.b-cdn.net/SFlg.png';
+  const BOTs2img = 'https://ail-media.b-cdn.net/BOTs2.png';
+  const BOTs3img = 'https://ail-media.b-cdn.net/BOTs3.png';
+
+
 
 
 
@@ -182,7 +181,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={RB} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={RBimg} alt="" />
              </div>
 
           </div>
@@ -289,7 +288,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs1} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs1img} alt="" />
              </div>
 
           </div>
@@ -392,7 +391,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={TBC} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={TBCimg} alt="" />
              </div>
 
           </div>
@@ -495,7 +494,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={GOG} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={GOGimg} alt="" />
              </div>
 
           </div>
@@ -599,7 +598,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs2} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs2img} alt="" />
              </div>
 
           </div>
@@ -703,7 +702,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={SF} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={SFimg} alt="" />
              </div>
 
           </div>
@@ -807,7 +806,7 @@ useEffect(() => {
           <div className="w-full md:w-1/2">
 
              <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs3} alt="" />
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs3img} alt="" />
              </div>
 
           </div>

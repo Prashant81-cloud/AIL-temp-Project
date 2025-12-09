@@ -1,26 +1,27 @@
 import { Marquee } from "@/Components/ui/Marquee";
-import Logo1 from "@/assets/ClientLogos/1.png";
-import Logo2 from "@/assets/ClientLogos/2.png";
-import Logo3 from "@/assets/ClientLogos/3.png";
-import Logo4 from "@/assets/ClientLogos/Untitled_design__2_-removebg-preview.png";
-import Logo5 from "@/assets/ClientLogos/5.png";
-import Logo6 from "@/assets/ClientLogos/Untitled_design__1_-removebg-preview.png";
-import Logo7 from "@/assets/ClientLogos/7.png";
-import Logo8 from "@/assets/ClientLogos/8.png";
-import Logo9 from "@/assets/ClientLogos/9.png";
-import Logo10 from "@/assets/ClientLogos/10.png";
-import Logo12 from "@/assets/ClientLogos/12.png";
-import Logo13 from "@/assets/ClientLogos/13.png";
-import Logo14 from "@/assets/ClientLogos/14.png";
-import Logo16 from "@/assets/ClientLogos/16.png";
-import Logo17 from "@/assets/ClientLogos/17.png";
-import Logo18 from "@/assets/ClientLogos/18.png";
-import Logo19 from "@/assets/ClientLogos/19.png";
-import Logo20 from "@/assets/ClientLogos/20.png";
-import Logo21 from "@/assets/ClientLogos/21.png";
-import Logo23 from "@/assets/ClientLogos/23.png";
-import Logo24 from "@/assets/ClientLogos/24.png";
-import Logo25 from "@/assets/ClientLogos/25.png";
+
+
+const Logo1 = 'https://ail-media.b-cdn.net/1.png';
+const Logo2 = 'https://ail-media.b-cdn.net/2.png';
+const Logo3 = 'https://ail-media.b-cdn.net/3.png';
+const Logo5 = 'https://ail-media.b-cdn.net/5.png';
+const Logo7 = 'https://ail-media.b-cdn.net/7.png';
+const Logo8 = 'https://ail-media.b-cdn.net/8.png';
+const Logo9 = 'https://ail-media.b-cdn.net/9.png';
+const Logo10 = 'https://ail-media.b-cdn.net/10.png';
+const Logo12 = 'https://ail-media.b-cdn.net/12.png';
+const Logo13 = 'https://ail-media.b-cdn.net/13.png';
+const Logo14 = 'https://ail-media.b-cdn.net/14.png';
+const Logo16 = 'https://ail-media.b-cdn.net/16.png';
+const Logo17 = 'https://ail-media.b-cdn.net/17.png';
+const Logo18 = 'https://ail-media.b-cdn.net/18.png';
+const Logo19 = 'https://ail-media.b-cdn.net/19.png';
+const Logo20 = 'https://ail-media.b-cdn.net/20.png';
+const Logo21 = 'https://ail-media.b-cdn.net/21.png';
+const Logo23 = 'https://ail-media.b-cdn.net/23.png';
+const Logo24 = 'https://ail-media.b-cdn.net/24.png';
+const Logo25 = 'https://ail-media.b-cdn.net/25.png';
+
 
 export default function Example() {
   return (
@@ -30,9 +31,9 @@ export default function Example() {
 <img className="sm:h-40 h-25 " src={Logo1} alt="Logo 1" />
 <img className="sm:h-40 h-25 " src={Logo2} alt="Logo 2" />
 <img className="sm:h-40 h-25 " src={Logo3} alt="Logo 3" />
-<img className="sm:h-40 h-25" src={Logo4} alt="Logo 4" />
+{/* <img className="sm:h-40 h-25" src={Logo4} alt="Logo 4" /> */}
 <img className="sm:h-40 h-25 " src={Logo5} alt="Logo 5" />
-<img className="sm:h-40 h-25" src={Logo6} alt="Logo 6" />
+{/* <img className="sm:h-40 h-25" src={Logo6} alt="Logo 6" /> */}
 <img className="sm:h-40 h-25 " src={Logo7} alt="Logo 7" />
 <img className="sm:h-40 h-25 " src={Logo8} alt="Logo 8" />
 <img className="sm:h-40 h-25 " src={Logo9} alt="Logo 9" />

@@ -27,7 +27,7 @@ const { ref: ciRef, inView: ciInView } = useInView({ triggerOnce: true });
           className="lg:h-150 lg:w-150 md:h-130 md:w-130 object-cover rounded-lg shadow-md"
           src={ciInView ? CI1 : undefined}
           ref={ciRef}
-          preload="none"
+          preload="metadata"
         autoPlay
         loop
         muted

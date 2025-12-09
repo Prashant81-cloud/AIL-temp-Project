@@ -1,7 +1,10 @@
 import React from 'react'
-import VisionVid from '@/assets/AboutUs/our promise.mp4'
-import MissionVid from '@/assets/AboutUs/our mission.mp4'
+// import VisionVid from '@/assets/AboutUs/our promise.mp4'
+// import MissionVid from '@/assets/AboutUs/our mission.mp4'
 import { useInView } from "react-intersection-observer";
+
+const VisionVid = 'https://ail-media.b-cdn.net/our-promise.mp4';
+const MissionVid = 'https://ail-media.b-cdn.net/our-mission.mp4';
 
 function AboutUs3() {
 
@@ -25,7 +28,7 @@ function AboutUs3() {
         muted 
         playsInline
         src={missionInView ? MissionVid : undefined}
-        className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 ' 
+        className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 rounded-xl object-cover' 
         />
       </div>
 
@@ -42,7 +45,7 @@ function AboutUs3() {
         muted 
         playsInline
         src={promiseInView ? VisionVid : undefined}
-        className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 ' 
+        className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-30 w-50 rounded-xl object-cover' 
         />
       </div>
     </div>
@@ -51,7 +54,7 @@ function AboutUs3() {
     {/* For screens smaller then "sm" */}
     <div className='h-auto w-screen flex flex-col sm:hidden'>
       <div className='flex flex-col justify-center items-center px-15 border-t-1 border-black py-5 '>
-        <div className='flex items-center justify-between w-full'>
+        <div className='flex items-center justify-between w-full gap-5'>
         <h1 className='xl:text-4xl lg:text-3xl font-semibold md:text-2xl sm:text-xl'>OUR MISSION</h1>
                 <video 
           autoPlay 
@@ -59,7 +62,7 @@ function AboutUs3() {
           muted 
           playsInline
           src={MissionVid}
-          className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-20 w-30  ' 
+          className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-20 w-30  rounded-xl object-cover' 
         />
         </div>
         <p className=' xl:text-xl lg:text-lg text-sm mt-7'>
@@ -69,7 +72,7 @@ function AboutUs3() {
       </div>
 
       <div className='flex flex-col justify-center items-center px-15  py-5 mt-5 border-t-1 border-black '>
-        <div className='flex items-center justify-between w-full'>
+        <div className='flex items-center justify-between w-full gap-5'>
         <h1 className='xl:text-4xl lg:text-3xl font-semibold md:text-2xl sm:text-xl'>OUR PROMISE</h1>
         <video 
         autoPlay 
@@ -77,7 +80,7 @@ function AboutUs3() {
         muted 
         playsInline
         src={VisionVid}
-        className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-20 w-30 '  
+        className='xl:h-45 xl:w-50 lg:h-35 lg:w-40 md:h-35  md:w-40 sm:h-30 sm:w-50 h-20 w-30 rounded-xl object-cover'  
         />
         </div>
 
