@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Random from "./Random";
 import DoubleMarquee from "./Marquee";
-import SEO from "../components/SEO";
+import SEO from "../Components/SEO";
 
 
 export default function HomePage() {

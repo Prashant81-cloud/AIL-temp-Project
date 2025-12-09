@@ -3,7 +3,7 @@ import AboutUs1 from "../Components/AboutUs1";
 import AboutUs2 from "../Components/AboutUs2";
 import AboutUs3 from "../Components/AboutUs3";
 import { useLocation } from "react-router-dom";
-import SEO from "../components/SEO";
+import SEO from "../Components/SEO";
 
 
 function AboutUs() {
