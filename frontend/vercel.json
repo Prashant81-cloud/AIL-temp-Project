@@ -19,11 +19,6 @@
       "source": "/upcoming-series",
       "destination": "/faqs",
       "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/about",
-      "permanent": true
     }
   ],
   "rewrites": [

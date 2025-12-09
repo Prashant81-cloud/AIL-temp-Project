@@ -31,7 +31,6 @@ export default function Example() {
 <img className="sm:h-40 h-25 " src={Logo1} alt="Logo 1" />
 <img className="sm:h-40 h-25 " src={Logo2} alt="Logo 2" />
 <img className="sm:h-40 h-25 " src={Logo3} alt="Logo 3" />
-{/* <img className="sm:h-40 h-25" src={Logo4} alt="Logo 4" /> */}
 <img className="sm:h-40 h-25 " src={Logo5} alt="Logo 5" />
 {/* <img className="sm:h-40 h-25" src={Logo6} alt="Logo 6" /> */}
 <img className="sm:h-40 h-25 " src={Logo7} alt="Logo 7" />
