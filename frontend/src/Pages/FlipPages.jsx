@@ -198,9 +198,7 @@ useEffect(() => {
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-          {!rbLoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                ref={rbRefMobile} 
 poster="https://ail-media.b-cdn.net/posterRB.png"
@@ -233,9 +231,7 @@ poster="https://ail-media.b-cdn.net/posterRB.png"
 
 
                        <div className="aspect-[3/3.8] p-1 w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-{!rbLoaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                ref={rbRef} 
 
@@ -306,9 +302,7 @@ poster="https://ail-media.b-cdn.net/posterRB.png"
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="aspect-[3/3.8] p-1 w-35 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-{!bot1LoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterBOT1.png"
                ref={bot1RefMobile} 
@@ -340,9 +334,7 @@ poster="https://ail-media.b-cdn.net/posterRB.png"
 
 
                        <div className="p-1 aspect-[3/3.8] w-35 sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-          {!bot1Loaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterBOT1.png"
 ref={bot1Ref} 
@@ -411,9 +403,7 @@ ref={bot1Ref}
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-                {!tbcLoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterTBC.png"
                ref={tbcRefMobile} 
@@ -445,9 +435,7 @@ ref={bot1Ref}
 
 
                        <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!tbcLoaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterTBC.png"
                ref={tbcRef} 
@@ -516,9 +504,7 @@ ref={bot1Ref}
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!gogLoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterGOG.png"
                ref={gogRefMobile} 
@@ -550,9 +536,7 @@ ref={bot1Ref}
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!gogLoaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterGOG.png"
                ref={gogRef} 
@@ -622,9 +606,6 @@ ref={bot1Ref}
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!bot2LoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
                <video
                poster="https://ail-media.b-cdn.net/posterBOT2.png"
                ref={bot2RefMobile} 
@@ -656,9 +637,7 @@ ref={bot1Ref}
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!bot2Loaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterBOT2.png"
                ref={bot2Ref} 
@@ -728,9 +707,6 @@ ref={bot1Ref}
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!sfLoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
                <video
                poster="https://ail-media.b-cdn.net/posterSF.png"
                ref={sfRefMobile} 
@@ -762,9 +738,6 @@ ref={bot1Ref}
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!sfLoaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
                <video
                poster="https://ail-media.b-cdn.net/posterSF.png"
                ref={sfRef} 
@@ -834,9 +807,6 @@ ref={bot1Ref}
         <div className="sm:hidden block flex flex-col ">
 
                        <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!bot3LoadedMobile && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
                <video
                poster="https://ail-media.b-cdn.net/posterBOT3.png"
                ref={bot3RefMobile} 
@@ -868,9 +838,7 @@ ref={bot1Ref}
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 aspect-[3/3.8] lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               {!bot3Loaded && (
-  <div className="absolute inset-0 bg-white rounded-2xl"></div>
-)}
+
                <video
                poster="https://ail-media.b-cdn.net/posterBOT3.png"
                ref={bot3Ref} 
