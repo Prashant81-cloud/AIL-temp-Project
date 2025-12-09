@@ -35,7 +35,7 @@ const Solutions = () => {
   };
 
   const randomColor = () => {
-    const colors = ["#FE6427", "#44EF18", "#FDE324", "#EFB9E2", "#03D5F2"];
+    const colors = ["#B61B76", "#3685ed", "#d1960aff", "#6b1bb6ff", "#347803ff"];
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
