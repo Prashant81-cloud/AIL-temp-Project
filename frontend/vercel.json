@@ -1,4 +1,31 @@
 {
+  "redirects": [
+    {
+      "source": "/programs",
+      "destination": "/faqs",
+      "permanent": true
+    },
+    {
+      "source": "/solutions",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/theory-of-branding",
+      "destination": "/content-intellegence",
+      "permanent": true
+    },
+    {
+      "source": "/upcoming-series",
+      "destination": "/faqs",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

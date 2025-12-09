@@ -53,6 +53,7 @@ function Video() {
       id="page2"
     >
       <video
+      poster="https://ail-media.b-cdn.net/web_main_loader.png"
         ref={videoRef}
         autoPlay
         loop

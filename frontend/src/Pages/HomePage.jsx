@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Random from "./Random";
 import DoubleMarquee from "./Marquee";
+import SEO from "../components/SEO";
 
 
 export default function HomePage() {
@@ -34,6 +35,13 @@ export default function HomePage() {
 
   return (
     <>
+
+      <SEO
+        title="AIL India: Advaita Innovation Labs - Reshaping India's Narrative"
+        description="AIL India is dedicated to ..."
+        keywords="ail india, research, programs"
+        canonical="https://ail-india.com/"
+      />
 
       <SplitText />
 
