@@ -31,6 +31,15 @@ function FlipPages() {
   const BOTs3img = 'https://ail-media.b-cdn.net/BOTs3.png';
 
 
+  {/*
+
+    
+    
+    
+
+    
+    
+    */}
 
 
 
@@ -194,7 +203,7 @@ useEffect(() => {
 )}
                <video
                ref={rbRefMobile} 
-
+poster="https://ail-media.b-cdn.net/posterRB.png"
                preload="metadata"
                 src={rbInViewMobile ? RBvid : undefined}
                 autoPlay
@@ -231,6 +240,7 @@ useEffect(() => {
                ref={rbRef} 
 
                preload="metadata"
+poster="https://ail-media.b-cdn.net/posterRB.png"
                 src={rbInView ? RBvid : undefined}
                 autoPlay
                 loop
@@ -300,6 +310,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterBOT1.png"
                ref={bot1RefMobile} 
                preload="metadata"
                  src={bot1InViewMobile ? BOT1vid : undefined}
@@ -333,7 +344,8 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
-               ref={bot1Ref} 
+               poster="https://ail-media.b-cdn.net/posterBOT1.png"
+ref={bot1Ref} 
                preload="metadata"
                  src={bot1InView ? BOT1vid : undefined}
                          autoPlay
@@ -403,6 +415,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterTBC.png"
                ref={tbcRefMobile} 
                preload="metadata"
                  src={tbcInViewMobile ? TBCvid : undefined}
@@ -436,6 +449,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterTBC.png"
                ref={tbcRef} 
                preload="metadata"
                  src={tbcInView ? TBCvid : undefined}
@@ -506,6 +520,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterGOG.png"
                ref={gogRefMobile} 
                preload="metadata"
                  src={gogInViewMobile ? GOGvid : undefined}
@@ -539,6 +554,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterGOG.png"
                ref={gogRef} 
                preload="metadata"
                  src={gogInView ? GOGvid : undefined}
@@ -610,6 +626,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterBOT2.png"
                ref={bot2RefMobile} 
                preload="metadata"
                  src={bot2InViewMobile ? BOT2vid : undefined}
@@ -643,6 +660,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterBOT2.png"
                ref={bot2Ref} 
                preload="metadata"
                  src={bot2InView ? BOT2vid : undefined}
@@ -714,6 +732,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterSF.png"
                ref={sfRefMobile} 
                preload="metadata"
                  src={sfInViewMobile ? SFvid : undefined}
@@ -747,6 +766,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterSF.png"
                ref={sfRef} 
                preload="metadata"
                  src={sfInView ? SFvid : undefined}
@@ -818,6 +838,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterBOT3.png"
                ref={bot3RefMobile} 
                preload="metadata"
                  src={bot3InViewMobile ? BOT3vid : undefined}
@@ -851,6 +872,7 @@ useEffect(() => {
   <div className="absolute inset-0 bg-white rounded-2xl"></div>
 )}
                <video
+               poster="https://ail-media.b-cdn.net/posterBOT3.png"
                ref={bot3Ref} 
                preload="metadata"
                  src={bot3InView ? BOT3vid : undefined}
