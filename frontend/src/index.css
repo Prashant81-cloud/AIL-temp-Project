@@ -240,5 +240,10 @@ button, .cursor-pointer {
 
 
 
+body.use-default-cursor {
+  cursor: auto !important;
+}
 
-
+body.use-default-cursor * {
+  cursor: auto !important;
+}

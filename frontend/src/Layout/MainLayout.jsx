@@ -15,6 +15,7 @@ import Random from "@/Pages/Random";
 import { Link } from "react-router-dom";
 import useIsMobile from "@/Pages/useIsMobile";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function MainLayout({ children }) {
@@ -27,13 +28,23 @@ export default function MainLayout({ children }) {
   const [visible, setVisible] = useState(true);
   const [cursorMode, setCursorMode] = useState("image");
   const isMobile = useIsMobile(768);
+  const [cursorColor, setCursorColor] = useState("black");
 
+
+          const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   // Cursor follower
   useEffect(() => {
 
     //disable cursor on mobile.
       if (isMobile) return;
+
+
+
+  if (isSafari) {
+    document.body.classList.add("use-default-cursor");
+    return; // ❗ Stop running custom cursor logic
+  }
 
     const handleMouseMove = (e) => {
       targetRef.current = { x: e.clientX, y: e.clientY };
@@ -176,7 +187,7 @@ export default function MainLayout({ children }) {
     
 
       {/* CUSTOM CURSOR */}
-{!isMobile && (
+{!isMobile && !isSafari && (
   <CursorPortal>
     <div ref={followerRef} style={followerStyle}>
       {cursorMode === "text" && "See Magic!!"}
