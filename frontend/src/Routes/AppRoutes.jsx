@@ -11,6 +11,7 @@ import MediaSolutions from "../Components/MediaSolutions";
 import ContentSolutions from "../Components/ContentSolutions";
 import Privacy from "@/Pages/Privacy";
 import TermsConditions from "@/Pages/TermsConditions";
+import NotFound from "@/Pages/NotFound";
 
 
 export default function AppRoutes() {
@@ -25,7 +26,7 @@ export default function AppRoutes() {
       <Route path="/content-solutions" element={<ContentSolutions/>}/>
       <Route path="/privacy-policy" element={<Privacy/>} />
       <Route path="/terms-conditions" element={<TermsConditions />} />
-      <Route path="*" element={<div>404 Not Found</div>} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
