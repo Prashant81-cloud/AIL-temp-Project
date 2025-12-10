@@ -114,9 +114,9 @@ export default function MainLayout({ children }) {
           absolute
           sticky bottom-0 
           z-0
-          md:h-140
+          md:h-150
           sm:h-160
-          h-115
+          h-118
           w-screen
         "
       >
@@ -157,9 +157,10 @@ export default function MainLayout({ children }) {
             </div>
 
 <div className="text-sm nunito-sans flex flex-col items-start  justify-start ">
-  <p>Indian DNA. Global drive.</p>
-  <p> Creative on purpose.</p>
-  <p>All Rights Reserved.</p>
+  <p>Made in India.</p>
+  <p>Made for the World. </p>
+  <p> All Rights Reserved. </p>
+  <p>©️ AIL 2026</p>
 </div>
 
 

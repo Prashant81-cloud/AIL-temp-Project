@@ -678,7 +678,7 @@ ref={bot1Ref}
 
 
 {/*Page-6 */}
-<a href="" target="_blank">
+<a href="#" target="_blank">
           <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
