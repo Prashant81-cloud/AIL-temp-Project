@@ -29,7 +29,7 @@ const { name, email, phone, coverLetter, driveLink } = req.body;
 
     await transporter.sendMail({
       from: `"AIL Website" <${process.env.EMAIL_USER}>`,
-      to: "prashant81046@gmail.com",
+      to: "cooperate@ail-india.com",
       replyTo: email,
       subject: "New Form Submission",
       html: `
