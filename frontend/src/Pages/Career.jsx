@@ -19,22 +19,27 @@ function Career() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // For now just logging — later you can connect API / EmailJS / Supabase
-    console.log("Form Submitted:", formData);
+  const res = await fetch("/api/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
+    alert("Form submitted successfully");
+  } else {
+    alert("Something went wrong");
+  }
+};
 
 
-    // Optional: reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      coverLetter: "",
-      driveLink: "",
-    });
-  };
+
+
   return (
     <div className='min-h-screen px-15  flex gap-27'>
         <div className='w-1/2'>
