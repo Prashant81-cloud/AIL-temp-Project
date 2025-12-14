@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 function Career() {
 
+  const [status, setStatus] = useState("idle"); 
+  const [message, setMessage] = useState("");
     const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,21 +23,45 @@ function Career() {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  setStatus("loading");
 
-  const res = await fetch("/api/send-email-career", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  });
+  try {
+    const res = await fetch("/api/send-email-career", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (data.success) {
-    alert("Form submitted successfully");
-  } else {
-    alert("Something went wrong");
+    if (data.success) {
+      setStatus("success");
+      setMessage("Application submitted successfully!");
+
+      // ✅ CLEAR FORM
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        coverLetter: "",
+        driveLink: "",
+      });
+
+      // Optional: auto-hide message
+      setTimeout(() => {
+        setStatus("idle");
+        setMessage("");
+      }, 4000);
+    } else {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
+  } catch (err) {
+    setStatus("error");
+    setMessage("Server error. Please try later.");
   }
 };
+
 
 
 
@@ -131,13 +157,33 @@ Google Drive Link (Resume / Portfolio)
 </div>
 
       {/* Submit Button */}
-      <button
-        type="submit"
-        className="w-full bg-black text-white py-3 rounded-lg hover:opacity-90 transition"
-      >
-        Submit Application
-      </button>
+<button
+  type="submit"
+  disabled={status === "loading"}
+  className={`w-full py-3 rounded-lg transition ${
+    status === "loading"
+      ? "bg-gray-400 cursor-not-allowed"
+      : "bg-black text-white hover:opacity-90"
+  }`}
+>
+  {status === "loading" ? "Submitting..." : "Submit Application"}
+</button>
+
     </form>
+    {status !== "idle" && (
+  <div
+    className={`mt-6 rounded-lg px-4 py-3 text-lg ${
+      status === "success"
+        ? "bg-green-100 text-green-800"
+        : status === "error"
+        ? "bg-red-100 text-red-800"
+        : ""
+    }`}
+  >
+    {message}
+  </div>
+)}
+
         </div>
 
 {/* div for images */}
