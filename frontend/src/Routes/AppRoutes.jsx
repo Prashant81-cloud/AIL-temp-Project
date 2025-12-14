@@ -12,6 +12,7 @@ import ContentSolutions from "../Components/ContentSolutions";
 import Privacy from "@/Pages/Privacy";
 import TermsConditions from "@/Pages/TermsConditions";
 import NotFound from "@/Pages/NotFound";
+import Career from "../Pages/Career"; 
 
 
 export default function AppRoutes() {
@@ -27,6 +28,7 @@ export default function AppRoutes() {
       <Route path="/privacy-policy" element={<Privacy/>} />
       <Route path="/terms-conditions" element={<TermsConditions />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/careers" element={<Career />} />
     </Routes>
   );
 }
