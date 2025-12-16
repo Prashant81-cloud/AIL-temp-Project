@@ -15,6 +15,7 @@ const Privacy = lazy(() => import("@/Pages/Privacy"));
 const TermsConditions = lazy(() => import("@/Pages/TermsConditions"));
 const NotFound = lazy(() => import("@/Pages/NotFound"));
 const Career = lazy(() => import("../Pages/Career"));
+const UpcomingSeries = lazy(() => import("../Pages/UpcomingSeries"));
 
 export default function AppRoutes() {
   return (
@@ -31,6 +32,7 @@ export default function AppRoutes() {
       <Route path="/terms-conditions" element={<TermsConditions />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/hiring" element={<Career />} />
+      <Route path="/upcoming-series" element={<UpcomingSeries />} />
     </Routes>
     </Suspense>
   );
