@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     await transporter.sendMail({
       from: `"AIL Website" <${process.env.EMAIL_USER}>`,
-      to: "prashant81046@gmail.com",
+      to: "corporate@ail-india.com",
       replyTo: email,
       subject: "New Submission – Upcoming Series",
       html: `
