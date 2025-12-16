@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { lazy, useEffect, useRef, useState } from "react";
 import NavbarWrapper from "../Components/NavbarWrapper";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
@@ -14,6 +14,7 @@ import AILLOGO from "../assets/AIL BRONZE.png";
 import Random from "@/Pages/Random";
 import { Link } from "react-router-dom";
 import useIsMobile from "@/Pages/useIsMobile";
+const Career = lazy(() => import("../Pages/Career"));
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -112,7 +113,7 @@ export default function MainLayout({ children }) {
 
   return (
     <div className="relative  bg-[#FAF4EC] ">
-      {/* MAIN CONTENT ABOVE, with bottom padding so footer can be revealed */}
+      {/* MAIN CONTENT ABOVE, with bottom padding so footer can be revealed  */}
       <div className="relative z-10 bg-[#FAF4EC] rounded-b-[70px]">
         <NavbarWrapper />
         <main className="">{children}</main>
@@ -125,9 +126,9 @@ export default function MainLayout({ children }) {
           absolute
           sticky bottom-0 
           z-0
-          md:h-150
-          sm:h-160
-          h-118
+          md:h-140
+          sm:h-170
+          h-[clamp(30rem,135vw,33rem)]
           w-screen
         "
       >
@@ -149,14 +150,39 @@ export default function MainLayout({ children }) {
 
           <div className="flex md:flex-row md:gap-0 gap-5 flex-col  justify-between items-center w-full ">
 
-<div className="text-sm nunito-sans flex items-center md:space-x-10  space-x-4 justify-center  "> 
-<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4">
+<div className="text-sm nunito-sans flex items-center md:space-x-10  space-x-4 justify-center hidden md:flex"> 
+<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4 md:gap-3">
   <Link to="/privacy-policy" className=" ">Privacy </Link>
   <Link to="/terms-conditions" className=" ">Terms & Conditions</Link>
 </div>
-<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4">
+<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4 md:gap-3">
     <a href="mailto:corporate@ail-india.com">  <button>Contact Us</button>   </a>
   <Link to="/about" className=" ">About Us</Link>
+</div>
+<div className="flex md:flex-col lg:flex-row md:space-x-5 space-x-4 md:gap-3">
+    <Link to="/hiring" className=" ">We're Hiring!</Link>
+    <Link to="/upcoming-series" className=" ">Upcoming Series</Link>
+</div>
+</div>
+
+<div className="text-sm nunito-sans flex md:flex-row  gap-5  items-center  justify-center md:hidden"> 
+<div className=" flex lg:flex-row md:flex-col md:gap-2 lg:gap-5  gap-3 flex-col ">
+  <Link to="/privacy-policy" className=" ">Privacy </Link>
+
+      <Link to="/hiring" className=" ">We're Hiring!</Link>
+
+</div>
+<div className=" flex lg:flex-row md:flex-col md:gap-2 lg:gap-5 gap-3  flex-col ">
+
+
+    <a href="mailto:corporate@ail-india.com">  <button>Contact Us</button>   </a>
+    <Link to="/upcoming-series" className=" ">Upcoming Series</Link>
+</div>
+<div className=" flex lg:flex-row md:flex-col md:gap-2 lg:gap-5 gap-3  flex-col ">
+  <Link to="/terms-conditions" className=" ">Terms </Link>
+  <Link to="/about" className=" ">About Us</Link>
+
+
 </div>
 </div>
 

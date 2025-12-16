@@ -30,7 +30,7 @@ export default function AppRoutes() {
       <Route path="/privacy-policy" element={<Privacy/>} />
       <Route path="/terms-conditions" element={<TermsConditions />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="/careers" element={<Career />} />
+      <Route path="/hiring" element={<Career />} />
     </Routes>
     </Suspense>
   );
