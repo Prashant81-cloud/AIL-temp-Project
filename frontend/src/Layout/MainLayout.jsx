@@ -128,7 +128,7 @@ export default function MainLayout({ children }) {
           z-0
           md:h-140
           sm:h-170
-          h-[clamp(30rem,135vw,33rem)]
+          h-[clamp(30rem,125vw,33rem)]
           w-screen
         "
       >
