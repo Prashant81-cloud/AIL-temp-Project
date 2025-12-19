@@ -7,6 +7,9 @@ import Solutions from "./Solutions";
 import { useLocation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
+
+
+
 ScrollTrigger.config({ 
   ignoreMobileResize: true 
 });
@@ -121,59 +124,57 @@ const { ref: bot3RefMobile, inView: bot3InViewMobile } = useInView({ triggerOnce
 useEffect(() => {
   if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
 
+  // 1. ENABLE Normalize Scroll only when this component mounts
+  ScrollTrigger.normalizeScroll({
+    allowNestedScroll: true,
+    lockAxis: false,
+    momentum: (self) => Math.min(3, self.velocityY / 1000), 
+    type: "touch,wheel,pointer",
+  });
+
+  // Force refresh to ensure calculations are correct with normalized scroll active
+  ScrollTrigger.refresh();
+
   const cards = cardsContainerRef.current.children;
   const cardInners = cardInnersRef.current;
-  const numCards = cardInners.length;
-
-  const resizeObserver = new ResizeObserver(() => {
-    ScrollTrigger.refresh();
-  });
+  
+  const resizeObserver = new ResizeObserver(() => ScrollTrigger.refresh());
   resizeObserver.observe(cardsContainerRef.current);
 
+  // Static Z-Index Setup
+  Array.from(cards).forEach((card, i) => {
+      gsap.set(card, { zIndex: i + 1 });
+  });
+
   cardInners.forEach((cardInner, index) => {
-    const card = cards[index];
-    if (!card) return;
-
-    gsap.set(cardInner, { 
-      rotation: 0, 
-      autoAlpha: 1, 
-      willChange: "transform, opacity" 
-    });
-    gsap.set(card, { zIndex: index });
-
     const nextCard = cards[index + 1];
     if (!nextCard) return;
 
+    gsap.set(cardInner, { willChange: "transform, opacity" });
+
     ScrollTrigger.create({
       trigger: nextCard,
-      start: "top 85%", // Trigger slightly earlier for mobile safety
-      end: "top 15%",   // End slightly later to ensure full rotation
+      start: "top 80%", 
+      end: "top 20%",
       scrub: 1,
       fastScrollEnd: true,   
       preventOverlaps: true, 
-      // SNAP Z-INDEX: Guaranteed to fire even on fast swipes
-      onToggle: (self) => {
-        if (self.isActive || self.progress > 0.5) {
-           gsap.set(nextCard, { zIndex: index + numCards + 10 });
-        }
-      },
+      
       onUpdate: (self) => {
         const progress = self.progress;
         gsap.to(cardInner, {
           rotation: 5 * (index * 0.13) * progress,
-          autoAlpha: 1 - (0.01 * progress), // Very subtle fade
+          autoAlpha: 1 - (0.02 * progress), 
           overwrite: "auto",
         });
-
-        // Backup z-index check for ultra-fast scrolling
-        if (progress > 0.1) {
-           gsap.set(nextCard, { zIndex: index + numCards + 10 });
-        }
       },
     });
   });
 
   return () => {
+    // CLEANUP: Disable Normalize Scroll when leaving this page
+    ScrollTrigger.normalizeScroll(false); 
+    
     resizeObserver.disconnect();
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     cardInners.forEach((inner) => gsap.killTweensOf(inner));
