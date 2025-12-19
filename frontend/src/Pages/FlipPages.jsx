@@ -122,20 +122,22 @@ useEffect(() => {
     const cardInners = cardInnersRef.current;
     const numCards = cardInners.length;
 
-    // 1. Force a refresh after a slight delay to ensure the DOM is settled
-    // This fixes the issue where calculations happen before images define the height
-    const refreshTimeout = setTimeout(() => {
-        ScrollTrigger.refresh();
-    }, 500);
+    // --- NEW: ResizeObserver ---
+    // This automatically recalculates positions if images load or screen resizes
+    // It replaces the need for the dependency array.
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+    resizeObserver.observe(cardsContainerRef.current);
 
     cardInners.forEach((cardInner, index) => {
       const card = cards[index];
       if (!card) return;
 
-      // 2. Add 'will-change' to hint the browser to use GPU (fixes tearing/flickering)
+      // Force initial GPU layer to prevent flickering
       gsap.set(cardInner, { 
         rotation: 0, 
-        autoAlpha: 1,
+        autoAlpha: 1, 
         willChange: "transform, opacity" 
       });
       gsap.set(card, { zIndex: index });
@@ -145,33 +147,40 @@ useEffect(() => {
 
       ScrollTrigger.create({
         trigger: nextCard,
-        start: "top 75%", 
-        end: "top 25%", 
-        scrub: 1, // Increased scrub slightly to smooth out fast scrolling
+        start: "top 75%",
+        end: "top 25%",
+        scrub: 1, // Keep scrub tight
+        fastScrollEnd: true,   // <--- FIX: Forces completion if scrolled fast
+        preventOverlaps: true, // <--- FIX: Stops animation conflicts
         onUpdate: (self) => {
           const progress = self.progress;
 
+          // Interpolate values based on progress
           gsap.to(cardInner, {
             rotation: gsap.utils.interpolate(0, 5 * (index * 0.13), progress),
             autoAlpha: gsap.utils.interpolate(1, 0.99, progress),
-            overwrite: "auto", // Changed to auto for better performance
+            overwrite: "auto",
           });
 
-          // Only update zIndex if it actually changes to prevent layout thrashing
+          // Logic to handle z-index switching safely
           const newZIndex = index + numCards;
-          if (gsap.getProperty(nextCard, "zIndex") !== newZIndex) {
+          const currentZ = gsap.getProperty(nextCard, "zIndex");
+          
+          if (progress > 0.1 && currentZ !== newZIndex) {
              gsap.set(nextCard, { zIndex: newZIndex });
+          } else if (progress < 0.1 && currentZ === newZIndex) {
+             gsap.set(nextCard, { zIndex: index + 1 });
           }
         },
       });
     });
 
     return () => {
-      clearTimeout(refreshTimeout);
+      resizeObserver.disconnect();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       cardInners.forEach((inner) => gsap.killTweensOf(inner));
     };
-  }, [cardData.length, rbLoaded, bot1Loaded, tbcLoaded, gogLoaded, bot2Loaded, sfLoaded, bot3Loaded]); // Added load states to dependency array
+  }, []); // Keep empty as requested
 
 
   return (
