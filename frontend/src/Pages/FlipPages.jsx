@@ -103,7 +103,7 @@ const { ref: bot3RefMobile, inView: bot3InViewMobile } = useInView({ triggerOnce
       //  bg-[#FA5325]           bg-[#A91C60]               bg-[#]
 
   const cardData = [
-    { id: 2, title: "Brands of Tomorrow Season 3",smallHeading:"Dreams bloom softly beneath the moonlight",cardNumber: '01', content: "A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. ", bgColor: "bg-[#FCB8FA]" },
+    { id: 2, title: "Brands of Tomorrow Season 3",smallHeading:"Dreams bloom softly beneath the moonlight",cardNumber: '01', content: "The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world.", bgColor: "bg-[#FCB8FA]" },
     { id: 3, title: "Rising Bharat",smallHeading:"Courage awakens when hope feels lost",cardNumber: '02', content: "A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.", bgColor: "bg-[#34C791]" },
     { id: 4, title: "The Bharat Chapters ",smallHeading:"Silence spoke louder than her words", cardNumber: '03',content: "The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity", bgColor: "bg-[#0E8DFF]" },
     { id: 5, title: "Valor",smallHeading:"Waves kissed the shore with rhythm",cardNumber: '04', content: "Cras justo odio dapibus ac facilisis in egestas eget quam. Sed posuere consectetur est at lobortis nibh ut fermentum massa justo sit amet.", bgColor: "bg-[#FA5325]" },
@@ -135,7 +135,6 @@ useEffect(() => {
       start: "top 75%",
       end: "top 25%",
       scrub: 1,
-      invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = self.progress;
 
@@ -156,7 +155,7 @@ useEffect(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     cardInners.forEach((inner) => gsap.killTweensOf(inner));
   };
-}, [cardData.length]);
+}, []);
 
 
   return (
@@ -373,310 +372,6 @@ ref={bot1Ref}
 </a>
 
 
-
-
-
-
-{/*Page-5 */}
-<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-<div className="flex items-start justify-between">
-
-            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Hall of Fame
-            </span>
-
-        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
-          05       
-        </span>
-
-
-            
-</div>
-
-        <div className="relative z-10  md:flex-row ">
-          <div className="w-full md:w-1/2">
-
-             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs2img} alt="" />
-             </div>
-
-          </div>
-        <div className=" ">
-        <div className="sm:hidden block flex flex-col ">
-
-                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <video
-               poster="https://ail-media.b-cdn.net/posterBOT2.png"
-               ref={bot2RefMobile} 
-               preload="metadata"
-                 src={bot2InViewMobile ? BOT2vid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setBot2LoadedMobile(true)}
-               />
-             </div>
-
-          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
-
-
-
-
-
-
-        </div>
-
-        <div className="hidden sm:flex items-center justify-between ">
-
-
-
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
-
-
-                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
-               <video
-               poster="https://ail-media.b-cdn.net/posterBOT2.png"
-               ref={bot2Ref} 
-               preload="metadata"
-                 src={bot2InView ? BOT2vid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setBot2Loaded(true)}
-               />
-             </div>
-
-
-
-        </div>
-
-        <div>
-<p
-  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-
->
-  <span>Watch now</span>
-  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
-    <ArrowIcon />
-  </span>
-</p>
-        </div>
-        </div>
-        </div>
-
-            </div>
-          </div>
-</a>
-
-
-
-
-{/*Page-6 */}
-<a href="#" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-<div className="flex items-start justify-between">
-
-            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Hall of Fame
-            </span>
-
-        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
-          06       
-        </span>
-
-
-            
-</div>
-
-        <div className="relative z-10  md:flex-row ">
-          <div className="w-full md:w-1/2">
-
-             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={SFimg} alt="" />
-             </div>
-
-          </div>
-        <div className=" ">
-        <div className="sm:hidden block flex flex-col ">
-
-                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <video
-               poster="https://ail-media.b-cdn.net/posterSF.png"
-               ref={sfRefMobile} 
-               preload="metadata"
-                 src={sfInViewMobile ? SFvid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setSfLoadedMobile(true)}
-               />
-             </div>
-
-          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
-
-
-
-
-
-
-        </div>
-
-        <div className="hidden sm:flex items-center justify-between ">
-
-
-
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
-
-
-                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <video
-               poster="https://ail-media.b-cdn.net/posterSF.png"
-               ref={sfRef} 
-               preload="metadata"
-                 src={sfInView ? SFvid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setSfLoaded(true)}
-               />
-             </div>
-
-
-
-        </div>
-
-        <div>
-<p
-  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-
->
-  <span>Coming soon</span>
-  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
-    <ArrowIcon />
-  </span>
-</p>
-        </div>
-        </div>
-        </div>
-
-            </div>
-          </div>
-</a>
-
-
-
-
-{/*Page-7 */}
-<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-<div className="flex items-start justify-between">
-
-            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Hall of Fame
-            </span>
-
-        <span className={`text-5xl sm:text-6xl invisible md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
-          07       
-        </span>
-
-
-            
-</div>
-
-        <div className="relative z-10  md:flex-row ">
-          <div className="w-full md:w-1/2">
-
-             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs3img} alt="" />
-             </div>
-
-          </div>
-        <div className=" ">
-        <div className="sm:hidden block flex flex-col ">
-
-                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
-               <video
-               poster="https://ail-media.b-cdn.net/posterBOT3.png"
-               ref={bot3RefMobile} 
-               preload="metadata"
-                 src={bot3InViewMobile ? BOT3vid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setBot3LoadedMobile(true)}
-               />
-             </div>
-
-          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
-
-
-
-
-
-
-        </div>
-
-        <div className="hidden sm:flex items-center justify-between ">
-
-
-
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
-
-
-                       <div className="p-1 w-35 sm:w-40 md:w-45 aspect-[3/3.8] lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
-               <video
-               poster="https://ail-media.b-cdn.net/posterBOT3.png"
-               ref={bot3Ref} 
-               preload="metadata"
-                 src={bot3InView ? BOT3vid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setBot3Loaded(true)}
-               />
-             </div>
-
-
-
-        </div>
-
-        <div>
-<p
-  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-
->
-  <span>Watch now</span>
-  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
-    <ArrowIcon />
-  </span>
-</p>
-        </div>
-        </div>
-        </div>
-
-            </div>
-          </div>
-</a>
-
-
 {/*Page-3 */}
 <a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
 
@@ -723,7 +418,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
 
 
 
@@ -736,7 +431,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
 
 
                        <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -824,7 +519,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
 
 
 
@@ -837,7 +532,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -853,6 +548,308 @@ ref={bot1Ref}
         playsInline 
                  className="rounded-2xl "
       onLoadedData={() => setGogLoaded(true)}
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</p>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
+
+
+
+
+{/*Page-5 */}
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Hall of Fame
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          05       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs2img} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <video
+               poster="https://ail-media.b-cdn.net/posterBOT2.png"
+               ref={bot2RefMobile} 
+               preload="metadata"
+                 src={bot2InViewMobile ? BOT2vid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setBot2LoadedMobile(true)}
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
+               <video
+               poster="https://ail-media.b-cdn.net/posterBOT2.png"
+               ref={bot2Ref} 
+               preload="metadata"
+                 src={bot2InView ? BOT2vid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setBot2Loaded(true)}
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</p>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
+
+
+
+
+{/*Page-6 */}
+<a href="#" target="_blank">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Hall of Fame
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          06       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={SFimg} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <video
+               poster="https://ail-media.b-cdn.net/posterSF.png"
+               ref={sfRefMobile} 
+               preload="metadata"
+                 src={sfInViewMobile ? SFvid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setSfLoadedMobile(true)}
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <video
+               poster="https://ail-media.b-cdn.net/posterSF.png"
+               ref={sfRef} 
+               preload="metadata"
+                 src={sfInView ? SFvid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setSfLoaded(true)}
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+
+>
+  <span>Coming soon</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</p>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
+
+
+
+
+{/*Page-7 */}
+<a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Hall of Fame
+            </span>
+
+        <span className={`text-5xl sm:text-6xl invisible md:text-7xl lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          07       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={BOTs3img} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 h-auto aspect-[3/3.8] bg-white rounded-3xl shadow-2xl transform rotate-5">
+               <video
+               poster="https://ail-media.b-cdn.net/posterBOT3.png"
+               ref={bot3RefMobile} 
+               preload="metadata"
+                 src={bot3InViewMobile ? BOT3vid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setBot3LoadedMobile(true)}
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 md:w-45 aspect-[3/3.8] lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
+               <video
+               poster="https://ail-media.b-cdn.net/posterBOT3.png"
+               ref={bot3Ref} 
+               preload="metadata"
+                 src={bot3InView ? BOT3vid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setBot3Loaded(true)}
                />
              </div>
 
