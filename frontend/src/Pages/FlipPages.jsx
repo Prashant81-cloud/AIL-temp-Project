@@ -125,12 +125,8 @@ useEffect(() => {
   if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
 
   // 1. ENABLE Normalize Scroll only when this component mounts
-  ScrollTrigger.normalizeScroll({
-    allowNestedScroll: true,
-    lockAxis: false,
-    momentum: (self) => Math.min(8, self.velocityY / 100), 
-    type: "touch,wheel,pointer",
-  });
+  // ScrollTrigger.normalizeScroll(true);  
+    
 
   // Force refresh to ensure calculations are correct with normalized scroll active
   ScrollTrigger.refresh();
