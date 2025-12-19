@@ -53,7 +53,7 @@ export default function HomePage() {
 </div>
 
 
-<div ><FlipPages /></div>
+<div className="min-h-screen md:h-auto" ><FlipPages /></div>
 
 <div id="solutions-section"> <Solutions /> </div>
 
