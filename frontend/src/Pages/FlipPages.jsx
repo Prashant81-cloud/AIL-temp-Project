@@ -373,206 +373,6 @@ ref={bot1Ref}
 </a>
 
 
-{/*Page-3 */}
-<a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
-
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-<div className="flex items-start justify-between">
-
-            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Hall of Fame
-            </span>
-
-        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
-          03       
-        </span>
-
-
-            
-</div>
-
-        <div className="relative z-10  md:flex-row ">
-          <div className="w-full md:w-1/2">
-
-             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={TBCimg} alt="" />
-             </div>
-
-          </div>
-        <div className=" ">
-        <div className="sm:hidden block flex flex-col ">
-
-                       <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
-               <video
-               poster="https://ail-media.b-cdn.net/posterTBC.png"
-               ref={tbcRefMobile} 
-               preload="metadata"
-                 src={tbcInViewMobile ? TBCvid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setTbcLoadedMobile(true)}
-               />
-             </div>
-
-          <p className="   font-normal text-[1rem] text-white mt-10">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
-
-
-
-
-
-
-        </div>
-
-        <div className="hidden sm:flex items-center justify-between ">
-
-
-
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
-
-
-                       <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
-               <video
-               poster="https://ail-media.b-cdn.net/posterTBC.png"
-               ref={tbcRef} 
-               preload="metadata"
-                 src={tbcInView ? TBCvid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setTbcLoaded(true)}
-               />
-             </div>
-
-
-
-        </div>
-
-        <div>
-<p
-  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-
->
-  <span>Watch now</span>
-  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
-    <ArrowIcon />
-  </span>
-</p>
-        </div>
-        </div>
-        </div>
-
-            </div>
-          </div>
-</a>
-
-
-
-{/*Page-4 */}
-<a href="https://www.youtube.com/watch?v=bnN8sPUKDN8" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
-            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
-<div className="flex items-start justify-between">
-
-            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
-              Hall of Fame
-            </span>
-
-        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
-          04       
-        </span>
-
-
-            
-</div>
-
-        <div className="relative z-10  md:flex-row ">
-          <div className="w-full md:w-1/2">
-
-             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
-              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={GOGimg} alt="" />
-             </div>
-
-          </div>
-        <div className=" ">
-        <div className="sm:hidden block flex flex-col ">
-
-                       <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
-               <video
-               poster="https://ail-media.b-cdn.net/posterGOG.png"
-               ref={gogRefMobile} 
-               preload="metadata"
-                 src={gogInViewMobile ? GOGvid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setGogLoadedMobile(true)}
-               />
-             </div>
-
-          <p className="   font-normal text-[1rem] text-white mt-10">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
-
-
-
-
-
-
-        </div>
-
-        <div className="hidden sm:flex items-center justify-between ">
-
-
-
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
-
-
-                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
-
-               <video
-               poster="https://ail-media.b-cdn.net/posterGOG.png"
-               ref={gogRef} 
-               preload="metadata"
-                 src={gogInView ? GOGvid : undefined}
-                         autoPlay
-        loop
-        muted
-        playsInline 
-                 className="rounded-2xl "
-      onLoadedData={() => setGogLoaded(true)}
-               />
-             </div>
-
-
-
-        </div>
-
-        <div>
-<p
-  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-
->
-  <span>Watch now</span>
-  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
-    <ArrowIcon />
-  </span>
-</p>
-        </div>
-        </div>
-        </div>
-
-            </div>
-          </div>
-</a>
 
 
 
@@ -851,6 +651,208 @@ ref={bot1Ref}
         playsInline 
                  className="rounded-2xl "
       onLoadedData={() => setBot3Loaded(true)}
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</p>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
+
+
+{/*Page-3 */}
+<a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
+
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Hall of Fame
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          03       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={TBCimg} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
+               <video
+               poster="https://ail-media.b-cdn.net/posterTBC.png"
+               ref={tbcRefMobile} 
+               preload="metadata"
+                 src={tbcInViewMobile ? TBCvid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setTbcLoadedMobile(true)}
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
+
+
+                       <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
+               <video
+               poster="https://ail-media.b-cdn.net/posterTBC.png"
+               ref={tbcRef} 
+               preload="metadata"
+                 src={tbcInView ? TBCvid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setTbcLoaded(true)}
+               />
+             </div>
+
+
+
+        </div>
+
+        <div>
+<p
+  className="watchNowBtn w-fit text-sm flex items-center mt-4 lg:-mt-4 gap-3 px-3 py-2 font-semibold text-black transition bg-white rounded-xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+
+>
+  <span>Watch now</span>
+  <span className="flex items-center justify-center  w-6 h-6 bg-black rounded-full">
+    <ArrowIcon />
+  </span>
+</p>
+        </div>
+        </div>
+        </div>
+
+            </div>
+          </div>
+</a>
+
+
+
+{/*Page-4 */}
+<a href="https://www.youtube.com/watch?v=bnN8sPUKDN8" target="_blank">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+            <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
+<div className="flex items-start justify-between">
+
+            <span className={` inline-block px-4 py-1 lg:text-lg font-semibold text-sm sm:text-base bg-white rounded-lg text-black`}>
+              Hall of Fame
+            </span>
+
+        <span className={`text-5xl sm:text-6xl md:text-7xl invisible lg:text-9xl font-extrabold  "text-white" opacity-20 `}>
+          04       
+        </span>
+
+
+            
+</div>
+
+        <div className="relative z-10  md:flex-row ">
+          <div className="w-full md:w-1/2">
+
+             <div className=" text-6xl font-bold text-black md:text-7xl lg:text-6xl lg:-mt-15">
+              <img className="rounded-xl  w-40 sm:w-55 md:w-70 lg:w-80  " src={GOGimg} alt="" />
+             </div>
+
+          </div>
+        <div className=" ">
+        <div className="sm:hidden block flex flex-col ">
+
+                       <div className="p-1 w-35 aspect-[3/3.8] h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
+               <video
+               poster="https://ail-media.b-cdn.net/posterGOG.png"
+               ref={gogRefMobile} 
+               preload="metadata"
+                 src={gogInViewMobile ? GOGvid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setGogLoadedMobile(true)}
+               />
+             </div>
+
+          <p className="   font-normal text-[1rem] text-white mt-10">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
+
+
+
+
+
+
+        </div>
+
+        <div className="hidden sm:flex items-center justify-between ">
+
+
+
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
+
+
+                       <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
+
+               <video
+               poster="https://ail-media.b-cdn.net/posterGOG.png"
+               ref={gogRef} 
+               preload="metadata"
+                 src={gogInView ? GOGvid : undefined}
+                         autoPlay
+        loop
+        muted
+        playsInline 
+                 className="rounded-2xl "
+      onLoadedData={() => setGogLoaded(true)}
                />
              </div>
 

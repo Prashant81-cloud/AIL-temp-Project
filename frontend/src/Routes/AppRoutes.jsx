@@ -1,23 +1,25 @@
+// src/routes/AppRoutes.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
+import { lazy, Suspense } from "react";
 
 import HomePage from "../Pages/HomePage";
-import AboutUs from "../Pages/AboutUs";
-import ContentIntellegence from "../Pages/ContentIntellegence";
-import FAQs from "../Pages/FAQs";
-import BrandSolutions from "../Components/BrandSolutions";
-import MediaSolutions from "../Components/MediaSolutions";
-import ContentSolutions from "../Components/ContentSolutions";
-import Privacy from "@/Pages/Privacy";
-import TermsConditions from "@/Pages/TermsConditions";
-import NotFound from "@/Pages/NotFound";
-import Career from "../Pages/Career"; 
-
+import PageLoader from "../Components/PageLoader";
+const AboutUs = lazy(() => import("../Pages/AboutUs"));
+const ContentIntellegence = lazy(() => import("../Pages/ContentIntellegence"));
+const FAQs = lazy(() => import("../Pages/FAQs"));
+const BrandSolutions = lazy(() => import("../Components/BrandSolutions"));
+const MediaSolutions = lazy(() => import("../Components/MediaSolutions"));
+const ContentSolutions = lazy(() => import("../Components/ContentSolutions"));
+const Privacy = lazy(() => import("@/Pages/Privacy"));
+const TermsConditions = lazy(() => import("@/Pages/TermsConditions"));
+const NotFound = lazy(() => import("@/Pages/NotFound"));
+const Career = lazy(() => import("../Pages/Career"));
+const UpcomingSeries = lazy(() => import("../Pages/UpcomingSeries"));
 
 export default function AppRoutes() {
   return (
-
+        <Suspense fallback={<PageLoader />}>
     <Routes>
       <Route path="/" element={<HomePage  />} />
       <Route path="/content-intellegence" element={<ContentIntellegence />} />
@@ -29,8 +31,9 @@ export default function AppRoutes() {
       <Route path="/privacy-policy" element={<Privacy/>} />
       <Route path="/terms-conditions" element={<TermsConditions />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="/careers" element={<Career />} />
+      <Route path="/hiring" element={<Career />} />
+      <Route path="/upcoming-series" element={<UpcomingSeries />} />
     </Routes>
-
+    </Suspense>
   );
 }
