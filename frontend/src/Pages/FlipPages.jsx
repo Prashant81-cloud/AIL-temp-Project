@@ -736,13 +736,12 @@ ref={bot1Ref}
                poster="https://ail-media.b-cdn.net/posterSF.png"
                ref={sfRefMobile} 
                preload="metadata"
-                 src={sfInViewMobile ? SFvid : undefined}
+                 src={SFvid }
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
-      onLoadedData={() => setSfLoadedMobile(true)}
                />
              </div>
 
@@ -836,13 +835,12 @@ ref={bot1Ref}
                poster="https://ail-media.b-cdn.net/posterBOT3.png"
                ref={bot3RefMobile} 
                preload="metadata"
-                 src={bot3InViewMobile ? BOT3vid : undefined}
+                 src={BOT3vid}
                          autoPlay
         loop
         muted
         playsInline 
                  className="rounded-2xl "
-      onLoadedData={() => setBot3LoadedMobile(true)}
                />
              </div>
 
