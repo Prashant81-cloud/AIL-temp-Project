@@ -125,7 +125,7 @@ useEffect(() => {
   if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
 
   // 1. ENABLE Normalize Scroll only when this component mounts
-  // ScrollTrigger.normalizeScroll(true);  
+  ScrollTrigger.normalizeScroll(true);  
     
 
   // Force refresh to ensure calculations are correct with normalized scroll active
