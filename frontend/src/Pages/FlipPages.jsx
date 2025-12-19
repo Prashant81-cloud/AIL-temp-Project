@@ -3,7 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-
+import Solutions from "./Solutions";
+import { useLocation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ 
@@ -33,6 +34,8 @@ function FlipPages() {
   const BOTs2img = 'https://ail-media.b-cdn.net/BOTs2.png';
   const BOTs3img = 'https://ail-media.b-cdn.net/BOTs3.png';
 
+
+    const location = useLocation();
 
   {/*
 
@@ -116,72 +119,87 @@ const { ref: bot3RefMobile, inView: bot3InViewMobile } = useInView({ triggerOnce
   ];
 
 useEffect(() => {
-    if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
+  if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
 
-    const cards = cardsContainerRef.current.children;
-    const cardInners = cardInnersRef.current;
-    const numCards = cardInners.length;
+  const cards = cardsContainerRef.current.children;
+  const cardInners = cardInnersRef.current;
+  const numCards = cardInners.length;
 
-    // --- NEW: ResizeObserver ---
-    // This automatically recalculates positions if images load or screen resizes
-    // It replaces the need for the dependency array.
-    const resizeObserver = new ResizeObserver(() => {
-      ScrollTrigger.refresh();
+  const resizeObserver = new ResizeObserver(() => {
+    ScrollTrigger.refresh();
+  });
+  resizeObserver.observe(cardsContainerRef.current);
+
+  cardInners.forEach((cardInner, index) => {
+    const card = cards[index];
+    if (!card) return;
+
+    gsap.set(cardInner, { 
+      rotation: 0, 
+      autoAlpha: 1, 
+      willChange: "transform, opacity" 
     });
-    resizeObserver.observe(cardsContainerRef.current);
+    gsap.set(card, { zIndex: index });
 
-    cardInners.forEach((cardInner, index) => {
-      const card = cards[index];
-      if (!card) return;
+    const nextCard = cards[index + 1];
+    if (!nextCard) return;
 
-      // Force initial GPU layer to prevent flickering
-      gsap.set(cardInner, { 
-        rotation: 0, 
-        autoAlpha: 1, 
-        willChange: "transform, opacity" 
-      });
-      gsap.set(card, { zIndex: index });
+    ScrollTrigger.create({
+      trigger: nextCard,
+      start: "top 85%", // Trigger slightly earlier for mobile safety
+      end: "top 15%",   // End slightly later to ensure full rotation
+      scrub: 1,
+      fastScrollEnd: true,   
+      preventOverlaps: true, 
+      // SNAP Z-INDEX: Guaranteed to fire even on fast swipes
+      onToggle: (self) => {
+        if (self.isActive || self.progress > 0.5) {
+           gsap.set(nextCard, { zIndex: index + numCards + 10 });
+        }
+      },
+      onUpdate: (self) => {
+        const progress = self.progress;
+        gsap.to(cardInner, {
+          rotation: 5 * (index * 0.13) * progress,
+          autoAlpha: 1 - (0.01 * progress), // Very subtle fade
+          overwrite: "auto",
+        });
 
-      const nextCard = cards[index + 1];
-      if (!nextCard) return;
-
-      ScrollTrigger.create({
-        trigger: nextCard,
-        start: "top 75%",
-        end: "top 25%",
-        scrub: 1, // Keep scrub tight
-        fastScrollEnd: true,   // <--- FIX: Forces completion if scrolled fast
-        preventOverlaps: true, // <--- FIX: Stops animation conflicts
-        onUpdate: (self) => {
-          const progress = self.progress;
-
-          // Interpolate values based on progress
-          gsap.to(cardInner, {
-            rotation: gsap.utils.interpolate(0, 5 * (index * 0.13), progress),
-            autoAlpha: gsap.utils.interpolate(1, 0.99, progress),
-            overwrite: "auto",
-          });
-
-          // Logic to handle z-index switching safely
-          const newZIndex = index + numCards;
-          const currentZ = gsap.getProperty(nextCard, "zIndex");
-          
-          if (progress > 0.1 && currentZ !== newZIndex) {
-             gsap.set(nextCard, { zIndex: newZIndex });
-          } else if (progress < 0.1 && currentZ === newZIndex) {
-             gsap.set(nextCard, { zIndex: index + 1 });
-          }
-        },
-      });
+        // Backup z-index check for ultra-fast scrolling
+        if (progress > 0.1) {
+           gsap.set(nextCard, { zIndex: index + numCards + 10 });
+        }
+      },
     });
+  });
 
-    return () => {
-      resizeObserver.disconnect();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      cardInners.forEach((inner) => gsap.killTweensOf(inner));
+  return () => {
+    resizeObserver.disconnect();
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    cardInners.forEach((inner) => gsap.killTweensOf(inner));
+  };
+}, []);
+
+
+  // 👉 Scroll to #solutions-section when coming from navbar
+  useEffect(() => {
+    if (location.hash === "#solutions") {
+      const el = document.getElementById("solutions-section");
+      if (el) el.scrollIntoView({ behavior: "auto" });
+    }
+  }, [location]);
+
+  // 👉 FIX: Remove #solutions from URL when user scrolls back to top
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 150 && location.hash === "#solutions") {
+        window.history.replaceState({}, "", "/"); // remove hash without reload
+      }
     };
-  }, []); // Keep empty as requested
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location]);
 
   return (
     <>
@@ -191,7 +209,7 @@ useEffect(() => {
         </h1>
       </div>
 
-      <div ref={cardsContainerRef} className="cards relative w-[100vw] bg-[#FAF4EC]">
+      <div ref={cardsContainerRef} className="cards relative w-[100vw] bg-[#FAF4EC]  md:pb-0">
 
 {/*Page-1 */}
 <a href="https://www.hotstar.com/in/shows/rising-bharat/1271450329" target="_blank">
@@ -901,9 +919,7 @@ ref={bot1Ref}
       </div>
 
 
-      <div className="h-1/4 flex items-center justify-center">
-        <h1 className="text-4xl md:text-6xl font-bold"></h1>
-      </div>
+  <div id="solutions-section"> <Solutions /> </div>
     </>
   );
 }
