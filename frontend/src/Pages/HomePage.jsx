@@ -53,9 +53,12 @@ export default function HomePage() {
 </div>
 
 
-<div className="min-h-screen md:h-auto" ><FlipPages /></div>
+<div >
+  <FlipPages />
+  <div id="solutions-section"> <Solutions /> </div>
+  </div>
 
-<div id="solutions-section"> <Solutions /> </div>
+
 
 <div ><DoubleMarquee/></div>
 
