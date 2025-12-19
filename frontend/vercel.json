@@ -16,7 +16,7 @@
       "permanent": true
     },
     {
-      "source": "/upcoming-series",
+      "source": "/get-started",
       "destination": "/faqs",
       "permanent": true
     }

@@ -38,9 +38,9 @@ export default function HomePage() {
 
       <SEO
         title="AIL India: Advaita Innovation Labs - Reshaping India's Narrative"
-        description="AIL India is dedicated to ..."
-        keywords="ail india, research, programs"
-        canonical="https://ail-india.com/"
+        description="Advaita Innovation Labs (AIL-India) combines impeccable production quality with data-driven storytelling. We help brands to create high-impact content for TV and OTT, bridging the gap between human creativity and AI intelligence"
+        keywords="ail india, research, programs, advaita labs, advaita innovation labs"
+        canonical="https://www.ail-india.com/"
       />
 
       <SplitText />

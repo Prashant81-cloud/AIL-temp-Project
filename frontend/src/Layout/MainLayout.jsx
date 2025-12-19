@@ -126,7 +126,7 @@ export default function MainLayout({ children }) {
           absolute
           sticky bottom-0 
           z-0
-          md:h-140
+          md:h-150
           sm:h-170
           h-[clamp(30rem,125vw,33rem)]
           w-screen

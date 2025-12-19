@@ -27,7 +27,7 @@ function AboutUs() {
       <SEO
         title="About Us | AIL India"
         description="Learn more about AIL India's mission and vision."
-        canonical="https://ail-india.com/about"
+        canonical="https://www.ail-india.com/about"
       />
 
     <div className="w-screen ">

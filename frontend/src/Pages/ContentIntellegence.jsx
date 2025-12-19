@@ -16,7 +16,7 @@ function ContentIntellegence() {
 <SEO
   title="Content Intelligence | AIL India"
   description="Learn about AIL India's content intelligence solutions."
-  canonical="https://ail-india.com/content-intellegence"
+  canonical="https://www.ail-india.com/content-intellegence"
 />
 
 

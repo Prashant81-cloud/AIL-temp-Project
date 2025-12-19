@@ -15,7 +15,7 @@ export default function FAQs() {
 <SEO 
   title="FAQs | AIL India"
   description="Frequently asked questions about AIL India."
-  canonical="https://ail-india.com/faqs"
+  canonical="https://www.ail-india.com/faqs"
 />
 
 

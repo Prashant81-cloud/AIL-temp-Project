@@ -135,6 +135,7 @@ useEffect(() => {
       start: "top 75%",
       end: "top 25%",
       scrub: 1,
+      invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = self.progress;
 
@@ -160,7 +161,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className="h-1/4 flex items-center justify-center font-sans ">
+      <div className=" flex items-center justify-center font-sans ">
         <h1 className="text-4xl md:text-6xl font-bold text-center p-4">
            <br /> 
         </h1>
