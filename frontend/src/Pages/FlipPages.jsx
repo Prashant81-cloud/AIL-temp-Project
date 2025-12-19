@@ -103,7 +103,7 @@ const { ref: bot3RefMobile, inView: bot3InViewMobile } = useInView({ triggerOnce
       //  bg-[#FA5325]           bg-[#A91C60]               bg-[#]
 
   const cardData = [
-    { id: 2, title: "Brands of Tomorrow Season 3",smallHeading:"Dreams bloom softly beneath the moonlight",cardNumber: '01', content: "The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world.", bgColor: "bg-[#FCB8FA]" },
+    { id: 2, title: "Brands of Tomorrow Season 3",smallHeading:"Dreams bloom softly beneath the moonlight",cardNumber: '01', content: "A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise. ", bgColor: "bg-[#FCB8FA]" },
     { id: 3, title: "Rising Bharat",smallHeading:"Courage awakens when hope feels lost",cardNumber: '02', content: "A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.", bgColor: "bg-[#34C791]" },
     { id: 4, title: "The Bharat Chapters ",smallHeading:"Silence spoke louder than her words", cardNumber: '03',content: "The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity", bgColor: "bg-[#0E8DFF]" },
     { id: 5, title: "Valor",smallHeading:"Waves kissed the shore with rhythm",cardNumber: '04', content: "Cras justo odio dapibus ac facilisis in egestas eget quam. Sed posuere consectetur est at lobortis nibh ut fermentum massa justo sit amet.", bgColor: "bg-[#FA5325]" },
@@ -421,7 +421,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
 
@@ -434,7 +434,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -522,7 +522,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
 
@@ -535,7 +535,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The docuseries showcases the stories of 14 innovative Indian brands, including Wow Momo, Digiyatra, Aimee, Koparo and more. </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -622,7 +622,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
 
@@ -635,7 +635,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The third season of Brands of Tomorrow brings 21 breakthrough Indian brands — from D2C to healthcare — telling stories of innovation and impact in a rapidly changing world. </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
                        <div className="p-1 w-35 sm:w-40 md:w-45 aspect-[3/3.8] lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -723,7 +723,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
 
@@ -736,7 +736,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">The Bharat Chapter captures how digital transformation is reshaping lives across eight diverse Indian cities, with powerful personal journeys—especially of women—at its heart. Through grounded, human-centric storytelling, it highlights how ecommerce and the internet have quietly enabled upward mobility by empowering individuals and households with access and opportunity. </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
                        <div className="p-1 w-35 aspect-[3/3.8] sm:w-40 md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
@@ -824,7 +824,7 @@ ref={bot1Ref}
                />
              </div>
 
-          <p className="   font-normal text-[1rem] text-white mt-10">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
+          <p className="   font-normal text-[1rem] text-white mt-10">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
 
@@ -837,7 +837,7 @@ ref={bot1Ref}
 
 
 
-          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">"Gods of Gourmet" explores India's fine-dining scene, showcasing its top chefs, innovative dishes, and prestigious restaurants. The show focuses on how India is evolving in the global culinary landscape, blending traditional and modern influences. It features a variety of restaurants across India, celebrating the passion and dedication behind creating exquisite food. </p>
+          <p className=" sm:w-90 md:w-100  lg:w-130 font-normal text-[1rem] md:text-[1.2rem] text-white ">A first-time-in-India series spotlighting generational legacy businesses—the backbone of India’s economy—celebrating visionary leaders redefining industries with innovation, resilience, and bold transformation shaping the nation’s global rise.  </p>
 
 
                        <div className="p-1 w-35 sm:w-40 aspect-[3/3.8] md:w-45 lg:w-60 h-auto bg-white rounded-3xl shadow-2xl transform rotate-5">
