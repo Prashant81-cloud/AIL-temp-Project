@@ -6,6 +6,9 @@ import { useInView } from "react-intersection-observer";
 
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ 
+  ignoreMobileResize: true 
+});
 
 function FlipPages() {
   const cardsContainerRef = useRef(null);
@@ -113,49 +116,62 @@ const { ref: bot3RefMobile, inView: bot3InViewMobile } = useInView({ triggerOnce
   ];
 
 useEffect(() => {
-  if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
+    if (!cardsContainerRef.current || cardInnersRef.current.length === 0) return;
 
-  const cards = cardsContainerRef.current.children;
-  const cardInners = cardInnersRef.current;
-  const numCards = cardInners.length;
+    const cards = cardsContainerRef.current.children;
+    const cardInners = cardInnersRef.current;
+    const numCards = cardInners.length;
 
-  cardInners.forEach((cardInner, index) => {
-    const card = cards[index];
-    if (!card) return;
+    // 1. Force a refresh after a slight delay to ensure the DOM is settled
+    // This fixes the issue where calculations happen before images define the height
+    const refreshTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 500);
 
-    // ✅ Initially set stacking (first card at bottom, last at top)
-    gsap.set(card, { zIndex: index });
-    gsap.set(cardInner, { rotation: 0, autoAlpha: 1 });
+    cardInners.forEach((cardInner, index) => {
+      const card = cards[index];
+      if (!card) return;
 
-    const nextCard = cards[index + 1];
-    if (!nextCard) return;
+      // 2. Add 'will-change' to hint the browser to use GPU (fixes tearing/flickering)
+      gsap.set(cardInner, { 
+        rotation: 0, 
+        autoAlpha: 1,
+        willChange: "transform, opacity" 
+      });
+      gsap.set(card, { zIndex: index });
 
-    ScrollTrigger.create({
-      trigger: nextCard,
-      start: "top 75%",
-      end: "top 25%",
-      scrub: 1,
-      onUpdate: (self) => {
-        const progress = self.progress;
+      const nextCard = cards[index + 1];
+      if (!nextCard) return;
 
-        // ✅ Apply tilt + fade to the current card
-        gsap.to(cardInner, {
-          rotation: gsap.utils.interpolate(0, 5*(index*0.13), progress),
-          autoAlpha: gsap.utils.interpolate(1, 0.99, progress),
-          overwrite: true,
-        });
+      ScrollTrigger.create({
+        trigger: nextCard,
+        start: "top 75%", 
+        end: "top 25%", 
+        scrub: 1, // Increased scrub slightly to smooth out fast scrolling
+        onUpdate: (self) => {
+          const progress = self.progress;
 
-        // ✅ Bring the next card above dynamically
-        gsap.set(nextCard, { zIndex: index + numCards });
-      },
+          gsap.to(cardInner, {
+            rotation: gsap.utils.interpolate(0, 5 * (index * 0.13), progress),
+            autoAlpha: gsap.utils.interpolate(1, 0.99, progress),
+            overwrite: "auto", // Changed to auto for better performance
+          });
+
+          // Only update zIndex if it actually changes to prevent layout thrashing
+          const newZIndex = index + numCards;
+          if (gsap.getProperty(nextCard, "zIndex") !== newZIndex) {
+             gsap.set(nextCard, { zIndex: newZIndex });
+          }
+        },
+      });
     });
-  });
 
-  return () => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    cardInners.forEach((inner) => gsap.killTweensOf(inner));
-  };
-}, []);
+    return () => {
+      clearTimeout(refreshTimeout);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      cardInners.forEach((inner) => gsap.killTweensOf(inner));
+    };
+  }, [cardData.length]); // Added load states to dependency array
 
 
   return (
@@ -170,7 +186,7 @@ useEffect(() => {
 
 {/*Page-1 */}
 <a href="https://www.hotstar.com/in/shows/rising-bharat/1271450329" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#B51674] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -274,7 +290,7 @@ poster="https://ail-media.b-cdn.net/posterRB.png"
 {/*Page-2 */}
 <a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
 
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#445066] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -375,7 +391,7 @@ ref={bot1Ref}
 {/*Page-3 */}
 <a href="https://www.hotstar.com/in/shows/the-bharat-chapters/1271450302" target="_blank">
 
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E296B] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -476,7 +492,7 @@ ref={bot1Ref}
 
 {/*Page-4 */}
 <a href="https://www.youtube.com/watch?v=bnN8sPUKDN8" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#C1C0C0] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -578,7 +594,7 @@ ref={bot1Ref}
 
 {/*Page-5 */}
 <a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#4E677A] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -679,7 +695,7 @@ ref={bot1Ref}
 
 {/*Page-6 */}
 <a href="#" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#0E8DFF] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
@@ -779,7 +795,7 @@ ref={bot1Ref}
 
 {/*Page-7 */}
 <a href="https://www.hotstar.com/in/shows/brands-of-tomorrow/1260147774" target="_blank">
-          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90vh] [@media(max-height:800px)]:h-auto  sticky top-[1vh] p-4 md:p-8 flex flex-col  ">
+          <div  className="card h-auto sm:h-auto md:h-auto lg:h-[90svh] [@media(max-height:800px)]:h-auto  sticky top-[1svh] p-4 md:p-8 flex flex-col  ">
             <div ref={addToRefs}  className={`card__inner relative  w-full h-full max-w-7xl mx-auto  bg-[#BE2D1C] rounded-3xl  p-8  overflow-hidden md:p-12 shadow-xl`}>
 <div className="flex items-start justify-between">
 
