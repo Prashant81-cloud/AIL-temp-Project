@@ -171,7 +171,7 @@ useEffect(() => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       cardInners.forEach((inner) => gsap.killTweensOf(inner));
     };
-  }, [cardData.length]); // Added load states to dependency array
+  }, [cardData.length, rbLoaded, bot1Loaded, tbcLoaded, gogLoaded, bot2Loaded, sfLoaded, bot3Loaded]); // Added load states to dependency array
 
 
   return (
